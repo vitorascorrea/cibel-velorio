@@ -1,0 +1,74 @@
+/*Sidebar*/
+
+.sidebar {
+  padding-top: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 222px;
+  
+}
+.sidebar .navbar {
+  position: fixed;
+}
+.sidebar .navbar li {
+  width: 180px;
+  margin-bottom: 8px;
+}
+.sidebar .navbar li a {
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+  text-shadow: none;
+  text-decoration:none;
+}
+.sidebar .navbar li a i {
+  margin-right: 6px;
+}
+.sidebar .toggle {
+  padding: 11px;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  background-color: #bf4737;
+  width: 40px;
+  position: fixed;
+  left: -48px;
+  top: 102px;
+  z-index: 1;
+}
+.sidebar .toggle a {
+  margin-right: 4px;
+  display: block;
+  float: right;
+}
+.sidebar .toggle a .glyphicon-bar {
+  display: block;
+  width: 18px;
+  height: 3px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.sidebar .toggle a .glyphicon-bar + .glyphicon-bar {
+  margin-top: 3px;
+}
+.sidebar .toggle:hover,
+.sidebar .toggle.hover {
+  left: -20px;
+  background-color: #cf675a;
+}
+.sidebar .toggle.hidden {
+  left: -105px;
+}
+
+/*Sidebar*/
