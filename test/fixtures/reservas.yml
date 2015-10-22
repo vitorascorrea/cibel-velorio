@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inicio: 2015-10-22 15:18:09
+  contratacao: 2015-10-22 15:18:09
+  sepultamento: 2015-10-22 15:18:09
+  rf_id: 
+  sala_id: 
+  cemiterio_id: 
+  d_obito: MyString
+  falecido: MyString
+  municipe: MyString
+
+two:
+  inicio: 2015-10-22 15:18:09
+  contratacao: 2015-10-22 15:18:09
+  sepultamento: 2015-10-22 15:18:09
+  rf_id: 
+  sala_id: 
+  cemiterio_id: 
+  d_obito: MyString
+  falecido: MyString
+  municipe: MyString

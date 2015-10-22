@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  agencia_id: 
+  adm: false
+  rf_id: 
+
+two:
+  agencia_id: 
+  adm: false
+  rf_id: 
