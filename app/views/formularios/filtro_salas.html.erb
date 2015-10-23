@@ -1,2 +1,21 @@
-<h1>Formularios#filtro_salas</h1>
-<p>Find me in app/views/formularios/filtro_salas.html.erb</p>
+<div class="row">
+	<div class="panel col-md-4 col-md-offset-4">
+		<div class="panel-heading title centralizar-texto">
+			Selecione a sala e o horário para o velório
+		</div>
+		<h3 class="centralizar-texto"><%= @velorio.nome %></h3>
+		<% @salas.each do |s| %>
+			<div class="row">
+				<div class="col-md-12">
+				<%= form_tag('/confirmacao_reserva', method: 'post') do %>
+					Sala <%= s.id %><br>
+					<%= select_datetime() %>
+					<%= hidden_field_tag :reserva_id, @reserva.id %>
+					<%= hidden_field_tag :sala_id, s.id %>
+					<%= submit_tag "Próximo", class: "btn btn-block btn-danger" %>
+				<% end %>
+				</div>
+			</div>
+		<% end %> 
+	</div>
+</div>

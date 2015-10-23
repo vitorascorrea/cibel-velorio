@@ -5,9 +5,11 @@ module ApplicationHelper
   end
 
   def current_funcionario
-    if @current_funcionario ||= Atendente.find_by(id: session[:funcionario_id])
-    else @current_funcionario ||= Velorista.find_by(id: session[:funcionario_id])
-   	end
+    if Atendente.find(session[:funcionario_id])
+      @current_funcionario = Atendente.find(session[:funcionario_id])
+    else
+      @current_funcionario = Velorista.find(session[:funcionario_id])
+    end
   end
 
   def logged_in?
