@@ -9,23 +9,34 @@
   width: 222px;
   
 }
-.sidebar .navbar {
+.sidebar .ferramentas{
   position: fixed;
 }
-.sidebar .navbar li {
+.sidebar .ferramentas li {
   width: 180px;
   margin-bottom: 8px;
+  border-bottom: 1px solid transparent;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
-.sidebar .navbar li a {
+.sidebar .ferramentas li:hover{
+  
+    background: white;
+    text-decoration: none;
+    color: black;
+}
+.sidebar .ferramentas li a {
   -webkit-border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
   border-radius: 5px 0 0 5px;
   text-shadow: none;
   text-decoration:none;
 }
-.sidebar .navbar li a i {
+
+.sidebar .ferramentas li a i {
   margin-right: 6px;
 }
+
 .sidebar .toggle {
   padding: 11px;
   -webkit-transition: all 0.15s ease-out;

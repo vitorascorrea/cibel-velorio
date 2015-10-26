@@ -25,20 +25,7 @@
   height: 875px;
 }
 
-.panel {
-  background: #fcfcfc;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 0 6px #ded4cc;
-  -moz-box-shadow: 0 0 6px #ded4cc;
-  box-shadow: 0 0 6px #ded4cc;
-  margin-bottom: 24px;
-}
-.panel .title, .navbar {
+.navbar {
   background: #B22222;
   color: #f2eeeb;
   display: block;
@@ -49,70 +36,4 @@
   border-radius: 4px 4px 0 0;
   text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 0px;
 }
-.panel .title + table {
-  margin-top: -12px;
-}
-.panel .content {
-  padding: 6px 18px 12px;
-  -webkit-border-radius: 0 0 4px 4px;
-  -moz-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.panel table {
-  margin-bottom: 0;
-}
-.panel table th {
-  font-weight: 400;
-}
-.panel table thead.title {
-  color: #f2eeeb;
-  background: #B22222;
-  display: table-header-group;
-}
-.panel table thead.title tr th:first-child {
-  -webkit-border-radius: 4px 0 0 0;
-  -moz-border-radius: 4px 0 0 0;
-  border-radius: 4px 0 0 0;
-}
-.panel table thead.title tr th:last-child {
-  -webkit-border-radius: 0 4px 0 0;
-  -moz-border-radius: 0 4px 0 0;
-  border-radius: 0 4px 0 0;
-}
-.panel form {
-  margin-top: -12px;
-  margin-bottom: 0;
-}
-.panel form label {
-  padding-left: 6px;
-  font-weight: 400;
-}
-.panel form .form-actions {
-  margin: 0;
-  -webkit-border-radius: 0 0 4px 4px;
-  -moz-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px;
-  border-top: none;
-}
-table.sortable thead tr th:hover {
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  -o-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
-  background: rgba(255, 255, 255, 0.1);
-  background: #e8e1dc;
-}
-table.sortable thead.title tr th:hover {
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  -o-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
-  background: rgba(255, 255, 255, 0.1);
-}
-table.center th,
-table.center td {
-  text-align: center;
-}
+
