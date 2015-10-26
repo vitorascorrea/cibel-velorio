@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
 	include ApplicationHelper
+	
   def new
+  	redirect_to selecao_velorio_path if logged_in?
   end
 
 	def create
@@ -18,4 +20,5 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+  
 end

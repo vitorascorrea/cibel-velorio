@@ -5,6 +5,11 @@
 #
 #   cities = City.create([{ nome: 'Chicago' }, { nome: 'Copenhagen' }])
 #   Mayor.create(nome: 'Emanuel', city: cities.first)
+
+ag = Agencia.create(nome: 'Agencia Teste')
+func = Funcionario.create(rf: '0000000', nome: 'Testador', password: '123456')
+Atendente.create(funcionario_id: func.id, agencia_id: ag.id, adm: true)
+
 Cemiterio.create(nome: 'Alphacampus')
 Cemiterio.create(nome: 'Alvaro Quinteiro Vieira')
 Cemiterio.create(nome: 'Araçá')

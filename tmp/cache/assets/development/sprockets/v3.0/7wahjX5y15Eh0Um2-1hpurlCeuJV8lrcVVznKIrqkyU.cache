@@ -1,0 +1,11 @@
+I"æ(function() {
+  jQuery(function() {
+    $('#velorio_id').hide();
+    $('#mesmo_local').change(function() {
+      return $('#velorio_id').toggle();
+    });
+    return jQuery('#datetimepicker').datetimepicker;
+  });
+
+}).call(this);
+:ET

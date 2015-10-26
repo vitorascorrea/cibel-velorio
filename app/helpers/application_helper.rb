@@ -5,10 +5,12 @@ module ApplicationHelper
   end
 
   def current_funcionario
-    if Atendente.find(session[:funcionario_id])
-      @current_funcionario = Atendente.find(session[:funcionario_id])
-    else
-      @current_funcionario = Velorista.find(session[:funcionario_id])
+    if session[:funcionario_id]
+      if Atendente.find(session[:funcionario_id])
+        @current_funcionario = Atendente.find(session[:funcionario_id])
+      else
+        @current_funcionario = Velorista.find(session[:funcionario_id])
+      end
     end
   end
 

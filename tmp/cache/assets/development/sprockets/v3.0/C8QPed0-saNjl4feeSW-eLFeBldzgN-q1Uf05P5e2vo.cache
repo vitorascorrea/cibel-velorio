@@ -1,0 +1,14 @@
+I"7(function() {
+  jQuery(function() {
+    $('#velorio_id').hide();
+    $('#mesmo_local').change(function() {
+      return $('#velorio_id').toggle();
+    });
+    jQuery.datetimepicker.setLocale('pt-BR');
+    return jQuery('#datetimepicker').datetimepicker({
+      format: 'd.m.Y H:i'
+    });
+  });
+
+}).call(this);
+:ET

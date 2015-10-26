@@ -2,7 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-	$(document).on 'ready page:load', ->
-		$('#velorio_id').hide()
-		$('#mesmo_local').change ->
-			$('#velorio_id').toggle()
+	$('#velorio_id').hide()
+	$('#mesmo_local').change ->
+		$('#velorio_id').toggle()
+		
+	jQuery.datetimepicker.setLocale('pt-BR')
+	jQuery('#datetimepicker').datetimepicker
+		format: 'd/m/Y H:i'
+		minDate:'0' # '0' é a data/tempo atual
+		minTime: '0'
+	
