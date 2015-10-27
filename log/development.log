@@ -35243,3 +35243,769 @@ Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 177.22.151.225 at 2015-10-26 19:42:11 +0000
 Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 16:11:49 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_nav.html.erb (12.0ms)
+Completed 200 OK in 1851ms (Views: 1845.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 177.22.151.225 at 2015-10-27 17:04:41 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 1221ms (Views: 1209.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 177.22.151.225 at 2015-10-27 17:04:48 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lMPVZY3ny5in2J8/pg/hx29peUW+L/SRYPog0Rfy7B5Sn1op9XxufsB+HIloa/tzNhScKILFc/ZmFSGkwjuhCQ==", "session"=>{"rf"=>"0000000", "password"=>"[FILTERED]"}, "commit"=>"Acessar"}
+  [1m[35mFuncionario Load (1.0ms)[0m  SELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."rf" = ? LIMIT 1  [["rf", "0000000"]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 140ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:04:48 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mCemiterio Load (2.5ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (0.9ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (138.1ms)
+  Rendered layouts/_nav.html.erb (3.5ms)
+Completed 200 OK in 1143ms (Views: 1136.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/logout" for 177.22.151.225 at 2015-10-27 17:06:36 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (195.8ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:06:42 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[36mAtendente Load (0.4ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 120ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:06:42 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mCemiterio Load (2.3ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (0.8ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (121.3ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 883ms (Views: 877.7ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/logout" for 177.22.151.225 at 2015-10-27 17:06:46 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"85XMzHxZ3C97VZqqZOjDLfK3ALNALxzjiqc9yKGvriA1yUOABMJ5yRzzGRyqjNmZq8rl3nzFm4SMSDy9dGbjNw=="}
+Redirected to https://rails-apps-flaviokr.c9.io/
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:06:47 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 788ms (Views: 783.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 177.22.151.225 at 2015-10-27 17:06:59 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"32icNOJTiAWPOk2JJWMdu5IKpQ0p+pZPERs0z+ngvQwZNBN4msgt4+iczj/rBwcPy3dAYBUQESgX9DW6PCnwGw==", "session"=>{"rf"=>"0000000", "password"=>"[FILTERED]"}, "commit"=>"Acessar"}
+  [1m[36mFuncionario Load (0.4ms)[0m  [1mSELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."rf" = ? LIMIT 1[0m  [["rf", "0000000"]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 148ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:07:00 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[35mCemiterio Load (2.8ms)[0m  SELECT "cemiterios".* FROM "cemiterios"
+  [1m[36mVelorio Load (1.2ms)[0m  [1mSELECT "velorios".* FROM "velorios"[0m
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (142.7ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 1050ms (Views: 1043.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/filtro_salas" for 177.22.151.225 at 2015-10-27 17:07:39 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/filtro_salas"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (26.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (252.1ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:07:47 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[35mAtendente Load (0.4ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:07:48 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[35mCemiterio Load (2.5ms)[0m  SELECT "cemiterios".* FROM "cemiterios"
+  [1m[36mVelorio Load (0.8ms)[0m  [1mSELECT "velorios".* FROM "velorios"[0m
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (224.2ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 995ms (Views: 989.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/filtro_salas" for 177.22.151.225 at 2015-10-27 17:07:56 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#filtro_salas as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BpgfQfkIRvn2vB8aODAlL07uNO8H6IO+uiZ3M9B/vk3AxJANgZPjH5EanKz2VD+bF5PRgjsCBNm8yXZGBbbzWg==", "cemiterio_id"=>"28", "mesmo_local"=>"1", "velorio_id"=>"1", "commit"=>"Próximo"}
+  [1m[35mCemiterio Load (0.6ms)[0m  SELECT  "cemiterios".* FROM "cemiterios" WHERE "cemiterios"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mVelorio Load (0.8ms)[0m  [1mSELECT  "velorios".* FROM "velorios" WHERE "velorios"."nome" = ? LIMIT 1[0m  [["nome", "Dom Bosco"]]
+  [1m[35mAtendente Load (0.6ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "reservas" ("atendente_id", "cemiterio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["atendente_id", 1], ["cemiterio_id", 28], ["created_at", "2015-10-27 17:07:56.321900"], ["updated_at", "2015-10-27 17:07:56.321900"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mSala Load (0.7ms)[0m  [1mSELECT "salas".* FROM "salas" WHERE "salas"."velorio_id" = ?[0m  [["velorio_id", 3]]
+  Rendered formularios/filtro_salas.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 1074ms (Views: 1008.2ms | ActiveRecord: 13.1ms)
+
+
+Started POST "/filtro_salas" for 177.22.151.225 at 2015-10-27 17:08:06 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#filtro_salas as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BpgfQfkIRvn2vB8aODAlL07uNO8H6IO+uiZ3M9B/vk3AxJANgZPjH5EanKz2VD+bF5PRgjsCBNm8yXZGBbbzWg==", "cemiterio_id"=>"3", "mesmo_local"=>"1", "velorio_id"=>"1", "commit"=>"Próximo"}
+  [1m[35mCemiterio Load (0.5ms)[0m  SELECT  "cemiterios".* FROM "cemiterios" WHERE "cemiterios"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mVelorio Load (0.5ms)[0m  [1mSELECT  "velorios".* FROM "velorios" WHERE "velorios"."nome" = ? LIMIT 1[0m  [["nome", "Araçá"]]
+  [1m[35mAtendente Load (0.4ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "reservas" ("atendente_id", "cemiterio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["atendente_id", 1], ["cemiterio_id", 3], ["created_at", "2015-10-27 17:08:06.766533"], ["updated_at", "2015-10-27 17:08:06.766533"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36mSala Load (0.7ms)[0m  [1mSELECT "salas".* FROM "salas" WHERE "salas"."velorio_id" = ?[0m  [["velorio_id", 1]]
+  Rendered formularios/filtro_salas.html.erb within layouts/application (168.2ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 1231ms (Views: 1121.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/confirmacao_reserva" for 177.22.151.225 at 2015-10-27 17:08:54 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/confirmacao_reserva"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (27.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (298.1ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:08:58 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[35mAtendente Load (7.7ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 24ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:08:58 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[35mCemiterio Load (4.5ms)[0m  SELECT "cemiterios".* FROM "cemiterios"
+  [1m[36mVelorio Load (1.2ms)[0m  [1mSELECT "velorios".* FROM "velorios"[0m
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (168.9ms)
+  Rendered layouts/_nav.html.erb (3.5ms)
+Completed 200 OK in 1287ms (Views: 1278.9ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/filtro_salas" for 177.22.151.225 at 2015-10-27 17:09:04 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#filtro_salas as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSGmBVN+KLHXDu33RMJsRHl4Q8vaqYL00p6/sThEoe93fSlJK+WNV7CobkGKpnbwIAWmpuZDBZPUcb7E7Y3s+A==", "cemiterio_id"=>"3", "mesmo_local"=>"1", "velorio_id"=>"1", "commit"=>"Próximo"}
+  [1m[35mCemiterio Load (0.5ms)[0m  SELECT  "cemiterios".* FROM "cemiterios" WHERE "cemiterios"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mVelorio Load (0.4ms)[0m  [1mSELECT  "velorios".* FROM "velorios" WHERE "velorios"."nome" = ? LIMIT 1[0m  [["nome", "Araçá"]]
+  [1m[35mAtendente Load (0.7ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "reservas" ("atendente_id", "cemiterio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["atendente_id", 1], ["cemiterio_id", 3], ["created_at", "2015-10-27 17:09:04.383313"], ["updated_at", "2015-10-27 17:09:04.383313"]]
+  [1m[35m (17.8ms)[0m  commit transaction
+  [1m[36mSala Load (0.6ms)[0m  [1mSELECT "salas".* FROM "salas" WHERE "salas"."velorio_id" = ?[0m  [["velorio_id", 1]]
+  Rendered formularios/filtro_salas.html.erb within layouts/application (157.2ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 1329ms (Views: 1210.2ms | ActiveRecord: 22.1ms)
+
+
+Started POST "/confirmacao_reserva" for 177.22.151.225 at 2015-10-27 17:09:07 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#confirmacao_reserva as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IZhzIExIgIsVChL6099bDX2IIRQiut+QqzTI/fqhMALnxPxsNNMlbXKskUwdu0G5JPXEeR5QWPet28mIL2h9FQ==", "horario_sepultamento"=>{"horario(3i)"=>"27", "horario(2i)"=>"10", "horario(1i)"=>"2015", "horario(4i)"=>"15", "horario(5i)"=>"09"}, "reserva_id"=>"15", "sala_id"=>"1", "commit"=>"Próximo"}
+  [1m[35mReserva Load (1.0ms)[0m  SELECT  "reservas".* FROM "reservas" WHERE "reservas"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "reservas" SET "sala_id" = ?, "sepultamento" = ?, "inicio" = ?, "updated_at" = ? WHERE "reservas"."id" = ?  [["sala_id", 1], ["sepultamento", "2015-10-27 17:09:00.000000"], ["inicio", "2015-10-27 17:09:07.938984"], ["updated_at", "2015-10-27 17:09:07.971915"], ["id", 15]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+  Rendered formularios/confirmacao_reserva.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 1163ms (Views: 1068.0ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:09:28 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[35mAtendente Load (0.7ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 97ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:09:29 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[35mCemiterio Load (2.6ms)[0m  SELECT "cemiterios".* FROM "cemiterios"
+  [1m[36mVelorio Load (1.0ms)[0m  [1mSELECT "velorios".* FROM "velorios"[0m
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (175.0ms)
+  Rendered layouts/_nav.html.erb (3.4ms)
+Completed 200 OK in 1326ms (Views: 1319.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/logout" for 177.22.151.225 at 2015-10-27 17:10:07 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (61.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (373.4ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:10:21 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[35mAtendente Load (0.7ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 181ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:10:21 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[35mCemiterio Load (2.6ms)[0m  SELECT "cemiterios".* FROM "cemiterios"
+  [1m[36mVelorio Load (1.0ms)[0m  [1mSELECT "velorios".* FROM "velorios"[0m
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (246.7ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 1187ms (Views: 1151.1ms | ActiveRecord: 6.3ms)
+
+
+Started DELETE "/logout" for 177.22.151.225 at 2015-10-27 17:10:26 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zS8E4pFrtArU5BI3/xnfLzu/Xvx0Blyg15XLdp6Gk+kLc4uu6fAR7LNCkYExfcWbYsK7kUjs28fResoDS0/e/g=="}
+Redirected to https://rails-apps-flaviokr.c9.io/
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:10:27 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_nav.html.erb (3.1ms)
+Completed 200 OK in 1053ms (Views: 1048.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 177.22.151.225 at 2015-10-27 17:12:33 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 1252ms (Views: 1247.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 177.22.151.225 at 2015-10-27 17:12:37 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u6ko07JnUcgKYG20VmwtyGMNU6R+BpfjSP5j4AsKrkR99aefyvz0Lm3G7gKYCDd8OnC2yULsEIROEWKV3sPjUw==", "session"=>{"rf"=>"0000000", "password"=>"[FILTERED]"}, "commit"=>"Acessar"}
+  [1m[35mFuncionario Load (1.0ms)[0m  SELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."rf" = ? LIMIT 1  [["rf", "0000000"]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 174ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:12:37 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mCemiterio Load (4.6ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (1.6ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (243.5ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 1528ms (Views: 1518.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/filtro_salas" for 177.22.151.225 at 2015-10-27 17:15:28 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/filtro_salas"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (42.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (238.9ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:15:33 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[36mAtendente Load (0.7ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 83ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:15:34 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mCemiterio Load (4.0ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (1.6ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (275.1ms)
+  Rendered layouts/_nav.html.erb (3.6ms)
+Completed 200 OK in 1619ms (Views: 1576.7ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/filtro_salas" for 177.22.151.225 at 2015-10-27 17:15:38 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#filtro_salas as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oT9CT667rWo04ActZE6hBOHQDmS1fPFF/pJTx2lx+UJnY80D1iAIjFNGhJuqKruwuK3rCYmWdiL4fVKyvLi0VQ==", "cemiterio_id"=>"3", "mesmo_local"=>"1", "velorio_id"=>"1", "commit"=>"Próximo"}
+  [1m[36mCemiterio Load (1.0ms)[0m  [1mSELECT  "cemiterios".* FROM "cemiterios" WHERE "cemiterios"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mVelorio Load (0.7ms)[0m  SELECT  "velorios".* FROM "velorios" WHERE "velorios"."nome" = ? LIMIT 1  [["nome", "Araçá"]]
+  [1m[36mAtendente Load (0.5ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "reservas" ("atendente_id", "cemiterio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["atendente_id", 1], ["cemiterio_id", 3], ["created_at", "2015-10-27 17:15:38.871743"], ["updated_at", "2015-10-27 17:15:38.871743"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mSala Load (1.1ms)[0m  SELECT "salas".* FROM "salas" WHERE "salas"."velorio_id" = ?  [["velorio_id", 1]]
+  Rendered formularios/filtro_salas.html.erb within layouts/application (211.2ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 1523ms (Views: 1345.3ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:22:31 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[36mAtendente Load (0.8ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 79ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:22:33 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mCemiterio Load (4.7ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (1.4ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (268.7ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 1694ms (Views: 1653.4ms | ActiveRecord: 9.6ms)
+
+
+Started DELETE "/logout" for 177.22.151.225 at 2015-10-27 17:22:37 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1vM/lsIl51lthmePV9OTW3PQK4578W5wDdxkpyA3IqMQr7Daur5Cvwog5DmZt4nvKq3O40cb6RcLM2XS9f5vtA=="}
+Redirected to https://rails-apps-flaviokr.c9.io/
+Completed 302 Found in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:22:37 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 1139ms (Views: 1131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:24:21 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_nav.html.erb (0.6ms)
+Completed 200 OK in 464ms (Views: 448.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 177.22.151.225 at 2015-10-27 17:24:24 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3kj/oyWbkcwCX8Q1MmiUe40vkR8Yz2PkmecsgsAWRpEYFHDvXQA0KmX5R4P8DI7P1FJ0ciQl5IOfCC33Fd8Lhg==", "session"=>{"rf"=>"0000000", "password"=>"[FILTERED]"}, "commit"=>"Acessar"}
+  [1m[35mFuncionario Load (0.2ms)[0m  SELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."rf" = ? LIMIT 1  [["rf", "0000000"]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 101ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:24:25 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mAtendente Load (0.3ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCemiterio Load (0.4ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (0.2ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+Completed 200 OK in 284ms (Views: 140.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 177.22.151.225 at 2015-10-27 17:26:38 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.2ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:31:32 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[36mAtendente Load (1.3ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:31:33 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mAtendente Load (0.1ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCemiterio Load (0.6ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (0.2ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 169ms (Views: 165.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:36:52 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  [1m[36mAtendente Load (0.2ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/selecao_velorio
+Completed 302 Found in 78ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:36:52 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[36mAtendente Load (0.2ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCemiterio Load (0.8ms)[0m  [1mSELECT "cemiterios".* FROM "cemiterios"[0m
+  [1m[35mVelorio Load (0.3ms)[0m  SELECT "velorios".* FROM "velorios"
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+Completed 200 OK in 180ms (Views: 165.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/selecao_velorio" for 177.22.151.225 at 2015-10-27 17:37:08 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FormulariosController#selecao_velorio as HTML
+  [1m[35mAtendente Load (0.3ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCemiterio Load (0.5ms)[0m  SELECT "cemiterios".* FROM "cemiterios"
+  [1m[36mVelorio Load (0.3ms)[0m  [1mSELECT "velorios".* FROM "velorios"[0m
+  Rendered formularios/selecao_velorio.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 518ms (Views: 464.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/jquery.datetimepicker.self-381dc208ebaa6bad2aeb418c35295f69873bd6d4b57e4260d240c92525777558.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/salas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reservas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sidebar.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/funcionarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/paineis.self-e3797af43f0a79e29edb5745d4bcc9501498ee45f2640f3ff2c92f924b82269c.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:09 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-5f9b72d81a4ba8525f5bf5294106556c8d1f96164cbdbcb3842cc8c0a09f31ef.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/index.self-8f1f980e72b76338aa785757b979c553fc530a10d15d64246b7cd6fec82564dc.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/formularios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.datetimepicker.full.min.self-5c1a0ef9b72d6d78217970ed5a7a166f4f8187f10be8d808598ef1f3e34460d9.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/formularios.self-3e4f761a48afdee1d624d526fd101253b00138de19dbece85ab29f3166bba584.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/funcionarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/reservas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/salas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 177.22.151.225 at 2015-10-27 17:37:10 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started DELETE "/logout" for 177.22.151.225 at 2015-10-27 17:37:49 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"noH7GUK8KTG9EjWUHsNMkZIDFMfBoRn+QkgbH4kq3vhY3XRVOieM19q0tiLQp1Yly37xqv1LnplEpxpqXOOT7w=="}
+  [1m[35mAtendente Load (0.1ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "atendentes".* FROM "atendentes" WHERE "atendentes"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to https://rails-apps-flaviokr.c9.io/
+Completed 302 Found in 109ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 177.22.151.225 at 2015-10-27 17:37:49 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 132ms (Views: 130.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 177.22.151.225 at 2015-10-27 17:37:57 +0000
+Cannot render console from 177.22.151.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 119ms (Views: 118.1ms | ActiveRecord: 0.0ms)

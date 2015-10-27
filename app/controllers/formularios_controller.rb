@@ -4,6 +4,12 @@ class FormulariosController < ApplicationController
   	@cemiterios = Cemiterio.all
   	@velorios = Velorio.all
   end
+  
+  def selecao_velorio_form
+    @sepultamento = Cemiterio.find(params[:cemiterio_id])
+    Reserva.create(atendente_id: current_funcionario.id, cemiterio_id: @sepultamento.id)
+    redirect_to filtro_salas_path
+  end
 
   def filtro_salas
     @sepultamento = Cemiterio.find(params[:cemiterio_id])
