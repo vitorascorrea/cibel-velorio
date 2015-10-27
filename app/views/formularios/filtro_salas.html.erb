@@ -9,8 +9,8 @@
 				<div class="col-md-12">
 				<%= form_tag confirmacao_reserva_path, method: 'get' do %>
 					Sala <%= s.id %><br>
-					<input id="datetimepicker">
-					<%= datetime_select :horario_sepultamento, :horario %>
+					<input class="datetimepicker" id="sala-<%= s.id %>">
+					<!--<%= datetime_select :horario_sepultamento, :horario %>-->
 					<%= hidden_field_tag :reserva_id, @reserva.id %>
 					<%= hidden_field_tag :sala_id, s.id %>
 					<%= submit_tag "Próximo", class: "btn btn-block btn-danger" %>

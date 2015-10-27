@@ -1,0 +1,31 @@
+I"(function() {
+  jQuery(function() {
+    var amanha, d, logic;
+    $('#velorio_id').hide();
+    $('#mesmo_local').change(function() {
+      return $('#velorio_id').toggle();
+    });
+    d = new Date(Date.parse(gon.array[0].sepultamento));
+    amanha = new Date(Date.parse(gon.amanha));
+    jQuery.datetimepicker.setLocale('pt-BR');
+    logic = function(currentDateTime) {
+      if (currentDateTime.getDay() === amanha.getDay()) {
+        this.setOptions({
+          minTime: '0:00',
+          minDate: d.getDay()
+        });
+      } else {
+        this.setOptions({
+          minTime: '0',
+          minDate: d.getDay()
+        });
+      }
+    };
+    return jQuery('#sala-1').datetimepicker({
+      onChangeDateTime: logic,
+      onShow: logic
+    });
+  });
+
+}).call(this);
+:ET

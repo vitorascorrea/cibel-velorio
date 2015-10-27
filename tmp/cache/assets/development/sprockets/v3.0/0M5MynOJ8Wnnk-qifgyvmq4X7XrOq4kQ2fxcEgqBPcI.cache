@@ -1,0 +1,17 @@
+I"“(function() {
+  jQuery(function() {
+    $('#velorio_id').hide();
+    $('#mesmo_local').change(function() {
+      return $('#velorio_id').toggle();
+    });
+    alert(Data.parse(gon.array[0].sepultamento).getHour());
+    jQuery.datetimepicker.setLocale('pt-BR');
+    return jQuery('#sala-1').datetimepicker({
+      format: 'd/m/Y H:i',
+      minDate: '0',
+      minTime: '0'
+    });
+  });
+
+}).call(this);
+:ET

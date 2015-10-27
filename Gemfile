@@ -29,6 +29,7 @@ gem 'table_print'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'gon'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -6,9 +6,32 @@ jQuery ->
 	$('#mesmo_local').change ->
 		$('#velorio_id').toggle()
 		
+	#maiorData(sala) ->
+		#for i in sala.reservas
+		
+	d = new Date(Date.parse(gon.array[0].sepultamento))
+	amanha = new Date(Date.parse(gon.amanha))
+		
 	jQuery.datetimepicker.setLocale('pt-BR')
-	jQuery('#datetimepicker').datetimepicker
-		format: 'd/m/Y H:i'
-		minDate:'0' # '0' é a data/tempo atual
-		minTime: '0'
 	
+	logic = (currentDateTime) ->
+	  # 'this' is jquery object datetimepicker
+	  if currentDateTime.getDay() == amanha.getDay()
+	    @setOptions
+	    	format: 'd/m/Y H:i'
+	    	minTime: '0:00'
+	    	minDate: d
+	    	maxDate: amanha
+	  else
+	    @setOptions 
+	    	format: 'd/m/Y H:i'
+	    	minTime: '0'
+	    	minDate: d
+	    	maxDate: amanha
+	  return
+
+	jQuery('#sala-1').datetimepicker
+	  onChangeDateTime: logic
+	  onShow: logic
+		#maxDate: amanha
+		#minTime: d	

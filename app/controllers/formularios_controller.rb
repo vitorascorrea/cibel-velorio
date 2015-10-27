@@ -14,6 +14,12 @@ class FormulariosController < ApplicationController
     end
     @reserva = Reserva.create(atendente_id: current_funcionario.id, cemiterio_id: @sepultamento.id)
     @salas = @velorio.salas
+    @array_salas = []
+    gon.array = @array_salas
+    @salas.each do |s|
+      gon.array << maiorHorario(s)
+    end
+    gon.amanha = 1.day.from_now
   end
 
   def confirmacao_reserva
@@ -38,6 +44,8 @@ class FormulariosController < ApplicationController
       offset = Time.now.in_time_zone.utc_offset
       time - offset
     end
-
-
+    
+    def maiorHorario(sala)
+      sala.reservas.order(sepultamento: :desc).first
+    end
 end
