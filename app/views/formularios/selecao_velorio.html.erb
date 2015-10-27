@@ -3,7 +3,7 @@
 		<div class="panel-heading title centralizar-texto">
 			Selecione o local de sepultamento
 		</div>    
-		<%= form_tag('/filtro_salas', method: 'post') do %>
+		<%= form_tag(filtro_salas_path, method: 'get') do %>
 			<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
 		    <%= select_tag :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %>
 		    <%= label_tag :mesmo_local, "Velório será no mesmo local de sepultamento?" %>

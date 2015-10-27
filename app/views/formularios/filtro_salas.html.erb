@@ -7,7 +7,7 @@
 		<% @salas.each do |s| %>
 			<div class="row">
 				<div class="col-md-12">
-				<%= form_tag filtro_salas_form_path, method: 'post' do %>
+				<%= form_tag confirmacao_reserva_path, method: 'get' do %>
 					Sala <%= s.id %><br>
 					<input id="datetimepicker">
 					<%= datetime_select :horario_sepultamento, :horario %>

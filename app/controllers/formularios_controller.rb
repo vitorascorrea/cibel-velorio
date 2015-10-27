@@ -4,12 +4,6 @@ class FormulariosController < ApplicationController
   	@cemiterios = Cemiterio.all
   	@velorios = Velorio.all
   end
-  
-  def selecao_velorio_form
-    @sepultamento = Cemiterio.find(params[:cemiterio_id])
-    Reserva.create(atendente_id: current_funcionario.id, cemiterio_id: @sepultamento.id)
-    redirect_to filtro_salas_path
-  end
 
   def filtro_salas
     @sepultamento = Cemiterio.find(params[:cemiterio_id])
@@ -31,15 +25,6 @@ class FormulariosController < ApplicationController
 
   private
 
-    #def checaHorario(sala)
-    #	time = 0
-    #	sala.reservas.each do |r|
-    #		if r.sepultamento > time
-    #			time = r.sepultamento
-    #	end
-    #	time
-    #end  
-  
     def date_time_from_date_time_select_params(date_params, key)
       string_from_date_select_params(date_params, key).to_datetime.utc
     end
