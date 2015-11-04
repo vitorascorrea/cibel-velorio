@@ -1,4 +1,9 @@
 class FormulariosController < ApplicationController
+  
+  def main
+    @reserva = Reserva.new
+  end
+
   def selecao_velorio
   	@cemiterios = Cemiterio.all
   	@velorios = Velorio.all

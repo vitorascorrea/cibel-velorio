@@ -3,4 +3,5 @@ class Velorio < ActiveRecord::Base
   belongs_to :cemiterio
   has_many :salas
   has_many :veloristas
+  has_many :reservas
 end

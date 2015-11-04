@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
 	$(document).on 'ready page:load', ->
-		$('#velorio_id').hide()
-		$('#mesmo_local').change ->
-			$('#velorio_id').toggle()
+		$('#reserva_velorio_id').hide()
+		$('#reserva_mesmo_local').change ->
+			if $('#reserva_mesmo_local').val() == "Sim"
+				$('#reserva_velorio_id').hide()
+			else
+				$('#reserva_velorio_id').show()

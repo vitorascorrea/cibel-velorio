@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		funcionario = Funcionario.find_by(rf: params[:session][:rf].downcase)
 		if funcionario && funcionario.authenticate(params[:session][:password])
 		  log_in(funcionario)
-		  redirect_to selecao_velorio_path
+		  redirect_to main_path
 		else
 		  flash.now[:danger] = 'RF ou Senha inválido'
 		  render 'new'
