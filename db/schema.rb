@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022171809) do
+ActiveRecord::Schema.define(version: 20151104134950) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -61,11 +61,14 @@ ActiveRecord::Schema.define(version: 20151022171809) do
     t.string   "municipe"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "mesmo_local"
+    t.integer  "velorio_id"
   end
 
   add_index "reservas", ["atendente_id"], name: "index_reservas_on_atendente_id"
   add_index "reservas", ["cemiterio_id"], name: "index_reservas_on_cemiterio_id"
   add_index "reservas", ["sala_id"], name: "index_reservas_on_sala_id"
+  add_index "reservas", ["velorio_id"], name: "index_reservas_on_velorio_id"
 
   create_table "salas", force: :cascade do |t|
     t.boolean  "especial"

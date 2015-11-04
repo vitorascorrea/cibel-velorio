@@ -1,0 +1,19 @@
+I"(function() {
+  jQuery(function() {
+    return $(document).on('ready page:load', function() {
+      $('#reserva_velorio_id').hide();
+      $('#reserva_mesmo_local').change(function() {
+        if ($('#reserva_mesmo_local').val() === "Sim") {
+          return $('#reserva_velorio_id').hide();
+        } else {
+          return $('#reserva_velorio_id').show();
+        }
+      });
+      return $('#fim_selecao').click(function() {
+        return resetActive(event, 33, 'step-2');
+      });
+    });
+  });
+
+}).call(this);
+:ET

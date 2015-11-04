@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
+<<<<<<< HEAD
 	$('#velorio_id').hide()
 	$('#mesmo_local').change ->
 		$('#velorio_id').toggle()
@@ -35,3 +36,12 @@ jQuery ->
 	  onShow: logic
 		#maxDate: amanha
 		#minTime: d	
+=======
+	$(document).on 'ready page:load', ->
+		$('#reserva_velorio_id').hide()
+		$('#reserva_mesmo_local').change ->
+			if $('#reserva_mesmo_local').val() == "Sim"
+				$('#reserva_velorio_id').hide()
+			else
+				$('#reserva_velorio_id').show()
+>>>>>>> Primeira_Sprint

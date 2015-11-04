@@ -8,14 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/nav' %>
-
-<% flash.each do |message_type, message| %>
-	<div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
-<div class="container-fluid">
+<div class="container-table">
 	<%= yield %>
 </div>
-
 </body>
 </html>

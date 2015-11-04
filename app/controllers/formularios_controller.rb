@@ -1,5 +1,12 @@
 class FormulariosController < ApplicationController
   
+<<<<<<< HEAD
+=======
+  def main
+    @reserva = Reserva.new
+  end
+
+>>>>>>> Primeira_Sprint
   def selecao_velorio
   	@cemiterios = Cemiterio.all
   	@velorios = Velorio.all
