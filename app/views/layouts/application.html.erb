@@ -4,10 +4,10 @@
   <title>Cibel</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-  <%= include_gon %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to "Logout", logout_path, method: :delete %>
 <div class="container-table">
 	<%= yield %>
 </div>

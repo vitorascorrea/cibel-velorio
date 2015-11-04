@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 	include ApplicationHelper
 	
   def new
-  	redirect_to selecao_velorio_path if logged_in?
+  	redirect_to main_path if logged_in?
   end
 
 	def create
