@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row setup-content step activeStepInfo" id="step-1">
 	<div class="col-xs-12">
 		<div class="col-md-4 col-md-offset-4 well text-center">
@@ -15,6 +16,24 @@
 				</div>
 				<%= submit_tag "Próximo passo", onclick:"javascript: resetActive(event, 33, 'step-2');" %>
 			<% end %>
+=======
+<div class="setup-content step activeStepInfo" id="step-1">
+
+		<div class="painel tam6">
+			<div class="titulo centralizar-texto">
+				Selecione o local de sepultamento
+			</div>
+			<div class="conteudo-painel">
+				<%= f.label :cemiterio_id, "Local de Sepultamento/Cremação" %><br>
+				<%= f.select :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %><br><br>
+				<%= f.label :mesmo_local, "Velório será no mesmo local de sepultamento?" %><br>
+				<%= f.select :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %>
+				<%= f.select :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
+			</div>
+			<div class="painel-footer">
+			 <input type="button" id="fim_selecao" value="Próximo passo" onclick="javascript: resetActive(event, 33, 'step-2');">	
+			</div>
+>>>>>>> 3bf523f75b4a2e253f33fa575f4383348218d42e
 		</div>
-	</div>
+
 </div>

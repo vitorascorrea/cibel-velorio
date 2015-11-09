@@ -3,75 +3,88 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .body {
-  background: #3c3334;
+ // background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(67,205,128,1)), to(rgba(255,193,37,0.6)));
+  //background: -webkit-linear-gradient(left, rgba(67,205,128,1) 0%, rgba(255,193,37,0.6) 100%);
+  //background: linear-gradient(left, rgba(67,205,128,1) 0%, rgba(255,193,37,0.6) 100%);
+  background: url(http://bgfons.com/upload/light_texture2213.jpg);
   color: #3c3334;
   font-weight: 200;
+  height: 100vh;
+  
 }
 
-.panel {
-  background: #fcfcfc;
-  border: 0px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.00)!important; 
+.login{
+  background: rgba(255,255,255,0.4);
+  height: 100vh;
+  width: 250px;
+  
+  float: right;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 1)!important;
+  
+  .campos-login{
+    position: absolute;
+    top: 30%;
+    bottom: 70%;
+  
+  .titulo-login{
+    text-align: center;
+  }
+  
+  .conteudo-login{
+    
+    position: relative;
+    margin-top: 20px;
+    
+    .user-password{
+      
+      list-style-type: none;
+      
+      li {
+          display: block;
+          margin-bottom: 10px;
+       
+        .caixa{
+        
+          display: block;
+          width: 100%;
+          height: 34px;
+          font-size: 14px;
+          line-height: 1.42857143;
+          color: #555;
+          background-color: #fff;
+          background-image: none;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+               -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        
+      }
+    }
+  }
+  }
 }
-.panel .title, .navbar {
-  background: #006600;
-  color: #f2eeeb;
-  display: block;
-  margin-bottom: 12px;
-  padding: 6px 12px;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  border-radius: 4px 4px 0 0;
-  text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 0px;
+
+.logo{
+  position: absolute;
+  font-size: 40px;
+  left: 20%;
+  top: 20%;
 }
-.panel .title + table {
-  margin-top: -12px;
-}
-.panel .content {
-  padding: 15px;
-  -webkit-border-radius: 0 0 4px 4px;
-  -moz-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.panel table {
-  margin-bottom: 0;
-}
-.panel table th {
-  font-weight: 400;
-}
-.panel table thead.title {
-  color: #f2eeeb;
-  background: #B22222;
-  display: table-header-group;
-}
-.panel table thead.title tr th:first-child {
-  -webkit-border-radius: 4px 0 0 0;
-  -moz-border-radius: 4px 0 0 0;
-  border-radius: 4px 0 0 0;
-}
-.panel table thead.title tr th:last-child {
-  -webkit-border-radius: 0 4px 0 0;
-  -moz-border-radius: 0 4px 0 0;
-  border-radius: 0 4px 0 0;
-}
-.panel form {
-  margin-top: -12px;
-  margin-bottom: 0;
-  padding: 15px;  
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 0 6px #ded4cc;
-  -moz-box-shadow: 0 0 6px #ded4cc;
-  box-shadow: 0 0 6px #ded4cc;
+
+.footer{
+  background: #007A00;
+  
   width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
+<<<<<<< HEAD
 .panel form label {
   padding-left: 6px;
   font-weight: 400;
@@ -105,3 +118,56 @@ table.center th,
 table.center td {
   text-align: center;
 }
+=======
+
+.passo-a-passo{
+  
+  margin-top: 20px;
+  margin-bottom: -70px;
+ .circulos{ 
+    margin-left: 50px;
+    margin-top: -25px;
+    display: inline-block;
+    
+   .circulo{
+   width: 40px;
+   height: 40px;
+   border-radius: 20px 20px 20px 20px;
+   background: orange;
+   list-style-type: none;
+   position: relative;
+   text-align: center;
+   margin-left: 200px;
+   margin-right: 100px;
+   float: left;
+   }
+ }
+ 
+ .nomes{
+   margin-left: 50px;
+   margin-top: -40px;
+   display: inline-block;
+   position: absolute;
+     .nome{
+     width: 40px;
+     height: 20px;
+     background: red;
+     list-style-type: none;
+     position: relative;
+     text-align: center;
+     margin-left: 200px;
+     margin-right: 100px;
+     float: left;
+     }
+ }
+ 
+ .linha{
+   background: blue;
+   height: 5px;
+   width: 1403px;
+   margin-left: -50px;
+   position: relative;
+  
+ }
+}
+>>>>>>> 3bf523f75b4a2e253f33fa575f4383348218d42e

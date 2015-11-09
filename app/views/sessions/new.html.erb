@@ -1,22 +1,26 @@
-<div class="vertical-center-row">
-	<div class="col-md-4">Cibel</div>
-	<div class="col-md-4 col-md-offset-4">
-		<div class="row">
-			<div class="col-md-12 panel">
-				<div class="titulo centralizar-texto">
-					Preencha abaixo para acessar
-				</div>    
-				<%= form_for(:session, url: login_path) do |f| %>
-
-				<%= f.label :rf, "RF" %>
-				<%= f.text_field :rf, class: 'form-control', maxlength: 7, autofocus: true %>
-
-				<%= f.label :password, "Senha" %>
-				<%= f.password_field :password, class: 'form-control' %>
-
-				<%= f.submit "Acessar", class: "btn btn-block btn-danger" %>
-				<% end %>
+	<div class="logo">Cibel</div>
+	
+			<div class="login">
+				<div class="campos-login">
+				<div class="titulo-login">
+					Login
+				</div>
+				<div class="conteudo-login">
+					<%= form_for(:session, url: login_path) do |f| %>
+					<ul class="user-password">
+						<li>
+							<%= f.text_field :rf, class: 'caixa', maxlength: 7, placeholder: ' RF', autofocus: true %>
+						</li>
+						<li>
+							<%= f.password_field :password, placeholder: ' Senha', class: 'caixa' %>
+						</li>
+						<li>
+							<%= f.submit "Acessar", class: "btn btn-block btn-danger" %>
+						</li>
+					<ul>
+					<% end %>
+				</div>
 			</div>
-		</div>
+			</div>
 	</div>
-</div>
+	
