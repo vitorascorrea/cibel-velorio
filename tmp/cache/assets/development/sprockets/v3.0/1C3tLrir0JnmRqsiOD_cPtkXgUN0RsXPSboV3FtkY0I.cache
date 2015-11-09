@@ -1,0 +1,20 @@
+I"Ç(function() {
+  jQuery(function() {
+    var d;
+    $('#velorio_id').hide();
+    $('#mesmo_local').change(function() {
+      return $('#velorio_id').toggle();
+    });
+    d = new Date(Date.parse(gon.array[0].sepultamento));
+    alert(d.getHours());
+    jQuery.datetimepicker.setLocale('pt-BR');
+    return jQuery('#sala-1').datetimepicker({
+      format: 'd/m/Y H:i',
+      minDate: '0',
+      maxDate: '+0',
+      minTime: d
+    });
+  });
+
+}).call(this);
+:ET

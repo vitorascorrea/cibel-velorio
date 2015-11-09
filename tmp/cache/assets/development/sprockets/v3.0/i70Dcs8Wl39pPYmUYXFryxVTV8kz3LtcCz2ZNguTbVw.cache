@@ -1,0 +1,53 @@
+I"…(function() {
+  var hideSteps, resetActive, showCurrentStepInfo;
+
+  jQuery(function() {});
+
+  resetActive = function(event, percent, step) {
+    $('.progress-bar').css('width', percent + '%').attr('aria-valuenow', percent);
+    $('.progress-completed').text(percent + '%');
+    $('div').each(function() {
+      if ($(this).hasClass('activestep')) {
+        $(this).removeClass('activestep');
+      }
+    });
+    if (event.target.className === 'col-md-2') {
+      $(event.target).addClass('activestep');
+    } else {
+      $(event.target.parentNode).addClass('activestep');
+    }
+    hideSteps();
+    showCurrentStepInfo(step);
+  };
+
+  hideSteps = function() {
+    $('div').each(function() {
+      if ($(this).hasClass('activeStepInfo')) {
+        $(this).removeClass('activeStepInfo');
+        $(this).addClass('hiddenStepInfo');
+      }
+    });
+  };
+
+  showCurrentStepInfo = function(step) {
+    var id;
+    id = '#' + step;
+    $(id).addClass('activeStepInfo');
+  };
+
+  $(document).on('ready page:load', function() {
+    $('#reserva_velorio_id').hide();
+    $('#reserva_mesmo_local').change(function() {
+      if ($('#reserva_mesmo_local').val() === "Sim") {
+        return $('#reserva_velorio_id').hide();
+      } else {
+        return $('#reserva_velorio_id').show();
+      }
+    });
+    return $('#fim_selecao').click(function() {
+      return resetActive(event, 33, 'step-2');
+    });
+  });
+
+}).call(this);
+:ET

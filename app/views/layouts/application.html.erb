@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<%= link_to "Logout", logout_path, method: :delete %>
+<div class="container-table">
+	<%= yield %>
+</div>
 </body>
 </html>

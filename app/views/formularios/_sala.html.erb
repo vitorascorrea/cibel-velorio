@@ -1,0 +1,25 @@
+<% @matriz.each_with_index do |row, row_index| %>
+<br>
+	<% row.each_with_index do |e, col_index| %>
+		<% if row_index > 0 && col_index == 0 %>
+			<div class="header_agenda" id="<%= e %>" style="width: 45px;">Sala <%= e %></div>
+		<% elsif row_index == 0 && col_index > 0 %>
+			<div class="header_agenda" id="<%= e %>"><%= e %>:00</div>
+		<% elsif row_index == 0 || col_index == 0 %>
+			<div class="header_agenda" id="<%= e %>"><%= e %></div>
+		<% elsif e == 'p' %>
+			<div class="agenda_ocupado"></div>
+		<% else %>
+			<div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div>
+		<% end %>	
+	<% end %>	
+<% end %>
+<br>
+
+<%= form_tag dados_reserva_path, :method => 'post', remote: true do |f| %>
+	<%= hidden_field_tag(:sepultamento, value = nil) %>
+	<%= hidden_field_tag(:sala_id, value = nil) %>
+	<%= hidden_field_tag(:cemiterio_id, value = params[:cemiterio_id]) %>
+	<input type="button" id="voltar_selecao" value="Voltar" onclick="javascript: resetActive(event, 00, 'step-1');">
+	<%= submit_tag "Próximo passo", onclick:"javascript: resetActive(event, 66, 'step-3');" %>
+<% end %>
