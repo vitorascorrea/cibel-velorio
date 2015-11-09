@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104134950) do
+ActiveRecord::Schema.define(version: 20151109173011) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20151104134950) do
   add_index "funcionarios", ["rf"], name: "index_funcionarios_on_rf", unique: true
 
   create_table "reservas", force: :cascade do |t|
-    t.datetime "inicio"
     t.datetime "contratacao"
     t.datetime "sepultamento"
     t.integer  "atendente_id"

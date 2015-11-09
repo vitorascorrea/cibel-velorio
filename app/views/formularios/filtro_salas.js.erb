@@ -1,0 +1,11 @@
+$('#matriz').html("<%= j render 'formularios/sala', object: @matriz %>");
+
+$(function() {
+    $('.agenda_livre').click( function() {
+    	$('.agenda_livre').css('background-color', '#fff'); //Altera tudo pro padrão normal
+    	$('.agenda_livre .mesmaklubga').css('background-color', '#fff'); //Altera tudo pro padrão normal
+        $(this).css('background-color', 'yellow');
+        document.getElementById('sepultamento').value = $(this).attr("data-horario");
+        document.getElementById('sala_id').value = $(this).attr("data-sala");
+    });
+});

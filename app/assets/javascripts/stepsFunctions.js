@@ -8,12 +8,8 @@ function resetActive(event, percent, step) {
     }
   });
 
-  if (event.target.className == "col-md-2") {
-    $(event.target).addClass("activestep");
-  }
-  else {
-    $(event.target.parentNode).addClass("activestep");
-  }
+  $('#head_'+step).addClass("activestep");
+  
 
   hideSteps();
   showCurrentStepInfo(step);
@@ -32,9 +28,3 @@ function showCurrentStepInfo(step) {
   var id = "#" + step;
   $(id).addClass("activeStepInfo");
 }
-
-$( document ).ready(function() {
-  $("#fim_selecao").on("click", function(){      
-      resetActive(event, 33, 'step-2');
-  });
-});
