@@ -1,24 +1,16 @@
-<div style="text-align: left;">
-<strong>Cemiterio:</strong> <%= @cemiterio.nome %><br>
-<strong>Velorio:</strong> <%= @velorio.nome %><br>
-<strong>Sala:</strong> <%= @sala.id %><br>
-<strong>Horario de Sepultamento:</strong> <%= @sepultamento.to_s.chomp('-0200') %><br>
-<strong>Data de Contratação:</strong> <%= Time.now.to_s.chomp('-0200') %><br>
-
 <%= form_tag criar_reserva_path, :method => 'post', remote: true do |f| %>
 
-	<%= label_tag "Declaração de Óbito:" %><br>
+	<%= label_tag "Declaração de Óbito:" %>
 	<%= text_field_tag :d_obito, '', :required => true %><br>
-	<%= label_tag "Nome do Facelido:" %><br>
+	<%= label_tag "Nome do Facelido:" %>
 	<%= text_field_tag :n_falecido, '', :required => true %><br>
-	<%= label_tag "Nome do Munícipe Responsável:" %><br>
+	<%= label_tag "Nome do Munícipe Responsável:" %>
 	<%= text_field_tag :n_municipe, '', :required => true %>
 	<%= hidden_field_tag :cemiterio, @cemiterio.id %>
 	<%= hidden_field_tag :velorio, @velorio.id %>
 	<%= hidden_field_tag :sala, @sala.id %>
 	<%= hidden_field_tag :sepultamento, @sepultamento %>
-	<br>
+	<div style="clear:both;"></div>
 	<input type="button" id="voltar_sala" value="Voltar" onclick="javascript: resetActive(event, 33, 'step-2');">
 	<%= submit_tag "Próximo passo", id:"botao_criar_reserva", onclick:"javascript: resetActive(event, 100, 'step-4');" %>
 <% end %>
-</div>

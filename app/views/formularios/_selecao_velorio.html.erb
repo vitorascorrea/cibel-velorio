@@ -2,18 +2,18 @@
 
 		<div class="painel tam6 col-md-offset-4">
 			<div class="titulo centralizar-texto">
-				Selecione o local de sepultamento
+				<h2>Selecione o local de sepultamento</h2>
 			</div>
 			<div class="conteudo-painel">
 				<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
 					<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
-					<%= select_tag :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %>
+					<%= select_tag :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %><br>
 					<%= label_tag :mesmo_local, "Velório será no mesmo local de sepultamento?" %>
-					<%= select_tag :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %>
+					<%= select_tag :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %><br>
 					<div id="velorio">
 						<%= label_tag :velorio_id, "Selecione o local de velório" %>
 						<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
-					</div>
+					</div><br>
 						<%= submit_tag "Próximo passo", onclick:"javascript: resetActive(event, 33, 'step-2');" %>				
 				<% end %>
 			</div>

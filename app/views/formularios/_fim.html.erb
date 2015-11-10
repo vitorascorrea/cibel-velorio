@@ -1,3 +1,12 @@
-Reserva Concluída
+<strong>Nome do Contratante: </strong><%= @reserva.municipe %><br>
+<strong>Nome do Falecido: </strong><%= @reserva.falecido %><br>
+<strong>Número da Declaração de Óbito: </strong><%= @reserva.d_obito %><br>
 
-<%= link_to "voltar à tela inicial", root_url %>
+<strong>Cemiterio: </strong> <%= Cemiterio.find(@reserva.cemiterio_id).nome %><br>
+<strong>Velorio: </strong> <%= Velorio.find(@reserva.velorio_id).nome %><br>
+<strong>Sala: </strong> <%= Sala.find(@reserva.sala_id).id %><br>
+<strong>Horario de Sepultamento: </strong> <%= @reserva.sepultamento.to_s.chomp('-0200') %><br>
+<strong>Data de Contratação: </strong> <%= Time.now.to_s.chomp('-0200') %><br>
+
+
+<%= link_to "Realizar nova Reserva", root_url %>

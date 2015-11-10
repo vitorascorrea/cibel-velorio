@@ -6,10 +6,11 @@
  // background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(67,205,128,1)), to(rgba(255,193,37,0.6)));
   //background: -webkit-linear-gradient(left, rgba(67,205,128,1) 0%, rgba(255,193,37,0.6) 100%);
   //background: linear-gradient(left, rgba(67,205,128,1) 0%, rgba(255,193,37,0.6) 100%);
-  background: url(http://bgfons.com/upload/light_texture2213.jpg);
+  background: url('bg.jpg');
   color: #3c3334;
   font-weight: 200;
   height: 100vh;
+  background-size: cover;
   
 }
 
