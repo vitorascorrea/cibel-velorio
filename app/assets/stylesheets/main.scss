@@ -39,7 +39,7 @@
 }
 
 .step .col-md-2 {
-    background-color: #fff;
+    background-color: rgba(152, 251, 152, 0.2);
     border: 1px solid #C0C0C0;
     border-right: none;
 }
@@ -57,12 +57,13 @@
 }
 
 .step .col-md-2:hover {
-    color: #F58723;
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
     cursor: pointer;
 }
 
 .step .activestep {
-    color: #F58723;
+    background: rgba(46, 139, 87,0.4);
     height: 100px;
     margin-top: -7px;
     padding-top: 7px;
