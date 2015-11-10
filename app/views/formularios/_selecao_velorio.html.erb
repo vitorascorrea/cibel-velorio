@@ -1,39 +1,23 @@
-<<<<<<< HEAD
-<div class="row setup-content step activeStepInfo" id="step-1">
-	<div class="col-xs-12">
-		<div class="col-md-4 col-md-offset-4 well text-center">
-			<div class="panel-heading title centralizar-texto">
-				<h2>Selecione o local de sepultamento</h2>
-			</div>
-			<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
-				<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
-				<%= select_tag :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %>
-				<%= label_tag :mesmo_local, "Velório será no mesmo local de sepultamento?" %>
-				<%= select_tag :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %>
-				<div id="velorio">
-					<%= label_tag :velorio_id, "Selecione o local de velório" %>
-					<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
-				</div>
-				<%= submit_tag "Próximo passo", onclick:"javascript: resetActive(event, 33, 'step-2');" %>
-			<% end %>
-=======
 <div class="setup-content step activeStepInfo" id="step-1">
 
-		<div class="painel tam6">
+		<div class="painel tam6 col-md-offset-4">
 			<div class="titulo centralizar-texto">
 				Selecione o local de sepultamento
 			</div>
 			<div class="conteudo-painel">
-				<%= f.label :cemiterio_id, "Local de Sepultamento/Cremação" %><br>
-				<%= f.select :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %><br><br>
-				<%= f.label :mesmo_local, "Velório será no mesmo local de sepultamento?" %><br>
-				<%= f.select :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %>
-				<%= f.select :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
+				<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
+					<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
+					<%= select_tag :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %>
+					<%= label_tag :mesmo_local, "Velório será no mesmo local de sepultamento?" %>
+					<%= select_tag :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %>
+					<div id="velorio">
+						<%= label_tag :velorio_id, "Selecione o local de velório" %>
+						<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
+					</div>
+						<%= submit_tag "Próximo passo", onclick:"javascript: resetActive(event, 33, 'step-2');" %>				
+				<% end %>
 			</div>
-			<div class="painel-footer">
-			 <input type="button" id="fim_selecao" value="Próximo passo" onclick="javascript: resetActive(event, 33, 'step-2');">	
-			</div>
->>>>>>> 3bf523f75b4a2e253f33fa575f4383348218d42e
+			
 		</div>
 
 </div>

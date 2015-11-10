@@ -3,30 +3,25 @@
     <div class="cabecalho-principal">
         
         <div class="step col-md-offset-3 row">
-            <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
+            <div id="head_step-1" class="col-md-2 activestep">
                 <span class="fa fa-cloud-download"></span>
                 <p>Selecione o local</p>
             </div>
-            <div class="col-md-2" onclick="javascript: resetActive(event, 33, 'step-2');">
+            <div id="head_step-2" class="col-md-2">
                 <span class="fa fa-pencil"></span>
                 <p>sala e horário</p>
             </div>
-            <div class="col-md-2" onclick="javascript: resetActive(event, 66, 'step-3');">
+            <div id="head_step-3" class="col-md-2">
                 <span class="fa fa-refresh"></span>
                 <p>Info. falecido</p>
             </div>
-            <div class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-4');">
+            <div id="head_step-4" class="col-md-2">
                 <span class="fa fa-dollar"></span>
                 <p>Conclua a reserva</p>
             </div>
         </div> <!-- step -->
     
     <div class="row">
-<<<<<<< HEAD
-        <div class="row step">
-            <div id="head_step-1" class="col-md-4 activestep">
-                <p>Selecione o local de sepultamento e velório</p>
-=======
         <div class="progress col-md-offset-3" id="progress1">
             <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
             </div>
@@ -36,12 +31,12 @@
     </div>
     </div>
     
-    <div class="corpo-principal col-md-offset-4">
+    <div class="corpo-principal">
         
-        
-            <%= form_for @reserva do |f| %>
-            <%= render 'formularios/selecao_velorio', f: f %>
-            <% end %>
+        <%= render 'formularios/selecao_velorio' %>
+        <%= render 'formularios/filtro_salas' %>
+        <%= render 'formularios/dados_reserva' %>
+        <%= render 'formularios/concluir_reserva' %>
         
     </div>
     
