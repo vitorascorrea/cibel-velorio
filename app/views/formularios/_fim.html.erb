@@ -8,5 +8,5 @@
 <strong>Horario de Sepultamento: </strong> <%= @reserva.sepultamento.to_s.chomp('-0200') %><br>
 <strong>Data de Contratação: </strong> <%= Time.now.to_s.chomp('-0200') %><br>
 
-
-<%= link_to "Realizar nova Reserva", root_url %>
+<input type="button" id="voltar_sala" value="Voltar" onclick="javascript: resetActive(event, 66, 'step-3');">
+<%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post %>

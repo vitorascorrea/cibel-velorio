@@ -29,16 +29,21 @@ class FormulariosController < ApplicationController
   end
 
   def criar_reserva
-    @reserva = Reserva.create(cemiterio_id: params[:cemiterio], velorio_id: params[:velorio], sala_id: params[:sala], 
-                   sepultamento: params[:sepultamento], d_obito: params[:d_obito], falecido: params[:n_falecido],
-                   municipe: params[:n_municipe])
-    if @reserva.save
-      respond_to do |format|
+    @reserva = Reserva.new(
+               cemiterio_id: params[:cemiterio], velorio_id: params[:velorio], sala_id: params[:sala], 
+               sepultamento: params[:sepultamento], d_obito: params[:d_obito], falecido: params[:n_falecido],
+               municipe: params[:n_municipe], atendente_id: current_funcionario.id)
+    respond_to do |format|
         format.js
-      end
-    else 
-      render 'formularios/main'
     end
+  end
+  
+  def confirmar_reserva
+    @reserva = Reserva.create(
+               cemiterio_id: params[:reserva][:cemiterio_id], velorio_id: params[:reserva][:velorio_id], sala_id: params[:reserva][:sala_id], 
+               sepultamento: params[:reserva][:sepultamento], d_obito: params[:reserva][:d_obito], falecido: params[:reserva][:falecido],
+               municipe: params[:reserva][:municipe], atendente_id: current_funcionario.id)
+    redirect_to root_url
   end
 
 end

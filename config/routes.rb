@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   
   post 'login'                => 'sessions#create'
   post 'filtro_salas'         => 'formularios#filtro_salas'
-  post 'dados_reserva'         => 'formularios#dados_reserva'
-  post 'criar_reserva'         => 'formularios#criar_reserva'
+  post 'dados_reserva'        => 'formularios#dados_reserva'
+  post 'criar_reserva'        => 'formularios#criar_reserva'
+  post 'confirmar_reserva'    => 'formularios#confirmar_reserva'
 
   delete 'logout'             => 'sessions#destroy'
   
