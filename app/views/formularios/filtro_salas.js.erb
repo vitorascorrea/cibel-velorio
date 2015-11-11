@@ -1,7 +1,10 @@
 $('#matriz').html("<%= j render 'formularios/sala', object: @matriz %>");
 
+var clicou = false;
+
 $(function() {
     $('.agenda_livre').click( function() {
+        clicou = true;
     	$('.agenda_livre').css('background-color', '#fff'); //Altera tudo pro padrão normal
         document.getElementById('sepultamento').value = $(this).attr("data-horario");
         document.getElementById('sala_id').value = $(this).attr("data-sala");
@@ -19,4 +22,12 @@ $(function() {
         	}        	
         });       
     });
+});
+
+$('#prox-passo').click( function() {
+    if (clicou == true){
+        resetActive(event, 50, 'step-3');
+    } else {
+        $('#modal-erro').click();
+    }
 });

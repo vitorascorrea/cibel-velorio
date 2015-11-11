@@ -1,6 +1,6 @@
 function resetActive(event, percent, step) {
   $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
-  $(".progress-completed").text(percent + "%");
+  $(".progress-completed").text((percent/100*4)+1 + "/4");
 
   $("div").each(function () {
     if ($(this).hasClass("activestep")) {

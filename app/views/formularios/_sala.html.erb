@@ -21,12 +21,11 @@
 	<%= hidden_field_tag(:sala_id, value = nil) %>
 	<%= hidden_field_tag(:cemiterio_id, value = params[:cemiterio_id]) %>
 	<input type="button" id="voltar_selecao" value="Voltar" onclick="javascript: resetActive(event, 00, 'step-1');">
-	<%= submit_tag "Próximo passo", onclick:"javascript: resetActive(event, 66, 'step-3');" %>
+	<%= submit_tag "Próximo passo", id: "prox-passo" %>
 <% end %>
 
 <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
+  <button id="modal-erro" style="display: none;" type="button" data-toggle="modal" data-target="#myModal">Open Modal</button>
  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -44,6 +43,5 @@
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
