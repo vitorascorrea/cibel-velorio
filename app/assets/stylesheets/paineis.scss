@@ -79,7 +79,7 @@ static-top .container,
   margin-top: 24px;
   
   .titulo{
-      background: rgba(60, 179, 113,1);
+      background: rgba(131, 111, 255,0.6);
       //background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255,175,75,0.6)), to(rgba(255,146,10,0.6)));
       //background: -webkit-linear-gradient(left, rgba(255,175,75,0.6) 0%, rgba(255,146,10,0.6) 100%);
       //background: -moz-linear-gradient(left, rgba(255,175,75,0.6) 0%, rgba(255,146,10,0.6) 100%);
@@ -120,10 +120,8 @@ static-top .container,
   }
   .painel-footer{
     padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-top: 
-
-1px solid #ddd;
+  background-color: rgba(193, 205, 205,0.8);
+  border-top: 1px solid #ddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   text-align: right;
