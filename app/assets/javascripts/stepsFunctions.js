@@ -11,20 +11,44 @@ function resetActive(event, percent, step) {
   $('#head_'+step).addClass("activestep");
   
 
-  hideSteps();
-  showCurrentStepInfo(step);
+  hideSteps(step);
 }
 
-function hideSteps() {
+function hideSteps(step) {
   $("div").each(function () {
     if ($(this).hasClass("activeStepInfo")) {
-      $(this).removeClass("activeStepInfo");
-      $(this).addClass("hiddenStepInfo");
+      
+      
+      
+      
+      
+      // $(this).animate({
+      //   width: 'toggle'
+      // }, 450, function() {
+      //   $(this).removeClass("activeStepInfo");
+      //   $(this).addClass("hiddenStepInfo");
+      //   showCurrentStepInfo(step);
+      // });
+      
+      
+      
+      
+      $(this).fadeOut(function (){
+        $(this).removeClass("activeStepInfo");
+        $(this).addClass("hiddenStepInfo");
+        showCurrentStepInfo(step);
+      });
+      
+      
+      
+      
     }
   });
 }
 
 function showCurrentStepInfo(step) {        
   var id = "#" + step;
+  $(id).removeClass("hiddenStepInfo");
+  $(id).hide().fadeIn(450);
   $(id).addClass("activeStepInfo");
 }
