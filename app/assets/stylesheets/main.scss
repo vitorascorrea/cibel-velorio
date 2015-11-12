@@ -12,6 +12,7 @@
 }
 
 .progress {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     position: relative;
     height: 25px;
     width: 650px;
@@ -35,7 +36,7 @@
 }
 
 .step {
-    
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     text-align: center;
     margin-top: 27px;
 }
@@ -73,8 +74,9 @@
 
 .step .activestep {
     background: rgba(46, 139, 87,0.4);
-    height: 100px;
+    //height: 100px;
     margin-top: -7px;
+    margin-bottom: 10px;
     padding-top: 7px;
     //border-left: 6px solid #5CB85C !important;
     //border-right: 6px solid #5CB85C !important;
@@ -84,6 +86,7 @@
 }
 
 .step .fa {
+    
     padding-top: 15px;
-    font-size: 40px;
+    font-size: 20px;
 }

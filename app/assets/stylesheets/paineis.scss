@@ -6,9 +6,7 @@
 }
 
 .container,
-.navbar-
-
-static-top .container,
+.navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
   width: 940px;
@@ -79,16 +77,16 @@ static-top .container,
   margin-top: 24px;
   
   .titulo{
-      background: rgba(131, 111, 255,0.6);
+      background: rgba(248, 248, 255,0.6);
       //background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255,175,75,0.6)), to(rgba(255,146,10,0.6)));
       //background: -webkit-linear-gradient(left, rgba(255,175,75,0.6) 0%, rgba(255,146,10,0.6) 100%);
       //background: -moz-linear-gradient(left, rgba(255,175,75,0.6) 0%, rgba(255,146,10,0.6) 100%);
       //background: -o-linear-gradient(left, rgba(255,175,75,0.6) 0%, rgba(255,146,10,0.6) 100%);
      //background: linear-gradient(left, rgba(255,175,75,0.6) 0%, rgba(255,146,10,0.6) 100%);
      // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
-      color: #f2eeeb;
+      color: black;
       text-align: center;
-      font-family: COURIER;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
       padding: 6px 12px;
       margin-bottom: 12px;
       border-bottom: 1px solid transparent;
