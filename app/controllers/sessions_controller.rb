@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 	include ApplicationHelper
 	
   def new
-  	redirect_to main_path if logged_in?
+  	redirect_to home_path if logged_in?
   end
 
 	def create

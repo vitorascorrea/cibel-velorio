@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'sessions#new'
   
+  get 'home'                  => 'home#home'
+  
   get  'main'                 => 'formularios#main'
   get  'login'                => 'sessions#new'
   
