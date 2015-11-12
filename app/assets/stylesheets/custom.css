@@ -7,10 +7,6 @@ td, tr, th{
     font-size: 8px;
 }
 
-.container-table {
-    display: table;
-    width: 100%;
-}
 .vertical-center-row {
     display: table-cell;
     vertical-align: middle; 
@@ -23,11 +19,11 @@ td, tr, th{
     display: inline-block;
     margin-left: 0;
     margin-right: 0;
-    color: white;
+    color: black;
 }
 
 .agenda_ocupado{
-    background-color: green; 
+    background-color: red; 
     width: 38px; 
     min-height: 15px; 
     text-align: center; 
