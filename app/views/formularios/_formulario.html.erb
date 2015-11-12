@@ -1,11 +1,11 @@
 <%= form_tag criar_reserva_path, :method => 'post', remote: true do |f| %>
 
 	<%= label_tag "Declaração de Óbito:" %>
-	<%= text_field_tag :d_obito, '', :required => true %><br>
+	<%= text_field_tag :d_obito %><br>
 	<%= label_tag "Nome do Facelido:" %>
-	<%= text_field_tag :n_falecido, '', :required => true %><br>
+	<%= text_field_tag :n_falecido %><br>
 	<%= label_tag "Nome do Munícipe Responsável:" %>
-	<%= text_field_tag :n_municipe, '', :required => true %>
+	<%= text_field_tag :n_municipe %>
 	<%= hidden_field_tag :cemiterio, @cemiterio.id %>
 	<%= hidden_field_tag :velorio, @velorio.id %>
 	<%= hidden_field_tag :sala, @sala.id %>
