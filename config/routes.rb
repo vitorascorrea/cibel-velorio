@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'dados_reserva'        => 'formularios#dados_reserva'
   post 'criar_reserva'        => 'formularios#criar_reserva'
   post 'confirmar_reserva'    => 'formularios#confirmar_reserva'
+  
+  post 'selecao_velorio'      => 'reservas#selecao_velorio'
 
   delete 'logout'             => 'sessions#destroy'
   

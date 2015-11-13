@@ -1,19 +1,4 @@
-<% @matriz.each_with_index do |row, row_index| %>
-<br>
-	<% row.each_with_index do |e, col_index| %>
-		<% if row_index > 0 && col_index == 0 %>
-			<div class="header_agenda" id="<%= e %>" style="width: 45px;">Sala <%= e %></div>
-		<% elsif row_index == 0 && col_index > 0 %>
-			<div class="header_agenda" id="<%= e %>"><%= e %>:00</div>
-		<% elsif row_index == 0 || col_index == 0 %>
-			<div class="header_agenda" id="<%= e %>"><%= e %></div>
-		<% elsif e == 'p' %>
-			<div class="agenda_ocupado"></div>
-		<% else %>
-			<div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div>
-		<% end %>	
-	<% end %>	
-<% end %>
+<%= render 'layouts/matriz', object: @matriz %>
 <br>
 
 <%= form_tag dados_reserva_path, :method => 'post', remote: true do |f| %>
