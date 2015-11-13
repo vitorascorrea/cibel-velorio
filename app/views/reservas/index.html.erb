@@ -1,25 +1,3 @@
-<!-- <div class="row-fluid">
-  <div class="col-md-8 col-md-offset-2">
-    <% @reservas.each do |r| %>
-      <div class="painel">
-        <div class=" conteudo-painel">
-          <strong>Velorio: </strong><%= r.velorio.nome %>
-          -
-          <strong>Sala: </strong><%= r.sala.id %>
-          -
-          <strong>Sepultamento: </strong><%= r.sepultamento %>
-          -
-          <strong>Atendente: </strong><%= r.atendente.funcionario.nome %>
-          -
-          <strong>Falecido: </strong><%= r.falecido %>
-          -
-          <%= link_to "Editar", edit_reserva_path(r) %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
--->
 <div class="painel tam13 col-md-offset-1">
   <div class="titulo">
     <h2>Relatório de reservas</h2>
@@ -52,5 +30,22 @@
   </div>
   <div class="painel-footer">
     <button class="btn btn-danger">Kon, coloca um botão de voltar aqui depois, por favor!</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_tag selecao_velorio_path, :method => 'post', remote: true do |f| %>
+      <%= label_tag :velorio_id, "Selecione o local de velório" %>
+      <%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
+      <%= submit_tag "Enviar" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12" style="margin-top: 20px;">
+    <div id="agenda-selecionada"></div>
+    <div id="velorio-selecionado"></div>
   </div>
 </div>

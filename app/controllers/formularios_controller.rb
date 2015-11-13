@@ -1,5 +1,6 @@
 class FormulariosController < ApplicationController
   include FormulariosHelper
+  
   def main
     @reserva = Reserva.new
   end

@@ -1,0 +1,19 @@
+<% @reserva.attributes.each do |a| %>
+  <%= a %><br>
+<% end %>
+
+
+<%= form_for(@reserva) do |f| %>
+  
+  <%= f.label :falecido, "Falecido" %>
+  <%= f.text_field :falecido %>    
+  
+  <%= f.label :municipe, "Munícipe" %>
+  <%= f.text_field :falecido %>
+  
+<% end %>
+<div style="background-color: gray">
+  <div id="matriz-edit">
+    <%= render 'layouts/matriz', object: @matriz %>
+  </div>
+</div>
