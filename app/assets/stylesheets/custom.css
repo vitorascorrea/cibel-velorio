@@ -44,3 +44,14 @@ td, tr, th{
     margin-left: 0;
     margin-right: 0;
 }
+
+.agenda_livre_index{
+    background-color: white; 
+    width: 38px; 
+    min-height: 15px; 
+    text-align: center; 
+    border: 1px solid black; 
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+}

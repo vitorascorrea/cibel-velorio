@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   private
   
   def user_logado?
+    gon.nada = nil
     if !logged_in? && params[:controller] != 'sessions'  
       redirect_to login_path
     end
