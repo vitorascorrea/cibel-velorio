@@ -2,16 +2,25 @@
   <%= a %><br>
 <% end %>
 
-
-<%= form_for(@reserva) do |f| %>
+<div class="row">
+  <div class="col-md-3">
+    <%= form_for(@reserva) do |f| %>
+      
+      <%= f.label :falecido, "Falecido" %>
+      <%= f.text_field :falecido, class: 'form-control' %>    
+      
+      <%= f.label :municipe, "Munícipe" %>
+      <%= f.text_field :municipe, class: 'form-control' %>
+      
+      <%= f.label :d_obito, "Declaração de Óbito" %>
+      <%= f.text_field :d_obito, class: 'form-control' %>
   
-  <%= f.label :falecido, "Falecido" %>
-  <%= f.text_field :falecido %>    
-  
-  <%= f.label :municipe, "Munícipe" %>
-  <%= f.text_field :falecido %>
-  
-<% end %>
+      <%= f.submit "Salvar Mudanças", class: "btn btn-primary" %>
+      
+    <% end %>
+  </div>
+</div>
+      
 <div style="background-color: gray">
   <div id="matriz-edit">
     <%= render 'layouts/matriz', object: @matriz %>
