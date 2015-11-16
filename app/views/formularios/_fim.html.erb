@@ -6,7 +6,7 @@
 <strong>Velorio: </strong> <%= Velorio.find(@reserva.velorio_id).nome %><br>
 <strong>Sala: </strong> <%= Sala.find(@reserva.sala_id).id %><br>
 <strong>Horario de Sepultamento: </strong> <%= @reserva.sepultamento.to_s.chomp('-0200') %><br>
-<strong>Data de Contratação: </strong> <%= Time.now.to_s.chomp('-0200') %><br>
+<strong>Data de Contratação: </strong> <%= Time.now.in_time_zone.to_s.chomp('-0200') %><br>
 
 <input type="button" id="voltar_sala" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">
 <%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post %>
