@@ -1,24 +1,34 @@
-<div class="row-fluid">
-  <div class="col-md-8 col-md-offset-2">
-    <strong>Histórico de reservas:</strong>
-    <br>
-    <strong><%= @velorio.nome %></strong>
-    <% @velorio.reservas.each do |r| %>
-      <div class="row-fluid">
-        <div class="btn btn-default btn-block">
-          <strong>Velorio: </strong><%= r.velorio.nome %>
-          -
-          <strong>Sala: </strong><%= r.sala.id %>
-          -
-          <strong>Sepultamento: </strong><%= r.sepultamento %>
-          -
-          <strong>Atendente: </strong><%= r.atendente.funcionario.nome %>
-          -
-          <strong>Falecido: </strong><%= r.falecido %>
-          -
-          <%= link_to "Editar", edit_reserva_path(r) %>
-        </div>
-      </div>
-    <% end %>
+<div class="painel tam13 col-md-offset-1">
+  <div class="titulo">
+    <h2>Relatório de reservas</h2>
+  </div>
+  <div class="conteudo-painel">
+    <table border="1" class="table table-hover">
+      <thead>
+        <tr>
+          <th>Velorio</th>
+          <th>Sala</th>
+          <th>Sepultamento</th>
+          <th>Atendente</th>
+          <th>Falecido</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @velorio.reservas.each do |r| %>
+        <tr>
+          <td><%= r.velorio.nome %></td>
+          <td><%= r.sala.id %></td>
+          <td><%= r.sepultamento %></td>
+          <td><%= r.atendente.funcionario.nome %></td>
+          <td><%= r.falecido %></td>
+          <td><i class="fa fa-pencil-square-o"></i><%= link_to "Editar", edit_reserva_path(r) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="painel-footer">
+    <button class="btn btn-danger">Kon, coloca um botão de voltar aqui depois, por favor!</button>
   </div>
 </div>
