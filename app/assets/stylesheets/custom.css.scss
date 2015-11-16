@@ -55,3 +55,11 @@ td, tr, th{
     margin-left: 0;
     margin-right: 0;
 }
+
+.link-div {
+    color: #3c3334;
+    &:hover {
+        text-decoration: none;
+        color: #3c3334;
+    }
+}
