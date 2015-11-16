@@ -5,8 +5,8 @@
 	<%= hidden_field_tag(:sepultamento, value = nil) %>
 	<%= hidden_field_tag(:sala_id, value = nil) %>
 	<%= hidden_field_tag(:cemiterio_id, value = params[:cemiterio_id]) %>
-	<input type="button" id="voltar_selecao" value="Voltar" onclick="javascript: resetActive(event, 00, 'step-1');">
-	<%= submit_tag "Próximo passo", id: "prox-passo" %>
+	<input type="button" class="dangerbutton" id="voltar_selecao" value="Voltar" onclick="javascript: resetActive(event, 00, 'step-1');">
+	<%= submit_tag "Próximo passo", id: "prox-passo", class: "cibelbutton" %>
 <% end %>
 
 <!-- Trigger the modal with a button -->
