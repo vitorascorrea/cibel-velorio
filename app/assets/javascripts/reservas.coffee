@@ -15,4 +15,6 @@ jQuery ->
       sala = $(this).prev().text()
       sala = sala.slice(5, sala.length)
     if horario < sepultamento and horario > inicio and sala.toString() is gon.sala.toString()
-      $(this).css('background-color', 'blue')
+      $(this).removeClass('agenda_ocupado')
+      $(this).addClass('agenda_livre')
+      $(this).css('background-color', 'yellow')

@@ -24,9 +24,6 @@ class ReservasController < ApplicationController
     gon.sepultamento = @reserva.sepultamento + 3600
     @reserva.sala.reservas.each do |r|
       if r.sepultamento < @reserva.sepultamento
-        if gon.inicio
-          gon.inicio = [r.sepultamento, gon.inicio].min
-        end
         gon.inicio = r.sepultamento
       end
     end
