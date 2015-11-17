@@ -1,4 +1,4 @@
-<div class="painel tam13 col-md-offset-1">
+<div class="painel col-md-10 col-md-offset-1">
   <div class="titulo">
     <h2>Relatório de reservas</h2>
   </div>
@@ -22,7 +22,14 @@
           <td><%= r.sepultamento %></td>
           <td><%= r.atendente.funcionario.nome %></td>
           <td><%= r.falecido %></td>
-          <td><i class="fa fa-pencil-square-o"></i><%= link_to "Editar", edit_reserva_path(r) %></td>
+          <td>
+            <%= link_to edit_reserva_path(r), class: 'myButton' do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            <div class="dangerBut">
+            <i class="fa fa-times"></i>
+            </div>
+          </td>  
         </tr>
         <% end %>
       </tbody>

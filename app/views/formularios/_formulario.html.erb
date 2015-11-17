@@ -1,5 +1,5 @@
 <%= form_tag criar_reserva_path, :method => 'post', remote: true do |f| %>
-
+	<div class="conteudo-painel">
 	<%= label_tag "Declaração de Óbito:" %>
 	<%= text_field_tag :d_obito %><br>
 	<%= label_tag "Nome do Falecido:" %>
@@ -10,6 +10,7 @@
 	<%= hidden_field_tag :velorio, @velorio.id %>
 	<%= hidden_field_tag :sala, @sala.id %>
 	<%= hidden_field_tag :sepultamento, @sepultamento %>
+	</div>
 	<div style="clear:both;"></div>
 	<div class="painel-footer">
 		<input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 25, 'step-2');">

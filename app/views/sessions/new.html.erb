@@ -2,9 +2,7 @@
 	
 			<div class="login">
 				<div class="campos-login">
-				<div class="titulo-login">
-					Login
-				</div>
+				
 				<div class="conteudo-login">
 					<%= form_for(:session, url: login_path) do |f| %>
 					<ul class="user-password">
@@ -15,7 +13,7 @@
 							<%= f.password_field :password, placeholder: ' Senha', class: 'caixa' %>
 						</li>
 						<li>
-							<%= f.submit "Acessar", class: "mybutton" %>
+							<%= f.submit "Acessar", class: "myButton" %>
 						</li>
 					<ul>
 					<% end %>
