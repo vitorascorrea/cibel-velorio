@@ -11,6 +11,6 @@
 	<%= hidden_field_tag :sala, @sala.id %>
 	<%= hidden_field_tag :sepultamento, @sepultamento %>
 	<div style="clear:both;"></div>
-	<input type="button" id="voltar_sala" value="Voltar" onclick="javascript: resetActive(event, 25, 'step-2');">
-	<%= submit_tag "Próximo passo", id:"botao_criar_reserva", onclick:"javascript: resetActive(event, 75, 'step-4');" %>
+	<input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 25, 'step-2');">
+	<%= submit_tag "Próximo passo", class: 'cibelbutton', id:"botao_criar_reserva", onclick:"javascript: resetActive(event, 75, 'step-4');" %>
 <% end %>
