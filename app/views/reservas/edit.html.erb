@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-12">
     <%= form_for(@reserva) do |f| %>
       
       <%= f.label :falecido, "Falecido" %>
@@ -14,15 +14,18 @@
       
       <%= f.label :d_obito, "Declaração de Óbito" %>
       <%= f.text_field :d_obito, class: 'form-control' %>
+      
+      <%= hidden_field_tag(:sepultamento, value = nil) %>
+	    <%= hidden_field_tag(:sala_id, value = nil) %>
+	    
+	    <div style="background-color: gray">
+        <div id="matriz-edit">
+          <%= render 'layouts/matriz', object: @matriz %>
+        </div>
+      </div>
   
       <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
       
     <% end %>
-  </div>
-</div>
-      
-<div style="background-color: gray">
-  <div id="matriz-edit">
-    <%= render 'layouts/matriz', object: @matriz %>
   </div>
 </div>
