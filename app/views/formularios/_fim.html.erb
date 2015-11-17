@@ -7,7 +7,8 @@
 <strong>Sala: </strong> <%= Sala.find(@reserva.sala_id).id %><br>
 <strong>Horario de Sepultamento: </strong> <%= @reserva.sepultamento.to_s.chomp('-0200') %><br>
 <strong>Data de Contratação: </strong> <%= Time.now.in_time_zone.to_s.chomp('-0200') %><br>
+
 <div class="painel-footer">
-<input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">
-<%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post , class: 'cibelbutton' %>
+  <input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">
+  <%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post , class: 'cibelbutton' %>
 </div>
