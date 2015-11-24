@@ -8,7 +8,7 @@
 		<% elsif row_index == 0 || col_index == 0 %>
 			<div class="header_agenda" id="<%= e %>"><%= e %></div>
 		<% elsif e == 'p' %>
-			<div class="agenda_ocupado" data-horario="<%= col_index %>"></div>
+			<div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= row_index %>"></div>
 		<% else %>
 			<div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div>
 		<% end %>	
