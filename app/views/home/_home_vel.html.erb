@@ -1,0 +1,19 @@
+<!--<div class="row">-->
+<!--  <% @salas.each do |s| %>-->
+<!--    <div class="col-md-3">-->
+<!--      <div><strong>Sala <%= s.id %></strong><br></div>-->
+<!--        <% s.reservas.order(sepultamento: :asc).each do |r| %>-->
+<!--          <div style="margin-left: 20px;"><strong>Reserva <%= @contador %></strong></div>-->
+<!--          <div style="margin-left: 40px;">-->
+<!--            <strong>Supultamento: </strong><%= r.sepultamento.strftime("%d/%m/%y %H:%M") %><br>-->
+<!--            <strong>Data de contratação: </strong><%= r.contratacao.strftime("%d/%m/%y %H:%M") %><br>-->
+<!--            <strong>Falecido: </strong><%= r.falecido %><br>-->
+<!--            <strong>Munícipe: </strong><%= r.municipe %><br>-->
+<!--            <strong>Cemitério: </strong><%= r.cemiterio.nome %><br>-->
+<!--          </div>-->
+<!--          <% @contador = @contador + 1 %>-->
+<!--        <% end %>-->
+<!--        <% @contador = 1 %>-->
+<!--    </div>-->
+<!--  <% end %>-->
+<!--</div>-->

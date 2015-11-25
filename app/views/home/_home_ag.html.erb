@@ -1,0 +1,15 @@
+<div class="inicio">
+  <h1 class="help">O que deseja fazer?</h1>
+  <%= link_to main_path, class: "link-div" do %>
+    <div class="painel tam2">
+      <i class="fa fa-file-o"></i><br>
+      Nova Reserva
+    </div>
+  <% end %>
+  <%= link_to reservas_path, class: "link-div" do %>
+    <div class="painel tam2">
+      <i class="fa fa-pie-chart"></i><br>
+      Listar Reservas
+    </div>
+  <% end %>
+</div>

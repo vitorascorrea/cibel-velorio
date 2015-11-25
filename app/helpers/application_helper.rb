@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def current_funcionario
     if session[:funcionario_id]
-      if Atendente.find(session[:funcionario_id])
+      if Atendente.where(id: session[:funcionario_id]).take
         @current_funcionario = Atendente.find(session[:funcionario_id])
       else
         @current_funcionario = Velorista.find(session[:funcionario_id])

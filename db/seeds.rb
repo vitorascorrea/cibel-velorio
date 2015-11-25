@@ -8,7 +8,10 @@
 
 ag = Agencia.create(nome: 'Agencia Teste')
 func = Funcionario.create(rf: '0000000', nome: 'Testador', password: '123456')
-at = Atendente.create(funcionario_id: func.id, agencia_id: ag.id, adm: true)
+func2 = Funcionario.create(rf: '9999999', nome: 'Veloristador', password: '123456')
+at = Atendente.create(id: func.id, funcionario_id: func.id, agencia_id: ag.id, adm: true)
+Velorio.create(nome: 'Araçá')
+velorista = Velorista.create(id: func2.id, funcionario_id: func2.id, velorio_id: 1)
 
 Cemiterio.create(nome: 'Araçá')
 Cemiterio.create(nome: 'Campo Grande')
@@ -29,7 +32,6 @@ Cemiterio.create(nome: 'Vila Formosa II')
 Cemiterio.create(nome: 'Vila Mariana')
 Cemiterio.create(nome: 'Vila Nova Cachoeirinha')
 
-Velorio.create(nome: 'Araçá')
 Velorio.create(nome: 'Campo Grande')
 Velorio.create(nome: 'Dom Bosco')
 Velorio.create(nome: 'Freguesia do Ó')

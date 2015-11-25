@@ -25,13 +25,13 @@ class ReservasController < ApplicationController
     aux = false
     @reserva.sala.reservas.order(sepultamento: :desc).each do |r|
       if aux == true
-        gon.inicio = r.sepultamento
+        gon.inicio = r.sepultamento + 3600
       end
       if r == @reserva
         aux = true
       end
     end
-    gon.inicio ? gon.inicio = gon.inicio + 3600 : gon.inicio = Time.now.in_time_zone - 3600
+    gon.inicio ? gon.inicio = gon.inicio : gon.inicio = Time.now.in_time_zone - 3600
   end
   #   @reserva.sala.reservas.each do |r|
   #     if r.sepultamento < @reserva.sepultamento
