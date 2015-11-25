@@ -1,0 +1,49 @@
+.header_agenda{
+    //width: 38px; 
+    min-height: 15px; 
+    text-align: center; 
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    color: black;
+}
+
+.agenda_ocupado{
+    background-color: red; 
+    width: 100%;
+    padding-right: 10px !important;
+    padding-top: 15px;
+    margin-top: 2.5px;
+    margin-bottom: -2.5px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black; 
+}
+
+.horarios{
+    width: 38px;
+    
+}
+
+.agenda_livre{
+    background-color: white;
+    width: 100%;
+    padding-right: 10px !important;
+    padding-top: 15px;
+    margin-top: 2.5px;
+    margin-bottom: -2.5px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black; 
+    cursor: pointer;
+    
+}
+
+.agenda_livre_index{
+    background-color: white; 
+    width: 100%;
+    height: 100%;
+    min-height: 15px; 
+    text-align: center; 
+    border: 1px solid black; 
+}

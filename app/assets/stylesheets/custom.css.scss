@@ -1,59 +1,10 @@
 html, body, .container-table {
     height: 100%;
 }
-td, tr, th{
-    text-align: center !important;
-    border: 1px solid #DDD;
-    font-size: 8px;
-}
 
 .vertical-center-row {
     display: table-cell;
     vertical-align: middle; 
-}
-
-.header_agenda{
-    width: 38px; 
-    min-height: 15px; 
-    text-align: center; 
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 0;
-    color: black;
-}
-
-.agenda_ocupado{
-    background-color: red; 
-    width: 38px; 
-    min-height: 15px; 
-    text-align: center; 
-    border: 1px solid black; 
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.agenda_livre{
-    background-color: white; 
-    width: 38px; 
-    min-height: 15px; 
-    text-align: center; 
-    border: 1px solid black; 
-    display: inline-block;
-    cursor: pointer;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.agenda_livre_index{
-    background-color: white; 
-    width: 38px; 
-    min-height: 15px; 
-    text-align: center; 
-    border: 1px solid black; 
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 0;
 }
 
 .link-div {
