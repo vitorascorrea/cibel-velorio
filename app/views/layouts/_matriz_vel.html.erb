@@ -1,0 +1,18 @@
+<div id="matriz_velorista">
+	<% object.each_with_index do |row, row_index| %>
+	<br>
+		<% row.each_with_index do |e, col_index| %>
+			<% if row_index > 0 && col_index == 0 %>
+				<div class="header_agenda" id="<%= e %>" style="width: 45px;">Sala <%= e %></div>
+			<% elsif row_index == 0 && col_index > 0 %>
+				<div class="header_agenda horarios" data-horario="<%= e %>"><%= e.hour %>:00</div>
+			<% elsif row_index == 0 || col_index == 0 %>
+				<div class="header_agenda" id="<%= e %>"><%= e %></div>
+			<% elsif e == 'p' %>
+				<div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= row_index %>"></div>
+			<% else %>
+				<div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div>
+			<% end %>	
+		<% end %>	
+	<% end %>
+</div>
