@@ -1,3 +1,4 @@
+
 	<div class="conteudo-painel testando">
 		
 		<table border="0" class="table table-condensed">
@@ -14,7 +15,7 @@
 						<% elsif row_index == 0 || col_index == 0 %>
 							<td style="background: rgba(46, 139, 87,0.4);"><div class="" id="<%= e %>"><%= e %></div></td>
 						<% elsif e == 'p' %>
-							<td><div class="agenda_ocupado" data-horario="<%= col_index %>"></div></td>
+							<td><div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= row_index %>"></div></td>
 						<% else %>
 							<td><div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div></td>
 						<% end %>	
