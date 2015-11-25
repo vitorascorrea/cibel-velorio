@@ -9,15 +9,25 @@
     		<tr>
 					<% row.each_with_index do |e, col_index| %>
 						<% if row_index > 0 && col_index == 0 %>
-							<td style="background: rgba(46, 139, 87,0.4);"><div class="" id="<%= e %>">Sala <%= e %></div></td>
+							<td style="background: rgba(46, 139, 87,0.4);">
+								<div class="" id="<%= e %>">Sala <%= e %></div>
+							</td>
 						<% elsif row_index == 0 && col_index > 0 %>
-							<td style="background: rgba(46, 139, 87,0.4);"><div class="horarios" data-horario="<%= e %>"><%= e.hour %>:00</div></td>	
+							<td style="background: rgba(46, 139, 87,0.4);">
+								<div class="horarios" data-horario="<%= e %>"><%= e.hour %>:00</div>
+							</td>	
 						<% elsif row_index == 0 || col_index == 0 %>
-							<td style="background: rgba(46, 139, 87,0.4);"><div class="" id="<%= e %>"><%= e %></div></td>
+							<td style="background: rgba(46, 139, 87,0.4);">
+								<div class="" id="<%= e %>"><%= e %></div>
+							</td>
 						<% elsif e == 'p' %>
-							<td><div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= row_index %>"></div></td>
+							<td>
+								<div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= row_index %>"></div>
+							</td>
 						<% else %>
-							<td><div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div></td>
+							<td class='td_livre'>
+								<div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= row_index %>"></div>
+							</td>
 						<% end %>	
 					<% end %>	
 					</tr>
