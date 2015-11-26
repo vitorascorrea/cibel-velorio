@@ -1,9 +1,15 @@
-<% @reserva.attributes.each do |a| %>
-  <%= a %><br>
-<% end %>
+<div class="row" style="margin-top: 50px;">
+  <div class="painel col-md-offset-1 col-md-4">
+    <table>
+    <% @reserva.attributes.each do |a| %>
+    
+      <tr><td><%= a %></td></tr>
+      
+    <% end %>
+    </table>
+  </div>
 
-<div class="row">
-  <div class="col-md-12">
+  <div class="painel col-md-offset-2 col-md-4" style="text-align: center;">
     <%= form_for(@reserva) do |f| %>
       
       <%= f.label :falecido, "Falecido" %>
@@ -17,15 +23,21 @@
       
       <%= hidden_field_tag(:sepultamento, value = nil) %>
 	    <%= hidden_field_tag(:sala_id, value = nil) %>
-	    
-	    <div style="background-color: gray">
-        <div id="matriz-edit">
-          <%= render 'layouts/matriz', object: @matriz %>
-        </div>
+	</div>
+</div>    
+<div class="row">   
+    <div class="painel col-md-12">
+      <div class="titulo">
+        <h2>Horário</h2>
       </div>
-  
-      <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
+    <div class="conteudo-painel" id="matriz-edit">
+      <%= render 'layouts/matriz', object: @matriz %>
+    </div>
       
+    <div class="painel-footer">
+    <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
+    </div>
+    
     <% end %>
-  </div>
+    </div>
 </div>
