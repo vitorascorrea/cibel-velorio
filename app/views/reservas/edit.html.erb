@@ -1,9 +1,41 @@
-<% @reserva.attributes.each do |a| %>
-  <%= a %><br>
-<% end %>
+<div class="row" style="margin-top: 50px;">
+  <div class="painel col-md-12">
+    <div class="titulo"><h2>Não editavel</h2></div>
+    <table border="1" class="table table-condensed">
+   
+      <thead>
+         <tr>
+         <% @reserva.attributes.each do |a| %>
+        
+          <th><%= a[0] %></th>
+        
+        <% end %>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @reserva.id %></td>
+        <td><%= @reserva.contratacao %></td>
+        <td><%= @reserva.sepultamento %></td>
+        <td><%= @reserva.atendente_id %></td>
+        <td><%= @reserva.sala_id %></td>
+        <td><%= @reserva.cemiterio_id %></td>
+        <td><%= @reserva.d_obito %></td>
+        <td><%= @reserva.falecido %></td>
+        <td><%= @reserva.municipe %></td>
+        <td><%= @reserva.created_at %></td>
+        <td><%= @reserva.updated_at %></td>
+        <td><%= @reserva.mesmo_local %></td>
+        <td><%= @reserva.velorio_id %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="painel col-md-offset-4 col-md-4" style="text-align: center;">
+    <div class="titulo"><h2>Editavel</h2></div>
     <%= form_for(@reserva) do |f| %>
       
       <%= f.label :falecido, "Falecido" %>
@@ -17,15 +49,22 @@
       
       <%= hidden_field_tag(:sepultamento, value = nil) %>
 	    <%= hidden_field_tag(:sala_id, value = nil) %>
-	    
-	    <div style="background-color: gray">
-        <div id="matriz-edit">
-          <%= render 'layouts/matriz', object: @matriz %>
-        </div>
+	</div>
+</div>    
+<div class="row">   
+    <div class="painel col-md-12">
+      <div class="titulo">
+        <h2>Horário</h2>
       </div>
-  
-      <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
+    <div class="conteudo-painel" id="matriz-edit">
+      <%= render 'layouts/matriz', object: @matriz %>
+    </div>
       
+    <div class="painel-footer">
+    <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
+    </div>
+    
     <% end %>
-  </div>
+    </div>
 </div>
+
