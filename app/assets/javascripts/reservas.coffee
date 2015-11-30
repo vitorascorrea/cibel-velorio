@@ -3,13 +3,15 @@ jQuery ->
   sala = null
   sepultamento = moment(gon.sepultamento)
   inicio = moment(gon.inicio)
-  $('#matriz-edit .agenda_ocupado').each ->
+  $('#matriz-edit td.td_ocupado').each ->
     index = $(this).index()
     index_inicial = index if !index_inicial
     horario = moment($('.horarios').eq(index-index_inicial).attr('data-horario'))
     $(this).attr('data-horario', $('.horarios').eq(index-index_inicial).attr('data-horario'))
-    sala = $(this).attr('data-sala').toString()
+    sala = $(this).find('.agenda_ocupado').attr('data-sala').toString()
     if horario < sepultamento and horario >= inicio and sala is gon.sala.toString()
-      $(this).removeClass('agenda_ocupado')
-      $(this).addClass('agenda_livre')
-      $(this).css('background-color', 'yellow')
+      $(this).find('.agenda_ocupado').addClass('agenda_livre')
+      $(this).find('.agenda_ocupado').removeClass('agenda_ocupado')
+      $(this).removeClass('td_ocupado')
+      $(this).addClass('td_livre')
+      $(this).find('.agenda_livre').css('background-color', 'yellow')

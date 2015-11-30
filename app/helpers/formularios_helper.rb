@@ -24,13 +24,13 @@ module FormulariosHelper
 				for y in 1..25
 					trocou_dia = true if matriz[0][y] == 0					
 					if trocou_dia
-						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= ultimo_sepultamento_sala + 3600
+						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala + 3600) && matriz[0][y] >= pegarInicio(ultimo_sepultamento_sala)
 							matriz[x][y] = 'p' #Periodo preenchido
 						else
 							matriz[x][y] = matriz[0][y] #Periodo vago
 						end
 					else
-						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= ultimo_sepultamento_sala + 3600
+						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala + 3600) && matriz[0][y] >= pegarInicio(ultimo_sepultamento_sala)
 							matriz[x][y] = 'p' #Periodo preenchido
 						else
 							matriz[x][y] = matriz[0][y] #Periodo vago
@@ -50,6 +50,22 @@ module FormulariosHelper
 
 	def transformaTimeStamp(inteiro, n)
 		Time.new(Time.now.in_time_zone.year, Time.now.in_time_zone.month, Time.now.in_time_zone.day + n, inteiro).in_time_zone # - Time.now.in_time_zone.utc_offset
+	end
+	
+	def pegarInicio(sepultamento)
+		aux = false
+		inicio = nil
+		@reserva = Reserva.all.where(sepultamento: sepultamento).first
+    @reserva.sala.reservas.order(sepultamento: :desc).each do |r|
+      if aux == true
+        inicio = r.sepultamento + 3600
+        break
+      end
+      if r == @reserva
+        aux = true
+      end
+    end
+    inicio ? inicio = inicio : inicio = Time.now.in_time_zone - 3600
 	end
 
 end
