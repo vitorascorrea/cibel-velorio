@@ -16,7 +16,14 @@
 	<%= yield %>
 	
 </div>
-<%= link_to "Logout", logout_path, method: :delete %>
+<footer>
+  <div class="navbar navbar-fixed-bottom" style="background: rgba(255,255,255,0.4);" role="navigation">
+    
+    <%= link_to "Logout", logout_path, method: :delete if params[:controller] != 'sessions' %>
+    <span id="link"><%= link_to image_tag("SFMSP_Logo.png", width: "55px", height: "auto", alt: "SFMSP"), 'http://www.prefeitura.sp.gov.br/cidade/secretarias/servicos/servico_funerario/', :target => '_blank' %></span>
+    
+  </div>
+</footer>
   </div>
 </body>
 </html>
