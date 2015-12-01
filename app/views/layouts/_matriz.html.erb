@@ -9,7 +9,7 @@
 					<% row.each_with_index do |e, col_index| %>
 						<% if row_index > 0 && col_index == 0 %>
 							<td style="background: rgba(46, 139, 87,0.4);">
-								<div class="" id="<%= e %>">Sala <%= e %></div>
+								<div style="width: 45px;" class="" id="<%= e %>">Sala <%= e %></div>
 							</td>
 						<% elsif row_index == 0 && col_index > 0 %>
 							<td style="background: rgba(46, 139, 87,0.4);">
@@ -18,6 +18,10 @@
 						<% elsif row_index == 0 || col_index == 0 %>
 							<td style="background: rgba(46, 139, 87,0.4);">
 								<div class="" id="<%= e %>"><%= e %></div>
+							</td>
+						<% elsif e == 'a' %>
+							<td class='td_ocupado'>
+								<div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= row_index %>">a</div>
 							</td>
 						<% elsif e == 'p' %>
 							<td class='td_ocupado'>

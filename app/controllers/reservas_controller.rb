@@ -50,6 +50,8 @@ class ReservasController < ApplicationController
   end
   
   def destroy
+    Reserva.find(params[:id]).destroy
+    redirect_to reservas_path
   end
   
   private

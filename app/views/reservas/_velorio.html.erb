@@ -24,11 +24,11 @@
           <td><%= r.falecido %></td>
           <td>
             <%= link_to edit_reserva_path(r), class: 'myButton' do %>
-            <i class="fa fa-pencil-square-o"></i>
+              <i class="fa fa-pencil-square-o"></i>
             <% end %>
-            <div class="dangerBut">
-            <i class="fa fa-times"></i>
-            </div>
+            <%= link_to r, method: :delete, class: "dangerBut" do %>
+              <i class="fa fa-times"></i>
+            <% end %>
           </td>  
         </tr>
         <% end %>
