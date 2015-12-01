@@ -26,6 +26,7 @@ class ReservasController < ApplicationController
     @reserva.sala.reservas.order(sepultamento: :desc).each do |r|
       if aux == true
         gon.inicio = r.sepultamento + 3600
+        break
       end
       if r == @reserva
         aux = true
@@ -49,6 +50,8 @@ class ReservasController < ApplicationController
   end
   
   def destroy
+    Reserva.find(params[:id]).destroy
+    redirect_to reservas_path
   end
   
   private

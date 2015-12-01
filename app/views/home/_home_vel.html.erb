@@ -1,19 +1,32 @@
-<!--<div class="row">-->
-<!--  <% @salas.each do |s| %>-->
-<!--    <div class="col-md-3">-->
-<!--      <div><strong>Sala <%= s.id %></strong><br></div>-->
-<!--        <% s.reservas.order(sepultamento: :asc).each do |r| %>-->
-<!--          <div style="margin-left: 20px;"><strong>Reserva <%= @contador %></strong></div>-->
-<!--          <div style="margin-left: 40px;">-->
-<!--            <strong>Supultamento: </strong><%= r.sepultamento.strftime("%d/%m/%y %H:%M") %><br>-->
-<!--            <strong>Data de contratação: </strong><%= r.contratacao.strftime("%d/%m/%y %H:%M") %><br>-->
-<!--            <strong>Falecido: </strong><%= r.falecido %><br>-->
-<!--            <strong>Munícipe: </strong><%= r.municipe %><br>-->
-<!--            <strong>Cemitério: </strong><%= r.cemiterio.nome %><br>-->
-<!--          </div>-->
-<!--          <% @contador = @contador + 1 %>-->
-<!--        <% end %>-->
-<!--        <% @contador = 1 %>-->
-<!--    </div>-->
-<!--  <% end %>-->
-<!--</div>-->
+<div class="painel col-md-10 col-md-offset-1">
+  <div class="titulo">
+    <h2>Velório <%= @velorio.nome %></h2>
+  </div>
+  <div class="conteudo-painel">
+    <table border="1" class="table table-striped">
+      <thead>
+        <tr id="home-vel">
+          <th>Sala</th>
+          <th>Sepultamento</th>
+          <th>Atendente</th>
+          <th>Falecido</th>
+          <th>Munícipe</th>
+          <th>Cemitério</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservas.each do |r| %>
+        <tr>
+          <td><%= r.sala.id %></td>
+          <td><%= r.sepultamento.strftime("%d/%m/%y %H:%M") %></td>
+          <td><%= r.atendente.funcionario.nome %></td>
+          <td><%= r.falecido %></td>
+          <td><%= r.municipe %></td>
+          <td><%= r.cemiterio.nome %></th>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="painel-footer"></div>
+</div>
