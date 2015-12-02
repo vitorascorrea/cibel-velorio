@@ -15,3 +15,4 @@ jQuery ->
       $(this).removeClass('td_ocupado')
       $(this).addClass('td_livre')
       $(this).find('.agenda_livre').css('background-color', 'yellow')
+  

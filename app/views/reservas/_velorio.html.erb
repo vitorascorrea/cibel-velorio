@@ -16,21 +16,23 @@
       </thead>
       <tbody>
         <% @velorio.reservas.each do |r| %>
-        <tr>
-          <td><%= r.velorio.nome %></td>
-          <td><%= r.sala.id %></td>
-          <td><%= r.sepultamento.to_s.chomp(' -0200') %></td>
-          <td><%= r.atendente.funcionario.nome %></td>
-          <td><%= r.falecido %></td>
-          <td>
-            <%= link_to edit_reserva_path(r), class: 'myButton' do %>
-              <i class="fa fa-pencil-square-o"></i>
-            <% end %>
-            <%= link_to r, method: :delete, class: "dangerBut" do %>
-              <i class="fa fa-times"></i>
-            <% end %>
-          </td>  
-        </tr>
+          <tr>
+            <td><%= r.velorio.nome %></td>
+            <td><%= r.sala.id %></td>
+            <td><%= r.sepultamento.to_s.chomp(' -0200') %></td>
+            <td><%= r.atendente.funcionario.nome %></td>
+            <td><%= r.falecido %></td>
+            <td>
+              <%= link_to edit_reserva_path(r), class: 'myButton' do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+              <span type="button" data-toggle="modal" data-target="#myModal<%= r.id %>">
+                <div class="dangerBut">
+                  <i class="fa fa-times"></i>
+                </div>
+              </span>
+            </td>  
+          </tr>
         <% end %>
       </tbody>
     </table>
@@ -38,3 +40,23 @@
   <div class="painel-footer">
   </div>
 </div>
+
+<% @velorio.reservas.each do |r| %>
+  <div class="modal fade" id="myModal<%= r.id %>" role="dialog">
+    <div class="modal-dialog">
+      <div class="cimodal tam6 col-md-offset-1">
+        <div class="titulo">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Atenção</h4>
+        </div>
+        <div class="conteudo-modal">
+          <p>Tem certeza que deseja deletar esta reserva?</p>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Deletar", r, method: :delete, class: "dangerBut" %>
+          <button type="button" class="myButton" data-dismiss="modal">Manter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
