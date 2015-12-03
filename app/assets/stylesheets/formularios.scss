@@ -1,3 +1,37 @@
 // Place all the styles related to the Formularios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cib_right {
+  text-align: right;
+}
+
+.cib_left {
+  text-align: left;
+}
+
+.cib_div_left {
+  display: inline-block;
+  text-align: left;
+  width: 55%;
+  font-weight: bold;
+}
+
+.cib_div_right {
+  display: inline-block;
+  text-align: left;
+  width: 41%;
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cib_input {
+  height: 25px;
+  width: 155px;
+  margin-bottom: 5px;
+}
+
+.cib_label {
+  margin-top: 4px;
+}

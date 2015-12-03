@@ -27,7 +27,7 @@ $(function() {
 
 $('#prox-passo').click( function() {
     if (clicou == true){
-        resetActive(event, 50, 'step-3');
+        resetActive($(this).event, 50, 'step-3');
     } else {
         $('#modal-erro').click();
     }

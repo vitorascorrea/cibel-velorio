@@ -1,13 +1,18 @@
-<div class="conteudo-painel">
-  <strong>Nome do Contratante: </strong><%= @reserva.municipe %><br>
-  <strong>Nome do Falecido: </strong><%= @reserva.falecido %><br>
-  <strong>Número da Declaração de Óbito: </strong><%= @reserva.d_obito %><br>
+<div class="conteudo-painel" style="text-align: left">
+  
+  <div>
+    <div><div class="cib_div_left">Nome do Contratante:</div>              <div class="cib_div_right"><%= @reserva.municipe %></div></div>
+    <div><div class="cib_div_left">Nome do Falecido:</div>                 <div class="cib_div_right"><%= @reserva.falecido %></div></div>
+    <div><div class="cib_div_left">Número da Declaração de Óbito:</div>    <div class="cib_div_right"><%= @reserva.d_obito %></div></div>
+    <div><div class="cib_div_left">Cemiterio:</div>                        <div class="cib_div_right"><%= Cemiterio.find(@reserva.cemiterio_id).nome %></div></div>
+    <div><div class="cib_div_left">Velorio:</div>                          <div class="cib_div_right"><%= Velorio.find(@reserva.velorio_id).nome %></div></div>
+    <div><div class="cib_div_left">Sala:</div>                             <div class="cib_div_right"><%= Sala.find(@reserva.sala_id).id %></div></div>
+    <div><div class="cib_div_left">Horario de Sepultamento:</div>          <div class="cib_div_right"><%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %></div></div>
+    <div><div class="cib_div_left">Data de Contratação:</div>              <div class="cib_div_right"><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></div></div>
+  </div>
+  
+
     
-  <strong>Cemiterio: </strong> <%= Cemiterio.find(@reserva.cemiterio_id).nome %><br>
-  <strong>Velorio: </strong> <%= Velorio.find(@reserva.velorio_id).nome %><br>
-  <strong>Sala: </strong> <%= Sala.find(@reserva.sala_id).id %><br>
-  <strong>Horario de Sepultamento: </strong> <%= @reserva.sepultamento.to_s.chomp('-0200') %><br>
-  <strong>Data de Contratação: </strong> <%= Time.now.in_time_zone.to_s.chomp('-0200') %><br>
 </div>
 <div class="painel-footer">
   <input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">

@@ -1,19 +1,43 @@
 <%= form_tag criar_reserva_path, :method => 'post', remote: true do |f| %>
-	<div class="conteudo-painel">
-	<%= label_tag "Declaração de Óbito:" %>
-	<%= text_field_tag :d_obito %><br>
-	<%= label_tag "Nome do Falecido:" %>
-	<%= text_field_tag :n_falecido %><br>
-	<%= label_tag "Nome do Munícipe Responsável:" %>
-	<%= text_field_tag :n_municipe %>
-	<%= hidden_field_tag :cemiterio, @cemiterio.id %>
-	<%= hidden_field_tag :velorio, @velorio.id %>
-	<%= hidden_field_tag :sala, @sala.id %>
-	<%= hidden_field_tag :sepultamento, @sepultamento %>
+	<div class="row conteudo-painel">
+		<div class="col-md-7 cib_left">
+			<%= label_tag "Declaração de Óbito:", nil, class: "cib_label" %>
+			<%= label_tag "Nome do Falecido:", nil, class: "cib_label" %>
+			<%= label_tag "Nome do Munícipe Responsável:", nil, class: "cib_label" %>
+		</div>
+		<div class="col-md-5">
+			<%= text_field_tag :d_obito, nil, class: "cib_input", id: "form_d_obito" %>
+			<%= text_field_tag :n_falecido, nil, class: "cib_input", id: "form_n_falecido" %>
+			<%= text_field_tag :n_municipe, nil, class: "cib_input", id: "form_n_municipe" %>
+		</div>
+		<%= hidden_field_tag :cemiterio, @cemiterio.id %>
+		<%= hidden_field_tag :velorio, @velorio.id %>
+		<%= hidden_field_tag :sala, @sala.id %>
+		<%= hidden_field_tag :sepultamento, @sepultamento %>
 	</div>
 	<div style="clear:both;"></div>
 	<div class="painel-footer">
 		<input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 25, 'step-2');">
-		<%= submit_tag "Próximo passo", class: 'cibelbutton', id:"botao_criar_reserva", onclick:"javascript: resetActive(event, 75, 'step-4');" %>
+		<input type="button" id="botao_criar_reserva" class="cibelbutton" value="Próximo Passo">
+		<%= submit_tag "Próximo passo", class: 'cibelbutton', id: "cib_submit", style: "display: none;", onclick:"javascript: resetActive(event, 75, 'step-4');" %>
 	</div>
 <% end %>
+
+<button id="botao_modal" style="display: none;" type="button" data-toggle="modal" data-target="#modal-form"></button>
+
+<div class="modal fade" id="modal-form" role="dialog">
+  <div class="modal-dialog">
+    <div class="cimodal tam6 col-md-offset-1">
+      <div class="titulo">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Operação errada!</h4>
+      </div>
+      <div class="conteudo-modal">
+        <p>Por favor, preencha todos os campos.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="dangerBut" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
