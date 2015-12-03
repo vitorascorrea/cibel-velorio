@@ -23,7 +23,7 @@ class FormulariosController < ApplicationController
     @cemiterio = Cemiterio.find(params[:cemiterio_id])
     @atendente = current_funcionario
     @reserva = Reserva.new
-
+    
     respond_to do |format|
       format.js
     end

@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @velorio.reservas.each do |r| %>
+        <% @velorio.reservas.order(sepultamento: :desc).each do |r| %>
           <tr>
             <td><%= r.velorio.nome %></td>
             <td><%= r.sala.id %></td>
@@ -23,8 +23,16 @@
             <td><%= r.atendente.funcionario.nome %></td>
             <td><%= r.falecido %></td>
             <td>
-              <%= link_to edit_reserva_path(r), class: 'myButton' do %>
-                <i class="fa fa-pencil-square-o"></i>
+              <% if r.sepultamento < Time.now %>
+                <span type="button" data-toggle="modal" data-target="#exp_<%= r.id %>">
+                  <div class="disabledBut">
+                    <i class="fa fa-lock"></i>
+                  </div>
+                </span>
+              <% else %>
+                <%= link_to edit_reserva_path(r), class: 'myButton' do %>
+                  <i class="fa fa-pencil-square-o"></i>
+                <% end %>
               <% end %>
               <span type="button" data-toggle="modal" data-target="#myModal<%= r.id %>">
                 <div class="dangerBut">
@@ -55,6 +63,22 @@
         <div class="modal-footer">
           <%= link_to "Deletar", r, method: :delete, class: "dangerBut" %>
           <button type="button" class="myButton" data-dismiss="modal">Manter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exp_<%= r.id %>" role="dialog">
+    <div class="modal-dialog">
+      <div class="cimodal tam6 col-md-offset-1">
+        <div class="titulo">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Atenção</h4>
+        </div>
+        <div class="conteudo-modal">
+          <p>Essa reserva já expirou.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="myButton" data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
