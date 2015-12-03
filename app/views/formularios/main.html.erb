@@ -1,6 +1,7 @@
 <div class="tela-principal">
     <div class="cabecalho-principal">
-        <div class="step col-md-offset-3 row">
+        <div style="float: right; margin-top: 10px;"><%= link_to "Cancelar Reserva", main_path, class: "cibelbutton" %></div>
+        <div class="step col-md-offset-3 row" style="margin-top: 60px;">
             <div id="head_step-1" class="col-md-2 activestep">
                 <span class="fa fa-file-o"></span>
                 <p>Selecione o local</p>
@@ -19,7 +20,6 @@
             </div>
         </div> 
     </div>
-    <div style="float: right;"><%= link_to "Cancelar Reserva", main_path, class: "cibelbutton" %></div>
     <div class="corpo-principal">
         <%= render 'formularios/selecao_velorio' %>
         <%= render 'formularios/filtro_salas' %>
