@@ -48,8 +48,8 @@
       <%= f.label :d_obito, "Declaração de Óbito" %>
       <%= f.text_field :d_obito, class: 'form-control' %>
       
-      <%= hidden_field_tag(:sepultamento, value = nil) %>
-	    <%= hidden_field_tag(:sala_id, value = nil) %>
+      <%= hidden_field_tag(:sepultamento, value = @reserva.sepultamento) %>
+	    <%= hidden_field_tag(:sala_id, value = @reserva.sala_id) %>
 	</div>
 </div>    
 <div class="row">   
