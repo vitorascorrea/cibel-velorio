@@ -7,7 +7,7 @@
   //background: -webkit-linear-gradient(left, rgba(67,205,128,1) 0%, rgba(255,193,37,0.6) 100%);
   //background: linear-gradient(left, rgba(67,205,128,1) 0%, rgba(255,193,37,0.6) 100%);
   background: url('bg2.jpg') no-repeat center center fixed;
-  //background: url(http://wallpanda.com/wp-content/uploads/2015/10/Green-background-9-700x438.jpg);
+  //background: url(http://www.superpagina.com.br/paginas/amor/olhando_o_por_do_sol.jpg);
   color: #3c3334;
   font-weight: 200;
   
@@ -211,4 +211,20 @@
   .prefeitura{
     float: right;
   }
+}
+
+.nedit{
+  border-bottom: 1px solid black;
+  margin-bottom: 24px;
+  margin-top: 15px;
+}
+
+.edit{
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+
+.excluir{
+  padding-top: 10px;
+  padding-bottom: 5px;
 }

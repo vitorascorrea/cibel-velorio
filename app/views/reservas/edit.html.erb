@@ -1,68 +1,66 @@
-<%= link_to "", @reserva, method: :delete, data: { confirm: "Tem certeza que deseja deletar esta reserva?" }, class: "dangerBut fa fa-times" %>
-<div class="row" style="margin-top: 50px;">
-  <div class="painel col-md-12">
-    <div class="titulo"><h2>Não editavel</h2></div>
-    <table border="1" class="table table-condensed">
-   
-      <thead>
-         <tr>
-         <% @reserva.attributes.each do |a| %>
-        
-          <th><%= a[0] %></th>
-        
-        <% end %>
-        </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><%= @reserva.id %></td>
-        <td><%= @reserva.contratacao %></td>
-        <td><%= @reserva.sepultamento %></td>
-        <td><%= @reserva.atendente_id %></td>
-        <td><%= @reserva.sala_id %></td>
-        <td><%= @reserva.cemiterio_id %></td>
-        <td><%= @reserva.d_obito %></td>
-        <td><%= @reserva.falecido %></td>
-        <td><%= @reserva.municipe %></td>
-        <td><%= @reserva.created_at %></td>
-        <td><%= @reserva.updated_at %></td>
-        <td><%= @reserva.mesmo_local %></td>
-        <td><%= @reserva.velorio_id %></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
-<div class="row">
-  <div class="painel col-md-offset-4 col-md-4" style="text-align: center;">
-    <div class="titulo"><h2>Editavel</h2></div>
-    <%= form_for(@reserva) do |f| %>
-      
-      <%= f.label :falecido, "Falecido" %>
-      <%= f.text_field :falecido, class: 'form-control' %>    
-      
-      <%= f.label :municipe, "Munícipe" %>
-      <%= f.text_field :municipe, class: 'form-control' %>
-      
-      <%= f.label :d_obito, "Declaração de Óbito" %>
-      <%= f.text_field :d_obito, class: 'form-control' %>
-      
-      <%= hidden_field_tag(:sepultamento, value = nil) %>
-	    <%= hidden_field_tag(:sala_id, value = nil) %>
-	</div>
-</div>    
-<div class="row">   
+
+<div class="row" style="margin-top: 50px;">   
     <div class="painel col-md-12">
       <div class="titulo">
-        <h2>Horário</h2>
+        <h2>Informações da Reserva</h2>
       </div>
-    <div class="conteudo-painel" id="matriz-edit">
+      
+    <div class="row">
+    <div class="col-md-10 col-md-offset-1">  
+      <div class="col-md-4">
+     
+        <%= form_for(@reserva) do |f| %>  
+        <h4 class="edit"><%= f.label :falecido, "Falecido" %></h4>
+        <%= f.text_field :falecido, class: 'form-control' %>    
+        
+        <h4 class="edit"><%= f.label :municipe, "Munícipe" %></h4>
+        <%= f.text_field :municipe, class: 'form-control' %>
+        
+        <h4 class="edit"><%= f.label :d_obito, "Declaração de Óbito" %></h4>
+        <%= f.text_field :d_obito, class: 'form-control' %>
+        
+        <%= hidden_field_tag(:sepultamento, value = nil) %>
+  	    <%= hidden_field_tag(:sala_id, value = nil) %>
+  	  </div>
+      
+      <div class="col-md-4">
+      
+        <h4 class="nedit"><strong>Contratação</strong></h4>
+        <%= @reserva.contratacao %>
+        
+        <h4 class="nedit"><strong>Sepultamento</strong></h4>
+        <%= @reserva.sepultamento %>
+        
+        <h4 class="nedit"><strong>Atendente</strong></h4>
+        <%= @reserva.atendente.funcionario.nome %>
+      </div>  
+      <div class="col-md-4">
+        
+        <h4 class="nedit"><strong>Cemitério</strong></h4>
+        <%= @reserva.cemiterio.nome %>
+        
+        <h4 class="nedit"><strong>Velório</strong></h4>
+        <%= @reserva.velorio.nome %>
+        
+        <h4 class="nedit"><strong>Agencia</strong></h4>
+        <%= @reserva.atendente.agencia.nome %>
+        
+      
+      </div>
+    </div>  
+	  </div>  
+    
+      
+      
+    <div class="conteudo-painel" id="matriz-edit" style="margin-top: 50px;">
       <%= render 'layouts/matriz', object: @matriz %>
     </div>
       
     <div class="painel-footer">
     <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
+    <%= link_to "Excluir Reserva", @reserva, method: :delete, data: { confirm: "Tem certeza que deseja deletar esta reserva?" }, class: 'dangerBut' %>
+    
     </div>
     
     <% end %>
