@@ -22,7 +22,7 @@ class ReservasController < ApplicationController
     aux = false
     @reserva.sala.reservas.order(sepultamento: :desc).each do |r|
       if aux == true
-        gon.inicio = r.sepultamento + 3600
+        gon.inicio = r.sepultamento + 3600 if r && r.sepultamento
         break
       end
       if r == @reserva
