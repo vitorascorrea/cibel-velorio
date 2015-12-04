@@ -19,7 +19,7 @@ class FormulariosController < ApplicationController
   def dados_reserva
     @sepultamento = params[:sepultamento]
     @sala = Sala.find(params[:sala_id])
-    @velorio = @sala.velorio
+    @velorio = Velorio.find(params[:velorio_id])
     @cemiterio = Cemiterio.find(params[:cemiterio_id])
     @atendente = current_funcionario
     @reserva = Reserva.new

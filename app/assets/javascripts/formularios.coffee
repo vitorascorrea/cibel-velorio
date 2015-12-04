@@ -20,4 +20,5 @@ jQuery ->
 			$('#cib_submit').click()
 		else
 			$('#botao_modal').click()
+
 			

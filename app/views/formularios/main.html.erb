@@ -1,6 +1,6 @@
 <div class="tela-principal">
     <div class="cabecalho-principal">
-        <div style="float: right; margin-top: 10px;"><%= link_to "Cancelar Reserva", main_path, class: "cibelbutton" %></div>
+        <div style="float: right; margin-top: 10px;"><input id="cancel_modal" class="cibelbutton" type="button" data-toggle="modal" data-target="#modal-cancel" value="Cancelar Reserva"></input></div>
         <div class="step col-md-offset-3 row" style="margin-top: 60px;">
             <div id="head_step-1" class="col-md-2 activestep">
                 <span class="fa fa-file-o"></span>
@@ -26,4 +26,23 @@
         <%= render 'formularios/dados_reserva' %>
         <%= render 'formularios/concluir_reserva' %>
     </div>
+</div>
+
+
+<div class="modal fade" id="modal-cancel" role="dialog">
+  <div class="modal-dialog">
+    <div class="cimodal tam6 col-md-offset-1">
+      <div class="titulo">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Atenção!</h4>
+      </div>
+      <div class="conteudo-modal">
+        <p>Tem certeza que deseja cancelar a reserva?</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Cancelar Reserva", root_path, class: "dangerBut", id: "cancelar_reserva" %>
+        <button type="button" class="myButton" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
 </div>
