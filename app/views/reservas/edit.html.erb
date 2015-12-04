@@ -3,6 +3,7 @@
 <div class="row" style="margin-top: 50px;">   
     <div class="painel col-md-12">
       <div class="titulo">
+        <%= link_to "Voltar", reservas_path, class: "cibelbutton", style:"float: right;" %>
         <h2>Informações da Reserva</h2>
       </div>
       
@@ -61,11 +62,29 @@
       
     <div class="painel-footer">
     <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
-    <%= link_to "Excluir Reserva", @reserva, method: :delete, data: { confirm: "Tem certeza que deseja deletar esta reserva?" }, class: 'dangerBut' %>
+    <input class="dangerBut" type="button" data-toggle="modal" data-target="#edit-deletar" value="Excluir Reserva"></input>
     
     </div>
     
     <% end %>
     </div>
+</div>
+
+<div class="modal fade" id="edit-deletar" role="dialog">
+  <div class="modal-dialog">
+    <div class="cimodal tam6 col-md-offset-1">
+      <div class="titulo">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Atenção!</h4>
+      </div>
+      <div class="conteudo-modal">
+        <p>Tem certeza que deseja excluir a reserva?</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Excluir Reserva", @reserva, method: :delete, class: 'dangerBut' %>
+        <button type="button" class="myButton" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
