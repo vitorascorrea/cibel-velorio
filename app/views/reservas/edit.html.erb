@@ -1,73 +1,50 @@
-
-
 <div class="row" style="margin-top: 50px;">   
-    <div class="painel col-md-12">
-      <div class="titulo">
-        <%= link_to "Voltar", reservas_path, class: "cibelbutton", style:"float: right;" %>
-        <h2>Informações da Reserva</h2>
-      </div>
-      
+  <div class="painel col-md-12">
+    <div class="titulo">
+      <%= link_to "Voltar", reservas_path, class: "cibelbutton", style:"float: right;" %>
+      <h2>Informações da Reserva</h2>
+    </div>
     <div class="row">
-    <div class="col-md-10 col-md-offset-1">  
-      <div class="col-md-4">
-     
-        <%= form_for(@reserva) do |f| %>  
-        <h4 class="edit"><%= f.label :falecido, "Falecido" %></h4>
-        <%= f.text_field :falecido, class: 'form-control' %>    
-        
-        <h4 class="edit"><%= f.label :municipe, "Munícipe" %></h4>
-        <%= f.text_field :municipe, class: 'form-control' %>
-        
-        <h4 class="edit"><%= f.label :d_obito, "Declaração de Óbito" %></h4>
-        <%= f.text_field :d_obito, class: 'form-control' %>
-        
-        <%= hidden_field_tag(:sepultamento, value = @reserva.sepultamento) %>
-	     <%= hidden_field_tag(:sala_id, value = @reserva.sala_id) %>
-        
-  	  </div>
-      
-      <div class="col-md-4">
-      
-        <h4 class="nedit"><strong>Contratação</strong></h4>
-        <%= @reserva.contratacao %>
-        
-        <h4 class="nedit"><strong>Sepultamento</strong></h4>
-        <%= @reserva.sepultamento %>
-        
-        <h4 class="nedit"><strong>Atendente</strong></h4>
-        <%= @reserva.atendente.funcionario.nome %>
+      <div class="col-md-10 col-md-offset-1">  
+        <div class="col-md-4">
+          <%= form_for(@reserva) do |f| %>  
+          <h4 class="edit"><%= f.label :falecido, "Falecido" %></h4>
+          <%= f.text_field :falecido, class: 'form-control', id: "edit_n_falecido_salvar" %>    
+          <h4 class="edit"><%= f.label :municipe, "Munícipe" %></h4>
+          <%= f.text_field :municipe, class: 'form-control', id: "edit_n_municipe_salvar" %>
+          <h4 class="edit"><%= f.label :d_obito, "Declaração de Óbito" %></h4>
+          <%= f.text_field :d_obito, maxlength: 8, class: 'form-control', id: "edit_d_obito_salvar" %>
+          <%= hidden_field_tag(:sepultamento, value = @reserva.sepultamento) %>
+          <%= hidden_field_tag(:sala_id, value = @reserva.sala_id) %>
+        </div>
+        <div class="col-md-4">
+          <h4 class="nedit"><strong>Contratação</strong></h4>
+          <%= @reserva.contratacao %>
+          <h4 class="nedit"><strong>Sepultamento</strong></h4>
+          <%= @reserva.sepultamento %>
+          <h4 class="nedit"><strong>Atendente</strong></h4>
+          <%= @reserva.atendente.funcionario.nome %>
+        </div>  
+        <div class="col-md-4">
+          <h4 class="nedit"><strong>Cemitério</strong></h4>
+          <%= @reserva.cemiterio.nome %>
+          <h4 class="nedit"><strong>Velório</strong></h4>
+          <%= @reserva.velorio.nome %>
+          <h4 class="nedit"><strong>Agencia</strong></h4>
+          <%= @reserva.atendente.agencia.nome %>
+        </div>
       </div>  
-      <div class="col-md-4">
-        
-        <h4 class="nedit"><strong>Cemitério</strong></h4>
-        <%= @reserva.cemiterio.nome %>
-        
-        <h4 class="nedit"><strong>Velório</strong></h4>
-        <%= @reserva.velorio.nome %>
-        
-        <h4 class="nedit"><strong>Agencia</strong></h4>
-        <%= @reserva.atendente.agencia.nome %>
-        
-      
-
-      </div>
-    </div>  
-	  </div>  
-    
-      
-      
+  	</div>  
     <div class="conteudo-painel" id="matriz-edit" style="margin-top: 50px;">
       <%= render 'layouts/matriz', object: @matriz %>
     </div>
-      
     <div class="painel-footer">
-    <%= f.submit "Salvar Mudanças", class: "cibelbutton" %>
-    <input class="dangerBut" type="button" data-toggle="modal" data-target="#edit-deletar" value="Excluir Reserva"></input>
-    
+      <%= f.submit "Salvar Mudanças", class: "cibelbutton", id: "edit_submit_mudancas", style: "display: none" %>
+      <button type="button" class="cibelbutton" id="salva_reserva_edit_page">Salvar Mudanças</button>
+      <input class="dangerBut" type="button" data-toggle="modal" data-target="#edit-deletar" value="Excluir Reserva"></input>
     </div>
-    
     <% end %>
-    </div>
+  </div>
 </div>
 
 <div class="modal fade" id="edit-deletar" role="dialog">
@@ -88,3 +65,21 @@
   </div>
 </div>
 
+<button id="edit_submit_modal" style="display: none;" type="button" data-toggle="modal" data-target="#modal-edit-submit"></button>
+
+<div class="modal fade" id="modal-edit-submit" role="dialog">
+  <div class="modal-dialog">
+    <div class="cimodal tam6 col-md-offset-1">
+      <div class="titulo">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Operação errada!</h4>
+      </div>
+      <div class="conteudo-modal">
+        <p>Por favor, preencha todos os campos.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="dangerBut" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
