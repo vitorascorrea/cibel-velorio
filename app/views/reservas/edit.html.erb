@@ -13,7 +13,7 @@
           <h4 class="edit"><%= f.label :municipe, "Munícipe" %></h4>
           <%= f.text_field :municipe, class: 'form-control', id: "edit_n_municipe_salvar" %>
           <h4 class="edit"><%= f.label :d_obito, "Declaração de Óbito" %></h4>
-          <%= f.text_field :d_obito, maxlength: 8, class: 'form-control', id: "edit_d_obito_salvar" %>
+          <%= f.text_field :d_obito, maxlength: 6, class: 'form-control', id: "edit_d_obito_salvar" %>
           <%= hidden_field_tag(:sepultamento, value = @reserva.sepultamento) %>
           <%= hidden_field_tag(:sala_id, value = @reserva.sala_id) %>
         </div>
