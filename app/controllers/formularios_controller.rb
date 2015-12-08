@@ -7,9 +7,12 @@ class FormulariosController < ApplicationController
 
   def filtro_salas
   	if params[:mesmo_local] == "Sim"
-  		@matriz = geraMatriz(Velorio.find(Cemiterio.find(params[:cemiterio_id])))
+  	  @nome_cemiterio = Cemiterio.find(params[:cemiterio_id]).nome
+  	  @velorio = Velorio.find_by(nome: @nome_cemiterio)
+  		@matriz = geraMatriz(@velorio)
   	else
-  		@matriz = geraMatriz(Velorio.find(params[:velorio_id]))
+  	  @velorio = Velorio.find(params[:velorio_id])
+  		@matriz = geraMatriz(@velorio)
   	end
   	respond_to do |format|
   		format.js

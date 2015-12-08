@@ -1,16 +1,39 @@
 <div class="conteudo-painel" style="text-align: left">
   
-  <div>
-    <div><div class="cib_div_left">Nome do Contratante:</div>              <div class="cib_div_right"><%= @reserva.municipe %></div></div>
-    <div><div class="cib_div_left">Nome do Falecido:</div>                 <div class="cib_div_right"><%= @reserva.falecido %></div></div>
-    <div><div class="cib_div_left">Número da Declaração de Óbito:</div>    <div class="cib_div_right"><%= @reserva.d_obito %></div></div>
-    <div><div class="cib_div_left">Cemiterio:</div>                        <div class="cib_div_right"><%= Cemiterio.find(@reserva.cemiterio_id).nome %></div></div>
-    <div><div class="cib_div_left">Velorio:</div>                          <div class="cib_div_right"><%= Velorio.find(@reserva.velorio_id).nome %></div></div>
-    <div><div class="cib_div_left">Sala:</div>                             <div class="cib_div_right"><%= Sala.find(@reserva.sala_id).id %></div></div>
-    <div><div class="cib_div_left">Horario de Sepultamento:</div>          <div class="cib_div_right"><%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %></div></div>
-    <div><div class="cib_div_left">Data de Contratação:</div>              <div class="cib_div_right"><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></div></div>
-  </div>
-  
+  <table border=0 width=100%>
+    <tr>
+      <td>Nome do Contratante:</td>
+      <td><%= @reserva.municipe %></td>
+    </tr>
+     <tr>
+      <td>Nome do Falecido:</td>
+      <td><%= @reserva.falecido %></td>
+    </tr>
+     <tr>
+      <td>Número da Declaração de Óbito:</td>
+      <td><%= @reserva.d_obito %></td>
+    </tr>
+     <tr>
+      <td>Cemiterio:</td>
+      <td><%= Cemiterio.find(@reserva.cemiterio_id).nome %></td>
+    </tr>
+     <tr>
+      <td>Velorio:</td>
+      <td><%= Velorio.find(@reserva.velorio_id).nome %></td>
+    </tr>
+     <tr>
+      <td>Sala:</td>
+      <td><%= Velorio.find(@reserva.velorio_id).salas.index(Sala.find(@reserva.sala_id)).to_i + 1 %></td>
+    </tr>
+     <tr>
+      <td>Horario de Sepultamento:</td>
+      <td><%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
+    </tr>
+     <tr>
+      <td>Data de Contratação:</td>
+      <td><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></td>
+    </tr>
+  </table>
 
     
 </div>
