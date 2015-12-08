@@ -1,11 +1,8 @@
 <footer class="navbar navbar-fixed-top" style="background: rgba(255,255,255,0.1); margin-bottom: 50px;" role="navigation">
     <div class="rodape">
 
-      <%= link_to logout_path, method: :delete do %>
-        <div class="deslogar">
-          <i class="fa fa-power-off"></i>
-        </div>
-      <% end %>
+      <%= link_to "Sair", logout_path, method: :delete, class: 'sair myButton' %>
+        
 
       
       <div class="prefeitura">
