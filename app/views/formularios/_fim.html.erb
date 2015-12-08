@@ -1,36 +1,36 @@
 <div class="conteudo-painel" style="text-align: left">
   
-  <table border=0 width=100%>
+  <table class="table table-striped table-bordered" border=0 width=100%>
     <tr>
-      <td>Nome do Contratante:</td>
+      <td class="left">Nome do Contratante:</td>
       <td><%= @reserva.municipe %></td>
     </tr>
      <tr>
-      <td>Nome do Falecido:</td>
+      <td class="left">Nome do Falecido:</td>
       <td><%= @reserva.falecido %></td>
     </tr>
      <tr>
-      <td>Número da Declaração de Óbito:</td>
+      <td class="left">Número da Declaração de Óbito:</td>
       <td><%= @reserva.d_obito %></td>
     </tr>
      <tr>
-      <td>Cemiterio:</td>
+      <td class="left">Cemiterio:</td>
       <td><%= Cemiterio.find(@reserva.cemiterio_id).nome %></td>
     </tr>
      <tr>
-      <td>Velorio:</td>
+      <td class="left">Velorio:</td>
       <td><%= Velorio.find(@reserva.velorio_id).nome %></td>
     </tr>
      <tr>
-      <td>Sala:</td>
+      <td class="left">Sala:</td>
       <td><%= Velorio.find(@reserva.velorio_id).salas.index(Sala.find(@reserva.sala_id)).to_i + 1 %></td>
     </tr>
      <tr>
-      <td>Horario de Sepultamento:</td>
+      <td class="left">Horario de Sepultamento:</td>
       <td><%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
     </tr>
      <tr>
-      <td>Data de Contratação:</td>
+      <td class="left">Data de Contratação:</td>
       <td><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></td>
     </tr>
   </table>
