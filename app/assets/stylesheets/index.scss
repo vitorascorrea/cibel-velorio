@@ -96,63 +96,11 @@
   left: 0;
 }
 
-
-.passo-a-passo{
-  
-  margin-top: 20px;
-  margin-bottom: -70px;
- .circulos{ 
-    margin-left: 50px;
-    margin-top: -25px;
-    display: inline-block;
-    
-   .circulo{
-   width: 40px;
-   height: 40px;
-   border-radius: 20px 20px 20px 20px;
-   background: orange;
-   list-style-type: none;
-   position: relative;
-   text-align: center;
-   margin-left: 200px;
-   margin-right: 100px;
-   float: left;
-   }
- }
- 
- .nomes{
-   margin-left: 50px;
-   margin-top: -40px;
-   display: inline-block;
-   position: absolute;
-     .nome{
-     width: 40px;
-     height: 20px;
-     background: red;
-     list-style-type: none;
-     position: relative;
-     text-align: center;
-     margin-left: 200px;
-     margin-right: 100px;
-     float: left;
-     }
- }
- 
- .linha{
-   background: blue;
-   height: 5px;
-   width: 1403px;
-   margin-left: -50px;
-   position: relative;
-  
- }
-}
-
 .inicio{
   text-align: center;
   top: 120px;
   position: absolute;
-  left: 500px;
+  left: 40%;
   
   .help{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
