@@ -19,7 +19,7 @@ module FormulariosHelper
 		trocou_dia = false
 		
 		for x in 1..velorio.salas.count
-			ultimo_sepultamento_sala = ultimoSepultamento(velorio.salas[x-1])		
+			ultimo_sepultamento_sala = ultimoSepultamento(velorio.salas[x-1])
 				for y in 1..25
 					trocou_dia = true if matriz[0][y] == 0					
 					if trocou_dia
