@@ -15,9 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <% @reservas.each do |r| %>
+        <% @reservas.order(sepultamento: :asc).each do |r| %>
         <tr>
-          <td><%= r.sala.id %></td>
+          <td><%= Velorio.find(r.velorio_id).salas.index(Sala.find(r.sala_id)).to_i + 1 %></td>
           <td><%= r.sepultamento.strftime("%d/%m/%y %H:%M") %></td>
           <td><%= r.atendente.funcionario.nome %></td>
           <td><%= r.falecido %></td>
