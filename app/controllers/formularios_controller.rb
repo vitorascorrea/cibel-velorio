@@ -49,5 +49,13 @@ class FormulariosController < ApplicationController
                municipe: params[:reserva][:municipe], atendente_id: current_funcionario.id, contratacao: Time.now.in_time_zone)
     redirect_to root_url
   end
+  
+  def impressao
+    redirect_to root_url if !params[:reserva]
+    @reserva = Reserva.new(
+               cemiterio_id: params[:reserva][:cemiterio_id], velorio_id: params[:reserva][:velorio_id], sala_id: params[:reserva][:sala_id], 
+               sepultamento: params[:reserva][:sepultamento], d_obito: params[:reserva][:d_obito], falecido: params[:reserva][:falecido],
+               municipe: params[:reserva][:municipe], atendente_id: current_funcionario.id)
+  end
 
 end

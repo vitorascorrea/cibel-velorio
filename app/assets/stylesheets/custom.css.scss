@@ -24,3 +24,15 @@ html, body, .container-table {
         text-align: center;
     }
 }
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+}
+
+@media screen {
+  .justPrint {
+    display: none;
+  }
+}
