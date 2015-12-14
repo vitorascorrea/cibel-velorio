@@ -21,6 +21,7 @@ group :development, :test do
 	gem 'database_cleaner'
 	gem 'rspec'
 	gem "factory_girl_rails", "~> 4.0"
+	gem 'webrat'
 end
 
 group :development do
