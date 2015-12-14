@@ -1,21 +1,21 @@
-<div class="row-fluid">
-  <div class="col-md-8 col-md-offset-2">
-    <% @reservas.each do |r| %>
-      <div class="row-fluid">
-        <div class="btn btn-default btn-block">
-          <strong>Velorio: </strong><%= r.velorio.nome %>
-          -
-          <strong>Sala: </strong><%= r.sala.id %>
-          -
-          <strong>Sepultamento: </strong><%= r.sepultamento %>
-          -
-          <strong>Atendente: </strong><%= r.atendente.funcionario.nome %>
-          -
-          <strong>Falecido: </strong><%= r.falecido %>
-          -
-          <%= link_to "Editar", edit_reserva_path(r) %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+Não feitas:
+
+- Formulário: Identificar funcionário e suas ações
+
+- Data reserva: Visível no monitor
+
+- Busca por nome falecido: Identificar onde está sendo velado
+
+- Administrador criar usuário: Para adicionar agenciadores
+
+- Velório fechado: Motivo - reforma, sem energia, etc
+
+- Local sepultamento: Pode ocorrer em cemitérios particular ou mesmo em outra cidade ou estado, onde possa ser digitado o cemitério, cidade e estado
+
+- Botões de navegação sempre visíveis
+
+- Cancelamento
+
+Feitas:
+
+- Impressão confirmação de reserva
