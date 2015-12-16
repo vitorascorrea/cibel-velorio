@@ -43,6 +43,16 @@ class ReservasController < ApplicationController
     Reserva.find(params[:id]).destroy
     redirect_to reservas_path
   end
+
+  def pesquisa
+    if params[:Nome]
+      @resultado = Reserva.where("falecido LIKE ?", params[:Nome])
+      respond_to do |format|
+        format.html { render nothing: true }
+        format.js { render layout: false }
+      end
+    end
+  end
   
   private
   

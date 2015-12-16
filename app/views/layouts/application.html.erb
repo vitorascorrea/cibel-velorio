@@ -9,20 +9,12 @@
 </head>
 <body>
   <div class="body">
-    <div>
-      
-      <%= render 'layouts/header' if params[:controller] != 'sessions' %>
-  
-    </div>
-    
+    <div>      
+      <%= render 'layouts/header' if params[:controller] != 'sessions' %>  
+    </div>    
     <div class="container-fluid">
-    	
-    	<%= yield %>
-    	
+    	<%= yield %>    	
     </div>
-
-
-
   </div>
 </body>
 </html>

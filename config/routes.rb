@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   root 'sessions#new'
   
-  get 'home'                  => 'home#home'
-  
+  get  'home'                 => 'home#home'
+  get  'pesquisa'             => 'reservas#pesquisa'
+  post 'pesquisa'             => 'reservas#pesquisa'
   get  'login'                => 'sessions#new'
   post 'login'                => 'sessions#create'
   
+
   get  'main'                 => 'formularios#main'
   post 'filtro_salas'         => 'formularios#filtro_salas'
   post 'dados_reserva'        => 'formularios#dados_reserva'
