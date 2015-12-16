@@ -48,8 +48,7 @@ class ReservasController < ApplicationController
     if params[:Nome]
       @resultado = Reserva.where("falecido LIKE ?", params[:Nome])
       respond_to do |format|
-        format.html { render nothing: true }
-        format.js { render layout: false }
+        format.js
       end
     end
   end
