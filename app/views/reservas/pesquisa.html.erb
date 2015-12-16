@@ -1,0 +1,13 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= form_tag pesquisa_path, :method => 'post', remote: true do %>
+	<%= label_tag 'Nome', 'Nome' %>
+	<%= text_field_tag 'Nome' %>
+	<%= submit_tag 'Buscar' %>
+<% end %>
+
+<div id="resultado"></div>

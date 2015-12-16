@@ -1,0 +1,1 @@
+$('#resultado').html("<%= raw j @resultado.first.falecido %>");
