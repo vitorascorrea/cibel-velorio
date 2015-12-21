@@ -1,24 +1,28 @@
 <div class="tela-principal">
     <div class="cabecalho-principal">
-        <div style="float: right; margin-top: 10px;"><input id="cancel_modal" class="cibelbutton" type="button" data-toggle="modal" data-target="#modal-cancel" value="Cancelar Reserva"></input></div>
-        <div class="step col-md-offset-3 row" style="margin-top: 60px;">
-            <div id="head_step-1" class="col-md-2 activestep">
-                <span class="fa fa-file-o"></span>
-                <p>Selecione o local</p>
-            </div>
-            <div id="head_step-2" class="col-md-2">
-                <span class="fa fa-calendar"></span>
-                <p>sala e horário</p>
-            </div>
-            <div id="head_step-3" class="col-md-2">
-                <span class="fa fa-leanpub"></span>
-                <p>Info. falecido</p>
-            </div>
-            <div id="head_step-4" class="col-md-2">
-                <span class="fa fa-book"></span>
-                <p>Conclua a reserva</p>
-            </div>
-        </div> 
+        <div class="row">
+        <div class="col-md-offset-3">
+          <div class="step row" style="margin-top: 60px;">
+              <div id="head_step-1" class="col-md-2 activestep">
+                  <span class="fa fa-file-o"></span>
+                  <p>Selecione o local</p>
+              </div>
+              <div id="head_step-2" class="col-md-2">
+                  <span class="fa fa-calendar"></span>
+                  <p>sala e horário</p>
+              </div>
+              <div id="head_step-3" class="col-md-2">
+                  <span class="fa fa-leanpub"></span>
+                  <p>Info. falecido</p>
+              </div>
+              <div id="head_step-4" class="col-md-2">
+                  <span class="fa fa-book"></span>
+                  <p>Conclua a reserva</p>
+              </div>
+          </div> 
+        </div>
+      <div class="cancelar-reserva" style="margin-top: 10px; margin-right: 30px;"><input id="cancel_modal" class="cibelbutton" type="button" data-toggle="modal" data-target="#modal-cancel" value="Cancelar Reserva"></input></div>
+        
     </div>
     <div class="corpo-principal">
         <%= render 'formularios/selecao_velorio' %>

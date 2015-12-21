@@ -14,9 +14,10 @@
 						<%= label_tag :velorio_id, "Selecione o local de velório" %>
 						<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
 					</div><br>
-					<div class="painel-footer">
+					<div class="proximo-passo">
 						<%= submit_tag "Próximo passo", class: 'cibelbutton', onclick:"javascript: resetActive(event, 25, 'step-2');" %>				
-					</div>	
+					</div>
+					
 				<% end %>
 			</div>
 			

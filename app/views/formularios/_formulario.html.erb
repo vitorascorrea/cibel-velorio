@@ -16,11 +16,12 @@
 		<%= hidden_field_tag :sepultamento, @sepultamento %>
 	</div>
 	<div style="clear:both;"></div>
-	<div class="painel-footer">
+	<div class="proximo-passo2">
 		<input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 25, 'step-2');">
 		<input type="button" id="botao_criar_reserva" class="cibelbutton" value="Próximo Passo">
 		<%= submit_tag "Próximo passo", class: 'cibelbutton', id: "cib_submit", style: "display: none;", onclick:"javascript: resetActive(event, 75, 'step-4');" %>
 	</div>
+	
 <% end %>
 
 <button id="botao_modal" style="display: none;" type="button" data-toggle="modal" data-target="#modal-form"></button>

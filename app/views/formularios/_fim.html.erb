@@ -38,7 +38,7 @@
   <%= link_to "Imprimir", impressao_path(:reserva => @reserva.attributes), :target => '_blank', class: 'cibelbutton', style: "margin-left: 78%;" %>
     
 </div>
-<div class="painel-footer">
+<div class="proximo-passo2">
   <input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">
   <%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post , class: 'cibelbutton' %>
 </div>

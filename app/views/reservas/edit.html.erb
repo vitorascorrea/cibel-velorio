@@ -1,7 +1,9 @@
 <div class="row" style="margin-top: 50px;">   
   <div class="painel col-md-12">
     <div class="titulo">
+      <div class="cancelar-reserva" style="margin-top: 10px; margin-right: 2.5%;">
       <%= link_to "Voltar", reservas_path, class: "cibelbutton", style:"float: right;" %>
+      </div>
       <h2>Informações da Reserva</h2>
     </div>
     <div class="row">
@@ -38,7 +40,7 @@
     <div class="conteudo-painel" id="matriz-edit" style="margin-top: 50px;">
       <%= render 'layouts/matriz', object: @matriz %>
     </div>
-    <div class="painel-footer">
+    <div class="proximo-passo2">
       <%= f.submit "Salvar Mudanças", class: "cibelbutton", id: "edit_submit_mudancas", style: "display: none" %>
       <button type="button" class="cibelbutton" id="salva_reserva_edit_page">Salvar Mudanças</button>
       <input class="dangerBut" type="button" data-toggle="modal" data-target="#edit-deletar" value="Excluir Reserva"></input>

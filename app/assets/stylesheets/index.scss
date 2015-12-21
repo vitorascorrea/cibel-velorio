@@ -184,5 +184,28 @@
 }
 
 .left{
-   font-weight: bold;
+  font-weight: bold;
+}
+
+.cancelar-reserva{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1050;
+}
+
+.proximo-passo{
+  position: fixed;
+  top: 0;
+  left: 45%;
+  z-index: 1050;
+  top: 10px;
+}
+
+.proximo-passo2{
+  position: fixed;
+  top: 10px;
+  left: 42%;
+  z-index: 1050;
+  top: 10px;
 }

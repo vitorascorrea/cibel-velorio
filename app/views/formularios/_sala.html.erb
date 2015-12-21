@@ -10,10 +10,11 @@
 	  <%= hidden_field_tag(:cemiterio_id, value = params[:cemiterio_id]) %>
 	  <%= hidden_field_tag(:velorio_id, value = @velorio.id) %>
 	</div>
-	<div class="painel-footer">
+	<div class="proximo-passo2">
 	  <%= link_to "Voltar", main_path, class: "cibelbutton" %>
 	  <%= submit_tag "Próximo passo", id: "prox-passo", class: "cibelbutton" %>
 	</div>  
+	
 <% end %>
 
 <!-- Trigger the modal with a button -->
