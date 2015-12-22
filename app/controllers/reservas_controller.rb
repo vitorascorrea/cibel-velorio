@@ -46,7 +46,8 @@ class ReservasController < ApplicationController
 
   def pesquisa
     if params[:Nome]
-      @resultado = Reserva.where("falecido LIKE ?", params[:Nome])
+      nome = '%' + params[:Nome] + '%'
+      @resultado = Reserva.where('falecido LIKE ?', nome)
       respond_to do |format|
         format.js
       end

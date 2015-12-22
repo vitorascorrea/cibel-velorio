@@ -1,5 +1,5 @@
 Dado(/^que eu estou na página inicial$/) do
-  visit root_url
+  visit '/'
 end
 
 Quando(/^eu preencher o campo "(.*?)" com "(.*?)"$/) do |campo, valor|
@@ -7,7 +7,6 @@ Quando(/^eu preencher o campo "(.*?)" com "(.*?)"$/) do |campo, valor|
 end
 
 Quando(/^eu clicar em "(.*?)"$/) do |botao|
-	debugger
   click_on(botao)
 end
 
@@ -19,6 +18,25 @@ Então(/^eu deveria estar na página de pesquisa$/) do
   expect(current_path).to eq(pesquisa_path)
 end
 
-Então(/^eu deveria ver "(.*?)"$/) do |conteudo|	
+Então(/^eu deveria ver "(.*?)"$/) do |conteudo|
 	expect(page).to have_content(conteudo)
+end
+
+Dado(/^que eu estou na página de pesquisa$/) do
+  visit pesquisa_path
+end
+
+Dado(/^que existe um agenciador$/) do
+	func = FactoryGirl.create(:funcionario, rf: "01", password: "01")
+  FactoryGirl.create(:atendente, funcionario: func)
+end
+
+# Dado(/^que existe uma reserva cujo falecido é "(.*?)" no velorio "(.*?)"$/) do |nome, velorio|
+#   vel = FactoryGirl.create(:velorio, nome: "Velorio de Maria")
+  # FactoryGirl.create(:reserva, falecido: nome, velorio: vel)
+# end
+
+Dado(/^que existe uma reserva cujo falecido é "(.*?)" no velorio "(.*?)" com sepultamento "(.*?)"$/) do |nome, velorio, horario|
+  vel = FactoryGirl.create(:velorio, nome: velorio)
+  FactoryGirl.create(:reserva, falecido: nome, velorio: vel, sepultamento: horario.to_time)
 end
