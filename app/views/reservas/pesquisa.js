@@ -1,1 +1,2 @@
-$('#resultado').html("<%= raw j @resultado.first.falecido %>");
+$('#resultado').html("<%= j render "reservas/resultado", resultado: @resultado %>");
+

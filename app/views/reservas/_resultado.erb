@@ -1,0 +1,9 @@
+<% if resultado and resultado.any? %>
+	<% resultado.each do |r| %>
+		<%= r.falecido %><br>
+		<%= r.velorio.nome %><br>
+		<%= r.sepultamento.to_s.chomp(' -0300') %>
+	<% end %>	
+<% else %>
+	Não encontrado
+<% end %>
