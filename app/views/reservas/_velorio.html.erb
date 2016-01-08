@@ -16,6 +16,7 @@
       </thead>
       <tbody>
         <% @velorio.reservas.order(sepultamento: :desc).each do |r| %>
+        <% if !r.excluida %>
           <tr>
             <td><%= r.velorio.nome %></td>
             <td><%= Velorio.find(r.velorio_id).salas.index(Sala.find(r.sala_id)).to_i + 1 %></td>
@@ -30,17 +31,20 @@
                   </div>
                 </span>
               <% else %>
-                <%= link_to edit_reserva_path(r), class: 'myButton' do %>
-                  <i class="fa fa-pencil-square-o" style="margin-left: 2px;"></i>
-                <% end %>
-              <% end %>
-              <span type="button" id="excluir_reserva_<%= r.falecido %>" data-toggle="modal" data-target="#myModal<%= r.id %>">
-                <div class="dangerBut">
-                  <i class="fa fa-times"></i>
-                </div>
-              </span>
+                <span type="button" id="editar_reserva_<%= r.falecido %>" data-toggle="modal" data-target="#edit_<%= r.id %>">
+                  <div class="myButton">
+                    <i class="fa fa-pencil-square-o"></i>
+                  </div>
+                </span>                
+              <% end %>              
+                <span type="button" id="excluir_reserva_<%= r.falecido %>" data-toggle="modal" data-target="#delete_<%= r.id %>">
+                  <div class="dangerBut">
+                    <i class="fa fa-times"></i>
+                  </div>
+                </span>              
             </td>  
           </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
@@ -50,23 +54,49 @@
 </div>
 
 <% @velorio.reservas.each do |r| %>
-  <div class="modal fade" id="myModal<%= r.id %>" role="dialog">
+  <div class="modal fade" id="delete_<%= r.id %>" role="dialog">
     <div class="modal-dialog">
-      <div class="cimodal tam6 col-md-offset-1">
+      <div class="cimodal tam6 col-md-offset-1">      
+      <%= form_for r, method: :delete do |f| %>
         <div class="titulo">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Atenção</h4>
-        </div>
+        </div>          
         <div class="conteudo-modal">
-          <p>Tem certeza que deseja deletar esta reserva?</p>
+          <p>Justifique a exclusão</p>
+          <%= f.text_area :justificativa, :required => true %>
         </div>
         <div class="modal-footer">
-          <%= link_to "Deletar", r, method: :delete, class: "dangerBut" %>
+          <%= f.submit "Deletar", class: "dangerBut" %>
+        <% end %>
           <button type="button" class="myButton" data-dismiss="modal">Manter</button>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="edit_<%= r.id %>" role="dialog">
+    <div class="modal-dialog">
+      <div class="cimodal tam6 col-md-offset-1">      
+      <%= form_for r, :url => { :action => "pre_edicao" } do |f| %>
+        <div class="titulo">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Atenção</h4>
+        </div>          
+        <div class="conteudo-modal">
+          <p>Justifique a edição</p>
+          <%= f.text_area :justificativa, :required => true %>
+          <%= f.hidden_field :id_edit, value: r.id %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Editar", class: "dangerBut" %>
+        <% end %>
+          <button type="button" class="myButton" data-dismiss="modal">Manter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="exp_<%= r.id %>" role="dialog">
     <div class="modal-dialog">
       <div class="cimodal tam6 col-md-offset-1">
@@ -83,4 +113,6 @@
       </div>
     </div>
   </div>
+
+
 <% end %>

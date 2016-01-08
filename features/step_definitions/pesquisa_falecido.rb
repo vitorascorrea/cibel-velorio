@@ -15,7 +15,6 @@ Então(/^eu deveria estar na página do agenciador$/) do
 end
 
 Então(/^eu deveria estar na página de pesquisa$/) do
-  sleep 2
   expect(current_path).to eq(pesquisa_path)
 end
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get  'login'                => 'sessions#new'
   post 'login'                => 'sessions#create'
   
-
+  patch 'pre_edicao'           => 'reservas#pre_edicao'
   get  'main'                 => 'formularios#main'
   post 'filtro_salas'         => 'formularios#filtro_salas'
   post 'dados_reserva'        => 'formularios#dados_reserva'

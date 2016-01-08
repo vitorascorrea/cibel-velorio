@@ -1,21 +1,21 @@
 Não feitas:
 
-- Formulário: Identificar funcionário e suas ações
-
-- Data reserva: Visível no monitor
-
 - Administrador criar usuário: Para adicionar agenciadores
 
 - Velório fechado: Motivo - reforma, sem energia, etc
 
 - Local sepultamento: Pode ocorrer em cemitérios particular ou mesmo em outra cidade ou estado, onde possa ser digitado o cemitério, cidade e estado
 
-- Botões de navegação sempre visíveis
-
-- Cancelamento
-
 Feitas:
+
+- Data da reserva vísivel acima dos seus horários correspondentes na matriz
+
+- Cancelamento de reserva (Podemos excluir a reserva apenas e justificar como cancelamento)
+
+- Botões de navegação sempre visíveis (Discutir melhor a distribuição dos botões)
+
+- Justificativa na edição e na exclusão de reserva; Não existe exclusão propriamente dita já que isso não tem muito propósito, colocado um campo booleano "Excluido" ao invés disso. Salvando id do funcionario como int (campo "responsavel") pois sqlite3 dá bug com duas chaves estrangeiras.
 
 - Impressão confirmação de reserva
 
-- Busca por nome falecido: Identificar onde está sendo velado FALTA LAYOUT
+- Busca por nome falecido: Identificar onde está sendo velado (FALTA LAYOUT)

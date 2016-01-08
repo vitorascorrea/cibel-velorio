@@ -1,6 +1,13 @@
 <div class="conteudo-painel testando">		
 	<table border="0" class="table table-condensed">			
-			<% object.each_with_index do |row, row_index| %>			
+		<% object.each_with_index do |row, row_index| %>
+			<% if row_index == 0 %>
+			<tr>
+				<td style="background: none; border: 0px;"></td>
+				<td class="celula_hoje" colspan='<%= Time.now.in_time_zone.end_of_day.hour.to_i - Time.now.in_time_zone.hour.to_i + 1 %>'><%= Time.now.strftime('%d/%m/%Y') %></td>
+				<td class="celula_amanha" colspan='<%= Time.now.in_time_zone.end_of_day.hour.to_i + Time.now.in_time_zone.hour.to_i %>'><%= Time.now.tomorrow.strftime('%d/%m/%Y') %></td>
+			</tr>  		
+			<% end %>
   		<tr>
 				<% row.each_with_index do |e, col_index| %>
 					<% if row_index > 0 && col_index == 0 %>
@@ -25,7 +32,7 @@
 						</td>
 					<% end %>	
 				<% end %>	
-				</tr>
-			<% end %>
+			</tr>
+		<% end %>
 	</table>				
 </div>

@@ -32,6 +32,12 @@ class ReservasController < ApplicationController
     gon.inicio ? gon.inicio = gon.inicio : gon.inicio = Time.now.in_time_zone - 3600
   end
   
+  def pre_edicao
+    @reserva = Reserva.find(params[:reserva][:id_edit])
+    @reserva.update_attributes(justificativa: params[:reserva][:justificativa], responsavel: current_funcionario.id)
+    redirect_to edit_reserva_path(@reserva)
+  end
+
   def update
     @reserva = Reserva.find(params[:id])
     @reserva.update_attributes(reserva_params)
@@ -40,7 +46,7 @@ class ReservasController < ApplicationController
   end
   
   def destroy
-    Reserva.find(params[:id]).destroy
+    Reserva.find(params[:id]).update_attributes(justificativa: params[:justificativa], excluida: true, responsavel: current_funcionario.id)
     redirect_to reservas_path
   end
 
