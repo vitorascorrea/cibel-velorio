@@ -31,7 +31,7 @@ Funcionalidade: Formulario de exclusão e edição
 	@javascript
 	Cenario: Justificativa e edicao
 		Dado que existe um agenciador
-		E que existe uma reserva cujo falecido é "Maria" no velorio "Velorio de Maria" com sepultamento "2016-01-10 21:00:00"
+		E que existe uma reserva cujo falecido é "Maria" no velorio "Velorio de Maria" com sepultamento "2016-01-20 21:00:00"
 		Dado que eu estou na página inicial
 		Quando eu preencher o campo "session_rf" com "01"
 		E eu preencher o campo "session_password" com "01"

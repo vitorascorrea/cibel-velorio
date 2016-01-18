@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108195925) do
+ActiveRecord::Schema.define(version: 20160118151713) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160108195925) do
     t.text     "justificativa"
     t.boolean  "excluida"
     t.integer  "responsavel"
+    t.datetime "inicio"
   end
 
   add_index "reservas", ["atendente_id"], name: "index_reservas_on_atendente_id"

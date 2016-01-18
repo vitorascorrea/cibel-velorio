@@ -21,7 +21,6 @@ FactoryGirl.define do
 	factory :atendente do
 		funcionario
 		agencia
-		adm false
 	end
 
 	factory :sala do 

@@ -38,8 +38,6 @@ module FormulariosHelper
 				end
 				trocou_dia = false
 		end
-
-
 		return matriz
 	end
 
