@@ -23,13 +23,13 @@ module FormulariosHelper
 				for y in 1..25
 					trocou_dia = true if matriz[0][y] == 0					
 					if trocou_dia
-						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala)
+						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala) + 3600
 							matriz[x][y] = 'p' #Periodo preenchido
 						else
 							matriz[x][y] = matriz[0][y] #Periodo vago
 						end
 					else
-						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala)
+						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala) + 3600
 							matriz[x][y] = 'p' #Periodo preenchido
 						else
 							matriz[x][y] = matriz[0][y] #Periodo vago

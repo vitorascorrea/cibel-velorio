@@ -1,7 +1,5 @@
 Não feitas:
 
-- Consertar Matriz (exibindo um quadrado a menos na reserva)
-
 - Administrador criar usuário: Para adicionar agenciadores
 
 - Velório fechado: Motivo - reforma, sem energia, etc
@@ -9,6 +7,8 @@ Não feitas:
 - Local sepultamento: Pode ocorrer em cemitérios particular ou mesmo em outra cidade ou estado, onde possa ser digitado o cemitério, cidade e estado
 
 Feitas:
+
+- Consertar Matriz (exibindo um quadrado a menos na reserva)
 
 - Data da reserva vísivel acima dos seus horários correspondentes na matriz
 
