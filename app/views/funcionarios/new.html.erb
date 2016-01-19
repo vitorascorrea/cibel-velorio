@@ -1,2 +1,39 @@
-<%= form_for @funcionario do |f| %>
-<% end %>
+<div class="col-md-4 col-md-offset-4">
+  <div class="inicio">
+    <h1 class="help">Cadastrar novo atendente</h1>
+
+    <% flash.each do |message_type, message| %>
+    	<div class="alert alert-<%=message_type%>"><%= message %></div>
+    <% end %>
+
+    <%= form_for @funcionario do |a| %>
+			<table class="table table-striped table-bordered" border=0 width=100%>
+			    <tr>
+			      <td class="left"><%= a.label :nome, 'Nome' %></td>
+			      <td><%= a.text_field :nome %></td>
+			    </tr>
+			     <tr>
+			      <td class="left"><%= a.label :rf, 'RF' %></td>
+			      <td><%= a.text_field :rf %></td>
+			    </tr>
+			     <tr>
+			      <td class="left"><%= a.label :senha, 'Senha' %></td>
+			      <td><%= a.text_field :password %></td>
+			    </tr>
+			     <tr>
+			     	<%= fields_for @atendente do |f| %>
+			     	 <td class="left"><%= f.label :agencia_id, 'Agência' %></td>
+			     	 <td><%= f.select :agencia_id, Agencia.all.collect{|x| [x.nome, x.id]} %></td>
+			      <% end %>
+			    </tr>
+			    <tr>
+			    	<td colspan='2'><%= a.submit 'Cadastrar', id: 'cadastrar', class: 'myButton' %></td>
+			    </tr>
+			  </table>
+			<% end %> 			   
+  </div>
+</div>
+
+<div class="cancelar-reserva" style="margin-top: 10px; margin-right: 2.5%;">
+  <%= link_to "Voltar", root_path, class: 'cibelbutton' %>
+</div>

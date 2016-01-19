@@ -1,6 +1,6 @@
 ag_araca = Agencia.create(nome: 'Araçá')
 func_at_araca = Funcionario.create(rf: '01', nome: 'Atendente - Araça', password: '01')
-at_araca = Atendente.create(id: func_at_araca.id, funcionario: func_at_araca, agencia: ag_araca, adm: false)
+at_araca = Atendente.create(id: func_at_araca.id, funcionario: func_at_araca, agencia: ag_araca, adm: true)
 
 ag_central = Agencia.create(nome: 'Central')
 func_at_central = Funcionario.create(rf: '02', nome: 'Atendente - Central', password: '02')

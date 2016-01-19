@@ -1,27 +1,31 @@
 <div class="col-md-6 col-md-offset-4">
   <div class="inicio">
     <h1 class="help">O que deseja fazer?</h1>
-
-    <%= link_to new_funcionario_path, id: 'novo_funcionario', class: "link-div" do %>
-      <div class="botao_inicial tam2">
-        <i class="fa fa-file-o"></i><br>
-        Cadastrar Atendente
-      </div>
+    
+    <div class="botao_inicial tam2">
+    <%= link_to new_funcionario_path, id: 'novo_funcionario', class: "link-div" do %>      
+      <i class="fa fa-file-o"></i><br>
+      Cadastrar Atendente     
     <% end %>
+    </div>
 
     <div class="botao_inicial tam2">
-      <%= link_to funcionario_path, class: "link-div" do %>
+      <%= link_to funcionarios_path, class: "link-div" do %>
         <i class="fa fa-search"></i><br>
-        Listar Funcionarios
+        Listar Atendentes
       <% end %>
     </div>
 
     <div class="botao_inicial tam2">
       <%= link_to reservas_path, class: "link-div" do %>
         <i class="fa fa-pie-chart"></i><br>
-        Listar Reservas
+        Administrar Velórios
       <% end %>
     </div>
     
   </div>
+</div>
+
+<div class="cancelar-reserva" style="margin-top: 10px; margin-right: 2.5%;">
+  <%= link_to "Voltar", root_path, class: 'cibelbutton' %>
 </div>

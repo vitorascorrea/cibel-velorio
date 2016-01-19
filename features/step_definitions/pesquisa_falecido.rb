@@ -7,7 +7,7 @@ Quando(/^eu preencher o campo "(.*?)" com "(.*?)"$/) do |campo, valor|
 end
 
 Quando(/^eu clicar em "(.*?)"$/) do |botao|
-  click_on(botao, visible: false)
+  click_on(botao)
 end
 
 Então(/^eu deveria estar na página do agenciador$/) do
