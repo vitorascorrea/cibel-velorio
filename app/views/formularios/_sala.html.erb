@@ -7,7 +7,7 @@
 	<div class="conteudo-painel">
 	  <%= hidden_field_tag(:sepultamento, value = nil) %>
 	  <%= hidden_field_tag(:sala_id, value = nil) %>
-	  <%= hidden_field_tag(:cemiterio_id, value = params[:cemiterio_id]) %>
+	  <%= hidden_field_tag(:cemiterio_id, value = @cemiterio) %>
 	  <%= hidden_field_tag(:velorio_id, value = @velorio.id) %>
 	</div>
 	<div class="proximo-passo2">
