@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'pesquisa'             => 'reservas#pesquisa'
   get  'login'                => 'sessions#new'
   post 'login'                => 'sessions#create'
-
+  post 'criar_funcionario'    => 'funcionarios#create'
   get 'adm'                   => 'funcionarios#adm'
   
   patch 'pre_edicao'          => 'reservas#pre_edicao'
