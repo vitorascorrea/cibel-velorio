@@ -3,21 +3,30 @@ class FormulariosController < ApplicationController
   
   def main
     @reserva = Reserva.new
+    @cem_aux = []
+    Cemiterio.all.each do |c|
+      @cem_aux << [c.nome, c.id] if c.id < 19
+    end
+    @cemiterios = @cem_aux << ["Outro", 0]
   end
 
-  def filtro_salas
-  	if params[:mesmo_local] == "Sim"
-  	  @nome_cemiterio = Cemiterio.find(params[:cemiterio_id]).nome
-  	  @velorio = Velorio.find_by(nome: @nome_cemiterio)
-  		@matriz = geraMatriz(@velorio)
-  	else
-  	  @velorio = Velorio.find(params[:velorio_id])
-  		@matriz = geraMatriz(@velorio)
-  	end
-  	respond_to do |format|
-  		format.js
-  	end
+def filtro_salas
+  if params[:mesmo_local] == "Sim"
+    @cemiterio = Cemiterio.find(params[:cemiterio_id]).id
+    @nome_cemiterio = Cemiterio.find(@cemiterio).nome
+    @velorio = Velorio.find_by(nome: @nome_cemiterio)
+    @matriz = geraMatriz(@velorio)
+  else
+    if params[:cemiterio_id] == "0"
+      @cemiterio = Cemiterio.create(nome: params[:outro]).id
+    end
+    @velorio = Velorio.find(params[:velorio_id])
+    @matriz = geraMatriz(@velorio)
   end
+  respond_to do |format|
+    format.js
+  end
+end
 
   def dados_reserva
     @sepultamento = params[:sepultamento]

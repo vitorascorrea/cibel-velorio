@@ -17,5 +17,28 @@ jQuery ->
 			$('#botao_modal').click()
 		else
 			$('#cib_submit').click()
-
 			
+	$('#outro').hide()
+	$('#label_outro').hide()
+	$('#cemiterio_id').change ->
+		if $('#cemiterio_id').val() is "0"
+			$('#outro').show()
+			$('#label_outro').show()
+			$('#mesmo_local').val("Não")
+			$('#mesmo_local').prop("disabled", true)
+			$('#velorio').show()
+		else
+			$('#mesmo_local').prop("disabled", false)
+			$('#velorio').hide()
+			$('#outro').hide()
+			$('#label_outro').hide()
+			$('#mesmo_local').val("Sim")
+			
+	$('#sel_vel_sub').click ->
+		if $('#cemiterio_id').val() isnt "0"
+			$('#prox_pass_but').click()
+		else
+			if $('#outro').val() is ""
+				$('#botao_modal_sel').click()
+			else
+				$('#prox_pass_but').click()

@@ -1,26 +1,45 @@
 <div class="setup-content step activeStepInfo" id="step-1">
-
-		<div class="painel tam6 col-md-offset-4">
-			<div class="titulo centralizar-texto">
-				<h2>Selecione o local de sepultamento</h2>
-			</div>
-			<div class="conteudo-painel">
-				<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
-					<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
-					<%= select_tag :cemiterio_id, options_for_select(Cemiterio.all.collect{ |u| [u.nome, u.id] }), class: 'form-control' %><br>
-					<%= label_tag :mesmo_local, "Velório será no mesmo local de sepultamento?" %>
-					<%= select_tag :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %><br>
-					<div id="velorio">
-						<%= label_tag :velorio_id, "Selecione o local de velório" %>
-						<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
-					</div><br>
-					<div class="proximo-passo">
-						<%= submit_tag "Próximo passo", class: 'cibelbutton', onclick:"javascript: resetActive(event, 25, 'step-2');" %>				
-					</div>
-					
-				<% end %>
-			</div>
-			
+	<div class="painel tam6 col-md-offset-4">
+		<div class="titulo centralizar-texto">
+			<h2>Selecione o local de sepultamento</h2>
 		</div>
+		<div class="conteudo-painel">
+			<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
+				<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
+				<%= select_tag :cemiterio_id, options_for_select(@cemiterios), class: 'form-control' %><br>
+				<%= label_tag :outro, "Digite as informações do cemitério", id: "label_outro" %>
+				<%= text_field_tag "outro", nil, class: 'form-control' %>
+				<br>
+				<%= label_tag :mesmo_local, "Velório será no mesmo local de sepultamento?" %>
+				<%= select_tag :mesmo_local, options_for_select(['Sim','Não']), class: 'form-control' %><br>
+				<div id="velorio">
+					<%= label_tag :velorio_id, "Selecione o local de velório" %>
+					<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
+				</div><br>
+				<div class="proximo-passo">
+					<input type="button" id="sel_vel_sub" class="cibelbutton" value="Próximo Passo">
+					<%= submit_tag "Próximo passo", class: 'cibelbutton', id: "prox_pass_but", style: "display: none", onclick:"javascript: resetActive(event, 25, 'step-2');" %>				
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
 
+<button id="botao_modal_sel" style="display: none;" type="button" data-toggle="modal" data-target="#modal-form"></button>
+
+<div class="modal fade" id="modal-form" role="dialog">
+  <div class="modal-dialog">
+    <div class="cimodal tam6 col-md-offset-1">
+      <div class="titulo">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Operação errada!</h4>
+      </div>
+      <div class="conteudo-modal">
+        <p>Por favor, preencha todos os campos.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="dangerBut" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
 </div>
