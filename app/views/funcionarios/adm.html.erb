@@ -1,28 +1,30 @@
-<div class="col-md-6 col-md-offset-4">
-  <div class="inicio">
-    <h1 class="help">O que deseja fazer?</h1>
-    
-    <div class="botao_inicial tam2">
-    <%= link_to new_funcionario_path, id: 'novo_funcionario', class: "link-div" do %>      
-      <i class="fa fa-file-o"></i><br>
-      Cadastrar Atendente     
-    <% end %>
-    </div>
-
-    <div class="botao_inicial tam2">
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="inicio">
+      <h1 class="help">O que deseja fazer?</h1>
+      
+      <%= link_to new_funcionario_path, id: 'novo_funcionario', class: "link-div" do %>      
+        <div class="botao_inicial">
+          <i class="fa fa-file-o"></i><br>
+          Cadastrar Atendente     
+        </div>
+      <% end %>
+  
       <%= link_to funcionarios_path, class: "link-div" do %>
-        <i class="fa fa-search"></i><br>
-        Listar Atendentes
+        <div class="botao_inicial">
+            <i class="fa fa-search"></i><br>
+            Listar Atendentes
+        </div>
       <% end %>
-    </div>
-
-    <div class="botao_inicial tam2">
+  
       <%= link_to reservas_path, class: "link-div" do %>
-        <i class="fa fa-pie-chart"></i><br>
-        Administrar Velórios
+        <div class="botao_inicial">
+            <i class="fa fa-pie-chart"></i><br>
+            Administrar Velórios
+        </div>
       <% end %>
+      
     </div>
-    
   </div>
 </div>
 
