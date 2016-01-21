@@ -1,0 +1,2 @@
+class VeloriosController < ApplicationController
+end
