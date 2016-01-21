@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'login'                => 'sessions#create'
   post 'criar_funcionario'    => 'funcionarios#create'
   get 'adm'                   => 'funcionarios#adm'
+  get 'index_interditar'      => 'salas#index_interditar'
   
   patch 'pre_edicao'          => 'reservas#pre_edicao'
   get  'main'                 => 'formularios#main'
@@ -17,7 +18,9 @@ Rails.application.routes.draw do
   post 'confirmar_reserva'    => 'formularios#confirmar_reserva'
   get  'impressao'            => 'formularios#impressao'
   
-  post 'selecao_velorio'      => 'reservas#selecao_velorio'
+  post 'selecao_velorio'           => 'reservas#selecao_velorio'
+  post 'velorio_interditar' => 'salas#selecao_velorio_interditar'
+  patch 'interditar_sala' => 'salas#interditar_sala'
 
   delete 'logout'             => 'sessions#destroy'
   

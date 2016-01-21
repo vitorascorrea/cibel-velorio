@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108195925) do
+ActiveRecord::Schema.define(version: 20160121170209) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -75,8 +75,10 @@ ActiveRecord::Schema.define(version: 20160108195925) do
   create_table "salas", force: :cascade do |t|
     t.boolean  "especial"
     t.integer  "velorio_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.boolean  "desabilitada"
+    t.text     "justificativa"
   end
 
   add_index "salas", ["velorio_id"], name: "index_salas_on_velorio_id"

@@ -21,9 +21,9 @@
         </div>
         <div class="col-md-4">
           <h4 class="nedit"><strong>Contratação</strong></h4>
-          <%= @reserva.contratacao %>
+          <%= @reserva.contratacao.to_s.chomp(' -0200') %>
           <h4 class="nedit"><strong>Sepultamento</strong></h4>
-          <%= @reserva.sepultamento %>
+          <%= @reserva.sepultamento.to_s.chomp(' -0200') %>
           <h4 class="nedit"><strong>Atendente</strong></h4>
           <%= @reserva.atendente.funcionario.nome %>
         </div>  

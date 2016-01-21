@@ -1,10 +1,11 @@
 class ReservasController < ApplicationController
   include FormulariosHelper
+  include ReservasHelper
   
   def index
     @reservas = Reserva.all
-  end
-  
+  end 
+
   def selecao_velorio
     @velorio = Velorio.find(params[:velorio_id])
     @matriz = geraMatriz(@velorio)
