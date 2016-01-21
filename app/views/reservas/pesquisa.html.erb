@@ -1,13 +1,22 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<%= form_tag pesquisa_path, :remote => true do %>
-	<%= label_tag 'Nome', 'Nome' %>
-	<%= text_field_tag 'Nome' %>
-	<%= submit_tag 'Buscar' %>
-<% end %>
+<div class="row" style="margin-top: 50px;">
+  <div class="painel col-md-4 col-md-offset-4">
+    <%= form_tag pesquisa_path, :remote => true do %>
+      <div class="titulo">
+        <%= label_tag 'Nome', 'Digite o nome do falecido' %>
+      </div>
+      <div class="conteudo-painel">
+				<%= text_field_tag 'Nome', nil, class: "form-control" %>
+      </div>
+      <div class="painel-footer">
+        <%= submit_tag "Buscar", class: 'cibelbutton' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="cancelar-reserva" style="margin-top: 10px; margin-right: 2.5%;">
+    <%= link_to "Voltar", root_path, class: 'cibelbutton' %>
+  </div>
+</div>
 
-<div id="resultado"></div>
+<div style="margin-top: 25px;">
+	<div id="resultado"></div>
+</div>

@@ -1,0 +1,43 @@
+<!--<% if resultado and resultado.any? %>-->
+<!--	<% resultado.each do |r| %>-->
+<!--		<%= r.falecido %><br>-->
+<!--		<%= r.velorio.nome %><br>-->
+<!--		<%= r.sepultamento.to_s.chomp(' -0200') %>-->
+<!--	<% end %>	-->
+<!--<% else %>-->
+<!--	Não encontrado-->
+<!--<% end %>-->
+
+<div class="painel col-md-10 col-md-offset-1">
+  <div class="titulo">
+    <h2>Resultado</h2>
+  </div>
+  <div class="conteudo-painel">
+  	
+    <% if resultado and resultado.any? %>
+	    <table border="1" class="table table-striped">
+	      <thead>
+	        <tr>
+	          <th>Nome</th>
+	          <th>Falecido</th>
+	          <th>Sepultamento</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+					<% resultado.each do |r| %>
+		      	<td><%= r.falecido %></td>
+		      	<td><%= r.velorio.nome %></td>
+		      	<td><%= r.sepultamento.to_s.chomp(' -0200') %></td>
+		      <% end %>
+	      </tbody>
+	    </table>
+    <% else %>
+    	<div class="titulo_foot">
+    		<h3>Não Encontrado</h3>
+  		</div>
+    <% end %>
+    
+  </div>
+  <div class="painel-footer">
+  </div>
+</div>
