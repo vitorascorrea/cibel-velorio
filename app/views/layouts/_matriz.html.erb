@@ -26,6 +26,10 @@
 						<td class='td_ocupado'>
 							<div class="agenda_ocupado" data-horario="<%= col_index %>" data-sala="<%= @velorio.salas[row_index -1].id %>"></div>
 						</td>
+					<% elsif e == 'o' %>
+						<td class='td_interditado'>
+							<div class="agenda_interditado" data-horario="<%= col_index %>" data-sala="<%= @velorio.salas[row_index -1].id %>"></div>
+						</td>
 					<% else %>
 						<td class='td_livre'>
 							<div class="agenda_livre" data-horario="<%= e %>" data-sala="<%= @velorio.salas[row_index -1].id %>"></div>

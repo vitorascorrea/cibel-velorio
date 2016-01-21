@@ -25,12 +25,16 @@ module FormulariosHelper
 					if trocou_dia
 						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala) + 3600
 							matriz[x][y] = 'p' #Periodo preenchido
+						elsif velorio.salas[x-1].desabilitada
+							matriz[x][y] = 'o' #sala ocupada
 						else
 							matriz[x][y] = matriz[0][y] #Periodo vago
 						end
 					else
 						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala) + 3600
 							matriz[x][y] = 'p' #Periodo preenchido
+						elsif velorio.salas[x-1].desabilitada
+							matriz[x][y] = 'o' #sala ocupada
 						else
 							matriz[x][y] = matriz[0][y] #Periodo vago
 						end
