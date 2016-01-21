@@ -2,6 +2,8 @@ Não feitas:
 
 - Velório fechado: Motivo - reforma, sem energia, etc
 
+- Mais dois campos na tabela de pesquisa por horario: ultimo atendente que editou e justificativa
+
 Feitas:
 
 - Local sepultamento: Pode ocorrer em cemitérios particular ou mesmo em outra cidade ou estado, onde possa ser digitado o cemitério, cidade e estado
@@ -18,4 +20,4 @@ Feitas:
 
 - Impressão confirmação de reserva
 
-- Busca por nome falecido: Identificar onde está sendo velado (FALTA LAYOUT)
+- Busca por nome falecido: Identificar onde está sendo velado
