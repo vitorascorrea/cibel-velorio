@@ -23,7 +23,7 @@ module FormulariosHelper
 				for y in 1..25
 					trocou_dia = true if matriz[0][y] == 0					
 					if trocou_dia
-						if !ultimo_sepultamento_sala.nil? && matriz[0][y] <= (ultimo_sepultamento_sala) + 3600
+						if (!ultimo_sepultamento_sala.nil?) && (matriz[0][y] <= (ultimo_sepultamento_sala) + 3600)
 							matriz[x][y] = 'p' #Periodo preenchido
 						elsif velorio.salas[x-1].desabilitada
 							matriz[x][y] = 'o' #sala ocupada
@@ -46,6 +46,6 @@ module FormulariosHelper
 	end
 
 	def ultimoSepultamento(sala)
-		sala.reservas.order(sepultamento: :desc).first.try(:sepultamento)
+		sala.reservas.where(excluida: nil).order(sepultamento: :desc).first.try(:sepultamento)		
 	end
 end

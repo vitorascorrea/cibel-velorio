@@ -47,7 +47,8 @@ class ReservasController < ApplicationController
   end
   
   def destroy
-    Reserva.find(params[:id]).destroy
+    @reserva = Reserva.find(params[:id])
+    @reserva.update_attributes(excluida: true)
     redirect_to reservas_path
   end
 
