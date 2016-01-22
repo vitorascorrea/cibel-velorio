@@ -13,7 +13,7 @@ class SalasController < ApplicationController
 		@sala = Sala.find(params[:sala][:id_edit])
 		@sala.desabilitada ? desab = false : desab = true
 		@sala.update_attributes(desabilitada: desab)
-		desab ? a = "Desinterditar sala" : a = "Interditar sala"
+		desab ? a = "Interditar sala" : a = "Desinterditar sala"
     Justificativa.create(sala: @sala.id, acao: a, justificativa: params[:sala][:justificativa], atendente: current_funcionario.id, horario: Time.now.in_time_zone)
 		redirect_to index_interditar_path
 	end
