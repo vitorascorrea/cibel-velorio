@@ -1,0 +1,35 @@
+<div class="painel col-md-10 col-md-offset-1">
+  <div class="titulo">
+    <h2>Relatório</h2>
+  </div>
+  <div class="conteudo-painel">
+    <table border="1" class="table table-striped">
+      <thead>
+        <th>Velório</th>
+        <th>Objeto</th>
+        <th>Ação</th>
+        <th>Justificativa</th>
+        <th>Responsável</th>
+        <th>Horario</th>
+      </thead>
+      <% @justificativas.each do |j| %>
+        <tbody>
+          <%
+            objeto = Reserva.find(j.reserva) if j.reserva
+            objeto = Sala.find(j.sala) if j.sala
+            velorio = objeto.velorio
+            responsavel = Atendente.find(j.atendente)
+          %>
+          <td><%= velorio.nome %></td>
+          <td><%= objeto.class %></td>
+          <td><%= j.acao %></td>
+          <td><%= j.justificativa %></td>
+          <td><%= responsavel.funcionario.nome %></td>
+          <td><%= j.horario %></td>
+        </tbody>
+      <% end %> 
+    </table>
+  </div>
+  <div class="painel-footer">
+  </div>
+</div>

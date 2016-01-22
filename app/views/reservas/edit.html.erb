@@ -43,27 +43,8 @@
     <div class="proximo-passo2">
       <%= f.submit "Salvar Mudanças", class: "cibelbutton", id: "edit_submit_mudancas", style: "display: none" %>
       <button type="button" class="cibelbutton" id="salva_reserva_edit_page">Salvar Mudanças</button>
-      <input class="dangerBut" type="button" data-toggle="modal" data-target="#edit-deletar" value="Excluir Reserva"></input>
     </div>
     <% end %>
-  </div>
-</div>
-
-<div class="modal fade" id="edit-deletar" role="dialog">
-  <div class="modal-dialog">
-    <div class="cimodal tam6 col-md-offset-1">
-      <div class="titulo">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Atenção!</h4>
-      </div>
-      <div class="conteudo-modal">
-        <p>Tem certeza que deseja excluir a reserva?</p>
-      </div>
-      <div class="modal-footer">
-        <%= link_to "Excluir Reserva", @reserva, method: :delete, class: 'dangerBut' %>
-        <button type="button" class="myButton" data-dismiss="modal">Fechar</button>
-      </div>
-    </div>
   </div>
 </div>
 
