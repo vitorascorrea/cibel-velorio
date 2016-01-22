@@ -1,10 +1,16 @@
 <div class="setup-content step activeStepInfo" id="step-1">
+	<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
+		<div>
+			<input type="button" id="sel_vel_sub" class="myButton" value="Próximo Passo">
+			<%= submit_tag "Próximo passo", class: 'cibelbutton', id: "prox_pass_but", style: "display: none", onclick:"javascript: resetActive(event, 25, 'step-2');" %>
+			</input>					
+		</div>
+		
 	<div class="painel tam6 col-md-offset-4">
 		<div class="titulo centralizar-texto">
 			<h2>Selecione o local de sepultamento</h2>
 		</div>
-		<div class="conteudo-painel">
-			<%= form_tag filtro_salas_path, :method => 'post', remote: true do |f| %>
+		<div class="conteudo-painel">			
 				<%= label_tag :cemiterio_id, "Local de Sepultamento/Cremação" %>
 				<%= select_tag :cemiterio_id, options_for_select(@cemiterios), class: 'form-control' %><br>
 				<%= label_tag :outro, "Digite as informações do cemitério", id: "label_outro" %>
@@ -15,11 +21,7 @@
 				<div id="velorio">
 					<%= label_tag :velorio_id, "Selecione o local de velório" %>
 					<%= select_tag :velorio_id, options_for_select(Velorio.all.collect{ |v| [v.nome, v.id] }), class: 'form-control' %>
-				</div><br>
-				<div class="proximo-passo">
-					<input type="button" id="sel_vel_sub" class="cibelbutton" value="Próximo Passo">
-					<%= submit_tag "Próximo passo", class: 'cibelbutton', id: "prox_pass_but", style: "display: none", onclick:"javascript: resetActive(event, 25, 'step-2');" %>				
-				</div>
+				</div>				
 			<% end %>
 		</div>
 	</div>

@@ -1,44 +1,49 @@
-<div class="conteudo-painel" style="text-align: left">
-  
-  <table class="table table-striped table-bordered" border=0 width=100%>
-    <tr>
-      <td class="left">Nome do Contratante:</td>
-      <td><%= @reserva.municipe %></td>
-    </tr>
-     <tr>
-      <td class="left">Nome do Falecido:</td>
-      <td><%= @reserva.falecido %></td>
-    </tr>
-     <tr>
-      <td class="left">Número da Declaração de Óbito:</td>
-      <td><%= @reserva.d_obito %></td>
-    </tr>
-     <tr>
-      <td class="left">Cemiterio:</td>
-      <td><%= Cemiterio.find(@reserva.cemiterio_id).nome %></td>
-    </tr>
-     <tr>
-      <td class="left">Velorio:</td>
-      <td><%= Velorio.find(@reserva.velorio_id).nome %></td>
-    </tr>
-     <tr>
-      <td class="left">Sala:</td>
-      <td><%= Velorio.find(@reserva.velorio_id).salas.index(Sala.find(@reserva.sala_id)).to_i + 1 %></td>
-    </tr>
-     <tr>
-      <td class="left">Horario de Sepultamento:</td>
-      <td><%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
-    </tr>
-     <tr>
-      <td class="left">Data de Contratação:</td>
-      <td><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></td>
-    </tr>
-  </table>
-  
-  <%= link_to "Imprimir", impressao_path(:reserva => @reserva.attributes), :target => '_blank', class: 'cibelbutton', style: "margin-left: 78%;" %>
-    
-</div>
-<div class="proximo-passo2">
-  <input type="button" id="voltar_sala" class="cibelbutton" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">
-  <%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post , class: 'cibelbutton' %>
+<div class="col-xs-12">
+  <div>
+    <input type="button" id="voltar_sala" class="dangerBut" value="Voltar" onclick="javascript: resetActive(event, 75, 'step-3');">
+    <%= link_to "Imprimir", impressao_path(:reserva => @reserva.attributes), :target => '_blank', class: 'cibelbutton' %>
+    <%= link_to "Confirmar reserva", confirmar_reserva_path(:reserva => @reserva.attributes), :method => :post , class: 'myButton' %>
+  </div>
+  <div class="col-md-offset-4 painel tam6 text-center">
+    <div class="titulo centralizar-texto">
+      <h2>Confirme os dados</h2>
+    </div>  
+    <div class="conteudo-painel" style="text-align: left">
+      
+      <table class="table table-striped table-bordered" border=0 width=100%>
+        <tr>
+          <td class="left">Nome do Contratante:</td>
+          <td><%= @reserva.municipe %></td>
+        </tr>
+         <tr>
+          <td class="left">Nome do Falecido:</td>
+          <td><%= @reserva.falecido %></td>
+        </tr>
+         <tr>
+          <td class="left">Número da Declaração de Óbito:</td>
+          <td><%= @reserva.d_obito %></td>
+        </tr>
+         <tr>
+          <td class="left">Cemiterio:</td>
+          <td><%= Cemiterio.find(@reserva.cemiterio_id).nome %></td>
+        </tr>
+         <tr>
+          <td class="left">Velorio:</td>
+          <td><%= Velorio.find(@reserva.velorio_id).nome %></td>
+        </tr>
+         <tr>
+          <td class="left">Sala:</td>
+          <td><%= Velorio.find(@reserva.velorio_id).salas.index(Sala.find(@reserva.sala_id)).to_i + 1 %></td>
+        </tr>
+         <tr>
+          <td class="left">Horario de Sepultamento:</td>
+          <td><%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
+        </tr>
+         <tr>
+          <td class="left">Data de Contratação:</td>
+          <td><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
