@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160121164030) do
+=======
+ActiveRecord::Schema.define(version: 20160122143507) do
+>>>>>>> nini
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -48,6 +52,16 @@ ActiveRecord::Schema.define(version: 20160121164030) do
   end
 
   add_index "funcionarios", ["rf"], name: "index_funcionarios_on_rf", unique: true
+
+  create_table "justificativas", force: :cascade do |t|
+    t.integer  "atendente"
+    t.datetime "horario"
+    t.integer  "sala"
+    t.integer  "reserva"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "acao"
+  end
 
   create_table "reservas", force: :cascade do |t|
     t.datetime "contratacao"
