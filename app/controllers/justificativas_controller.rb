@@ -1,0 +1,3 @@
+class JustificativasController < ApplicationController
+  
+end

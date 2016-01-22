@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   resources 'salas'
   resources 'funcionarios'
   resources 'reservas'
+  resources 'justificativas'
   
 end
