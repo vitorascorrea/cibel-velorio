@@ -4,5 +4,4 @@ class JustificativasController < ApplicationController
     @justificativas = Justificativa.all
   end
   
-  
 end

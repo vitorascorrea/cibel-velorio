@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160121164030) do
-=======
-ActiveRecord::Schema.define(version: 20160122143507) do
->>>>>>> nini
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
