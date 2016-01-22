@@ -1,39 +1,40 @@
-  
-    <%= render 'layouts/matriz', object: @matriz %>
-  
-    <br>
-  
-    <%= form_tag dados_reserva_path, :method => 'post', remote: true do |f| %>
-	<div class="conteudo-painel">
-	  <%= hidden_field_tag(:sepultamento, value = nil) %>
-	  <%= hidden_field_tag(:sala_id, value = nil) %>
-	  <%= hidden_field_tag(:cemiterio_id, value = @cemiterio) %>
-	  <%= hidden_field_tag(:velorio_id, value = @velorio.id) %>
-	</div>
-	<div class="proximo-passo2">
-	  <%= link_to "Voltar", main_path, class: "cibelbutton" %>
-	  <%= submit_tag "Próximo passo", id: "prox-passo", class: "cibelbutton" %>
-	</div>  
-	
+<%= form_tag dados_reserva_path, :method => 'post', remote: true do |f| %>
+  <div>
+    <%= link_to "Voltar", main_path, class: "dangerBut" %>
+    <%= submit_tag "Próximo passo", id: "prox-passo", class: "myButton" %>
+  </div>  
+  <div class="painel col-md-12 text-center">
+    <div class="titulo centralizar-texto">
+      <h2>Selecione a sala e horário de sepultamento</h2>
+    </div>
+    <%= render 'layouts/matriz', object: @matriz %> 
+      
+  	<div class="conteudo-painel">
+  	  <%= hidden_field_tag(:sepultamento, value = nil) %>
+  	  <%= hidden_field_tag(:sala_id, value = nil) %>
+  	  <%= hidden_field_tag(:cemiterio_id, value = @cemiterio) %>
+  	  <%= hidden_field_tag(:velorio_id, value = @velorio.id) %>
+  	</div>	
 <% end %>
 
-<!-- Trigger the modal with a button -->
-  <button id="modal-erro" style="display: none;" type="button" data-toggle="modal" data-target="#myModal">Open Modal</button>
- <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="cimodal tam6 col-md-offset-1">
-        <div class="titulo">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Operação errada!</h4>
-        </div>
-        <div class="conteudo-modal">
-          <p>Por favor, selecione um horário para o velorio e tente novamente!</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="dangerBut" data-dismiss="modal">Fechar</button>
+  <!-- Trigger the modal with a button -->
+    <button id="modal-erro" style="display: none;" type="button" data-toggle="modal" data-target="#myModal">Open Modal</button>
+   <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="cimodal tam6 col-md-offset-1">
+          <div class="titulo">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Operação errada!</h4>
+          </div>
+          <div class="conteudo-modal">
+            <p>Por favor, selecione um horário para o velorio e tente novamente!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="dangerBut" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
