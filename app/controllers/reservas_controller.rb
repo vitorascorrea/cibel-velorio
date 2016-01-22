@@ -35,7 +35,7 @@ class ReservasController < ApplicationController
   
   def pre_edicao
     @reserva = Reserva.find(params[:reserva][:id_edit])
-    @reserva.update_attributes(justificativa: params[:reserva][:justificativa], responsavel: current_funcionario.id)
+    Justificativa.create(reserva: @reserva.id, acao: "Editar", justificativa: params[:reserva][:justificativa], atendente: current_funcionario.id, horario: Time.now.in_time_zone)
     redirect_to edit_reserva_path(@reserva)
   end
 
@@ -49,6 +49,7 @@ class ReservasController < ApplicationController
   def destroy
     @reserva = Reserva.find(params[:id])
     @reserva.update_attributes(excluida: true)
+    Justificativa.create(reserva: @reserva.id, acao: "Deletar", justificativa: params[:reserva][:justificativa], atendente: current_funcionario.id, horario: Time.now.in_time_zone)
     redirect_to reservas_path
   end
 
