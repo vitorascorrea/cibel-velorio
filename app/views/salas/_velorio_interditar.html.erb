@@ -14,10 +14,12 @@
         </tr>
       </thead>
       <tbody>
-        <% @velorio.salas.each do |s| %>
+        <% i = 1
+           @velorio.salas.each do |s| 
+        %>
         	<tr>
             <td><%= @velorio.nome %></td>
-            <td><%= s.id %></td>
+            <td><%= i %></td>
             <td><%= sala_ocupada?(s) ? "Sim" : "Não" %></td>
             <td><%= s.desabilitada ? "Sim" : "Não" %></td>
             <td>
@@ -38,7 +40,10 @@
 	            <% end %>
             </td>
           </tr>
-        <% end %>
+        <% 
+          i = i + 1
+          end 
+        %>
       </tbody>
     </table>
   </div>
