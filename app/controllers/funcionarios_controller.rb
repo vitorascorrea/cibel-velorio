@@ -20,11 +20,11 @@ class FuncionariosController < ApplicationController
   		if @atendente.save
   			redirect_to adm_path
   		else
-  			flash[:notice] = "Preencha o formulário corretamente"
+  			flash.now[:erro] = 'Preencha o formulário corretamente'
   			render 'new'
   		end
   	else
-  		flash[:notice] = "Preencha o formulário corretamente"
+  		flash.now[:notice] = "Preencha o formulário corretamente"
   		render 'new'
   	end
   end

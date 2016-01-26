@@ -1,4 +1,4 @@
-<div class="painel col-md-10 col-md-offset-1">
+<div class="painel col-md-10 col-md-offset-1" style="margin-top: 65px">
   <div class="titulo">
     <h2>Relatório</h2>
   </div>
@@ -10,7 +10,7 @@
         <th>Ação</th>
         <th>Justificativa</th>
         <th>Responsável</th>
-        <th>Horario</th>
+        <th>Horário</th>
       </thead>
       <% @justificativas.each do |j| %>
         <tbody>
@@ -25,10 +25,13 @@
           <td><%= j.acao %></td>
           <td><%= j.justificativa %></td>
           <td><%= responsavel.funcionario.nome %></td>
-          <td><%= j.horario %></td>
+          <td><%= j.horario.strftime("%d/%m/%Y %H:%M") %></td>
         </tbody>
       <% end %> 
     </table>
+  </div>
+  <div class="cancelar-reserva" style="margin-top: 10px; margin-right: 2.5%;">
+    <%= link_to "Voltar", adm_path, class: 'cibelbutton' %>
   </div>
   <div class="painel-footer">
   </div>
