@@ -1,14 +1,7 @@
 <% if params[:action] != 'impressao' %>
-<footer class="navbar navbar-fixed-top" style="background: rgba(255,255,255,0.6); margin-bottom: 50px;" role="navigation">
-    <div class="rodape" style="z-index: 3000;">
-
-      <%= link_to "Sair", logout_path, method: :delete, class: 'sair myButton' %>
-        
-
-      
-     
-      
-    </div>
-
-</footer>
+	<header class="navbar navbar-fixed-top" style="background: rgba(255,255,255,0.6); margin-bottom: 50px;" role="navigation">
+	    <div class="rodape">
+	      <%= link_to "Sair", logout_path, method: :delete, class: 'sair myButton' %>      
+	    </div>
+	</header>
 <% end %>
