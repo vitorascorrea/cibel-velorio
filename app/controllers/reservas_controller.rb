@@ -8,6 +8,7 @@ class ReservasController < ApplicationController
 
   def selecao_velorio
     @velorio = Velorio.find(params[:velorio_id])
+    @reservas = @velorio.reservas.order(sepultamento: :desc)
     @matriz = geraMatriz(@velorio)
   	respond_to do |format|
   		format.js

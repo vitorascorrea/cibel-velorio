@@ -20,4 +20,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'sala', 'salas'
   inflect.irregular 'reserva', 'reservas'
   inflect.irregular 'velorista', 'veloristas'
+  inflect.irregular 'justificativa', 'justificativas'
 end

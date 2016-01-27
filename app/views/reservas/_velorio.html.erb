@@ -3,6 +3,7 @@
     <h2>Relatório de reservas</h2>
   </div>
   <div class="conteudo-painel">
+    
     <table border="1" class="table table-striped">
       <thead>
         <tr>
@@ -15,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @velorio.reservas.order(sepultamento: :desc).each do |r| %>
+        <% @reservas.each do |r| %>
         <% if !r.excluida %>
           <tr>
             <td><%= r.velorio.nome %></td>
@@ -48,6 +49,7 @@
         <% end %>
       </tbody>
     </table>
+    
   </div>
   <div class="painel-footer">
   </div>
