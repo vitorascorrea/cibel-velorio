@@ -3,34 +3,28 @@
     <h2>Resultado</h2>
   </div>
   <div class="conteudo-painel">
-  	
-    <% if resultado and resultado.any? %>
-    
-	    <table border="1" class="table table-striped">
-	      <thead>
-	        <tr>
-	          <th>Falecido</th>
-	          <th>Velório</th>
-	          <th>Horário de sepultamento</th>
-	          <th>Contratante</th>
-	        </tr>
-	      </thead>
-	      <tbody>
-					<% resultado.each do |r| %>
-					<tr>
-		      	<td><%= r.falecido %></td>
-		      	<td><%= r.velorio.nome %></td>
-		      	<td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
-		      	<td><%= r.municipe %></td>
-		      <% end %>
-	      </tbody>
-	    </table>
-    <% else %>
-    	<div class="titulo_foot">
-    		<h3>Não Encontrado</h3>
-  		</div>
-    <% end %>
-    
+    <%= will_paginate resultado, :previous_label => t("Anterior"), :next_label => t("Próximo")%>
+  <table border="1" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Falecido</th>
+        <th>Velório</th>
+        <th>Horário de sepultamento</th>
+        <th>Contratante</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @resultado.each do |r| %>
+      <tr>
+        <td><%= r.falecido %></td>
+        <td><%= r.velorio.nome %></td>
+        <td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
+        <td><%= r.municipe %></td>
+       </tr>
+     <% end %>
+    </tbody>
+  </table>
+<%= will_paginate resultado, :previous_label => t("Anterior"), :next_label => t("Próximo") %>    
   </div>
   <div class="painel-footer">
   </div>
