@@ -15,9 +15,11 @@
 	      </thead>
 	      <tbody>
 					<% resultado.each do |r| %>
+					<tr>
 		      	<td><%= r.falecido %></td>
 		      	<td><%= r.velorio.nome %></td>
 		      	<td><%= r.sepultamento.to_s.chomp(' -0200') %></td>
+		      </tr>
 		      <% end %>
 	      </tbody>
 	    </table>
