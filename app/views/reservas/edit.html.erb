@@ -18,9 +18,9 @@
         </div>
         <div class="col-md-4">
           <h4 class="nedit"><strong>Contratação</strong></h4>
-          <%= @reserva.contratacao.strftime('%d-%m-%Y %H:%M:%S') %>
+          <%= @reserva.contratacao.strftime("%d/%m/%Y %H:%M") %>
           <h4 class="nedit"><strong>Sepultamento</strong></h4>
-          <%= @reserva.sepultamento.strftime('%d-%m-%Y %H:%M:%S') %>
+          <%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %>
           <h4 class="nedit"><strong>Atendente</strong></h4>
           <%= @reserva.atendente.funcionario.nome %>
         </div>  
