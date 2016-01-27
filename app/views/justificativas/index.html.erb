@@ -3,6 +3,7 @@
     <h2>Relatório</h2>
   </div>
   <div class="conteudo-painel">
+    <%= will_paginate :previous_label => t("Anterior"), :next_label => t("Próximo") %>
     <table border="1" class="table table-striped">
       <thead>
         <th>Velório</th>
@@ -29,6 +30,7 @@
         </tbody>
       <% end %> 
     </table>
+    <%= will_paginate :previous_label => t("Anterior"), :next_label => t("Próximo") %>
   </div>
   <div class="cancelar-reserva" style="margin-top: 10px; margin-right: 2.5%;">
     <%= link_to "Voltar", adm_path, class: 'cibelbutton' %>

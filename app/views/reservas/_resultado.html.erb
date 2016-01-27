@@ -8,9 +8,10 @@
 	    <table border="1" class="table table-striped">
 	      <thead>
 	        <tr>
-	          <th>Nome</th>
 	          <th>Falecido</th>
-	          <th>Sepultamento</th>
+	          <th>Velório</th>
+	          <th>Horário de sepultamento</th>
+	          <th>Contratante</th>
 	        </tr>
 	      </thead>
 	      <tbody>
@@ -18,8 +19,8 @@
 					<tr>
 		      	<td><%= r.falecido %></td>
 		      	<td><%= r.velorio.nome %></td>
-		      	<td><%= r.sepultamento.to_s.chomp(' -0200') %></td>
-		      </tr>
+		      	<td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
+		      	<td><%= r.municipe %></td>
 		      <% end %>
 	      </tbody>
 	    </table>
