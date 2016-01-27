@@ -1,8 +1,30 @@
 Não feitas:
 
-- Mais dois campos na tabela de pesquisa por velorio: ultimo atendente que editou e justificativa
+- Adicionar Crematório
+
+- Resolver bug impressão (firefox)
+
+- Colocar link para edição no resultado da pesquisa
+
+- Resolver paginação
+
+- Ordenar tabelas por horário de sepultamento
+
+- "Before action" em páginas sensíveis
 
 Feitas:
+
+- Bug velório e sepultamento diferentes
+
+- Colocar nome do velório na página da matriz
+
+- Tirar obrigatoriedade - declaração de óbito
+
+- Formatar horários
+
+
+
+--// Antigas //--
 
 - Local sepultamento: Pode ocorrer em cemitérios particular ou mesmo em outra cidade ou estado, onde possa ser digitado o cemitério, cidade e estado
 

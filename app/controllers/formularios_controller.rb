@@ -19,6 +19,8 @@ def filtro_salas
   else
     if params[:cemiterio_id] == "0"
       @cemiterio = Cemiterio.create(nome: params[:outro]).id
+    else
+      @cemiterio = Cemiterio.find(params[:cemiterio_id]).id
     end
     @velorio = Velorio.find(params[:velorio_id])
     @matriz = geraMatriz(@velorio)
