@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122161844) do
+ActiveRecord::Schema.define(version: 20160129174351) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160122161844) do
     t.integer  "velorio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "outro"
   end
 
   add_index "cemiterios", ["velorio_id"], name: "index_cemiterios_on_velorio_id"
