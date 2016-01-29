@@ -4,8 +4,12 @@ class FormulariosController < ApplicationController
   def main
     @reserva = Reserva.new
     @cem_aux = []
+    gon.cemiterios = {}
     Cemiterio.all.each do |c|
-      @cem_aux << [c.nome, c.id] if c.id < 19
+      if !c.outro
+        @cem_aux << [c.nome, c.id]
+        gon.cemiterios[c.id] = c
+      end
     end
     @cemiterios = @cem_aux << ["Outro", 0]
   end
@@ -18,7 +22,7 @@ def filtro_salas
     @matriz = geraMatriz(@velorio)
   else
     if params[:cemiterio_id] == "0"
-      @cemiterio = Cemiterio.create(nome: params[:outro]).id
+      @cemiterio = Cemiterio.create(nome: params[:outro], outro: true).id
     else
       @cemiterio = Cemiterio.find(params[:cemiterio_id]).id
     end
