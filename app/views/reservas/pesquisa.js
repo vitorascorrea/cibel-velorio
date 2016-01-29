@@ -1,2 +1,2 @@
-$('#resultado').html("<%= j render "reservas/resultado", resultado: @resultado %>");
+$('#resultado').html("<%= j render 'reservas/resultado', resultado: @resultado %>");
 

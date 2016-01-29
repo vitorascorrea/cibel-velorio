@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4 col-md-offset-4" style="text-align: center; margin-bottom: 30px; margin-top: 15px;">
-    <%= image_tag("SFMSP_Logo.png", width: "250px", height: "auto", alt: "SFMSP") %>
+    <%= image_tag("SFMSP_Logo.png", width: "225px", height: "auto", alt: "SFMSP") %>
   </div>
 </div>
 <div class="row">
@@ -19,11 +19,11 @@
         <td><%= @reserva.d_obito %></td>
       </tr>
        <tr>
-        <td class="left">Cemiterio:</td>
+        <td class="left">Cemitério:</td>
         <td><%= Cemiterio.find(@reserva.cemiterio_id).nome %></td>
       </tr>
        <tr>
-        <td class="left">Velorio:</td>
+        <td class="left">Velório:</td>
         <td><%= Velorio.find(@reserva.velorio_id).nome %></td>
       </tr>
        <tr>
@@ -39,6 +39,6 @@
         <td><%= Time.now.in_time_zone.strftime("%d/%m/%Y %H:%M") %></td>
       </tr>
     </table>
-    <a class="noPrint cibelbuttonprint" style="float: right" href="#" onclick="window.print();return false;">Imprimir</a>
+    <a class="noPrint cibelbuttonprint" href="#" onclick="window.print();return false;">Imprimir</a>
   </div>
 </div>

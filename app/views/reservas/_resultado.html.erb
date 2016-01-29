@@ -3,29 +3,69 @@
     <h2>Resultado</h2>
   </div>
   <div class="conteudo-painel">
-    <%= will_paginate resultado, :previous_label => t("Anterior"), :next_label => t("Próximo")%>
-  <table border="1" class="table table-striped">
-    <thead>
-      <tr>
-        <th>Falecido</th>
-        <th>Velório</th>
-        <th>Horário de sepultamento</th>
-        <th>Contratante</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @resultado.each do |r| %>
-      <tr>
-        <td><%= r.falecido %></td>
-        <td><%= r.velorio.nome %></td>
-        <td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
-        <td><%= r.municipe %></td>
-       </tr>
-     <% end %>
-    </tbody>
-  </table>
-<%= will_paginate resultado, :previous_label => t("Anterior"), :next_label => t("Próximo") %>    
+  
+  <% if @resultado.any? %>  
+    <table border="1" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Falecido</th>
+          <th>Velório</th>
+          <th>Horário de sepultamento</th>
+          <th>Contratante</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @resultado.each do |r| %>
+        <tr>
+          <td><%= r.falecido %></td>
+          <td><%= r.velorio.nome %></td>
+          <td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
+          <td><%= r.municipe %></td>
+          <td>
+            <span type="button" id="editar_reserva_<%= r.falecido %>" data-toggle="modal" data-target="#edit_<%= r.id %>">
+              <div class="myButton">
+                <i class="fa fa-pencil-square-o"></i>
+              </div>
+            </span>  
+          </td>
+         </tr>
+       <% end %>
+      </tbody>
+    </table> 
+  <% else %>
+    	<div class="titulo_foot">
+    		<h3>Nenhuma reserva encontrada</h3>
+  		</div>
+  <% end %>
+
   </div>
   <div class="painel-footer">
   </div>
 </div>
+
+<% @resultado.each do |r| %>
+
+  <div class="modal fade" id="edit_<%= r.id %>" role="dialog">
+    <div class="modal-dialog">
+      <div class="cimodal tam6 col-md-offset-1">      
+      <%= form_for r, :url => { :action => "pre_edicao" } do |f| %>
+        <div class="titulo">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Atenção</h4>
+        </div>          
+        <div class="conteudo-modal">
+          <p>Justifique a edição</p>
+          <%= f.text_area :justificativa, :required => true, :value => "" %>
+          <%= f.hidden_field :id_edit, value: r.id %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Editar", class: "dangerBut" %>
+        <% end %>
+          <button type="button" class="myButton" data-dismiss="modal">Manter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
