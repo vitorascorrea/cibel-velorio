@@ -2,6 +2,8 @@ class ReservasController < ApplicationController
   include FormulariosHelper
   include ReservasHelper
   
+  before_action :pre_editou?, only: [:edit]
+  
   def index
     @reservas = Reserva.all
   end 
@@ -37,6 +39,7 @@ class ReservasController < ApplicationController
   def pre_edicao
     @reserva = Reserva.find(params[:reserva][:id_edit])
     Justificativa.create(reserva: @reserva.id, acao: "Editar", justificativa: params[:reserva][:justificativa], atendente: current_funcionario.id, horario: Time.now.in_time_zone)
+    session[:pre_edicao] = true
     redirect_to edit_reserva_path(@reserva)
   end
 
@@ -65,6 +68,11 @@ class ReservasController < ApplicationController
   end
   
   private
+  
+  def pre_editou?
+    redirect_to reservas_path unless session[:pre_edicao]
+    session.delete(:pre_edicao)
+  end
   
   def reserva_params
     params.require(:reserva).permit(:falecido, :municipe, :d_obito)
