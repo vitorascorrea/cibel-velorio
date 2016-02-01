@@ -1,5 +1,3 @@
-$('#velorio-selecionado').html("<%= j render 'reservas/velorio'%>");
-
 $(document).ready(function() {
     $('.data_table').DataTable( {
         "ordering": false,

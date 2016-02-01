@@ -1,5 +1,5 @@
-<table border="1" class="table table-striped">
-  <thead>
+<table border="1" class="table table-striped data_table">
+    <thead>
     <th>Velório</th>
     <th>Objeto</th>
     <th>Ação</th>
@@ -7,20 +7,22 @@
     <th>Responsável</th>
     <th>Horário</th>
   </thead>
-  <% @justificativas.each do |j| %>
-    <tbody>
-      <%
-        objeto = Reserva.find(j.reserva) if j.reserva
-        objeto = Sala.find(j.sala) if j.sala
-        velorio = objeto.velorio
-        responsavel = Atendente.find(j.atendente)
-      %>
-      <td><%= velorio.nome %></td>
-      <td><%= objeto.class %></td>
-      <td><%= j.acao %></td>
-      <td><%= j.justificativa %></td>
-      <td><%= responsavel.funcionario.nome %></td>
-      <td><%= j.horario.strftime("%d/%m/%Y %H:%M") %></td>
-    </tbody>
-  <% end %> 
-  </table>
+  <tbody>
+    <% @justificativas.each do |j| %>
+      <tr>
+        <%
+          objeto = Reserva.find(j.reserva) if j.reserva
+          objeto = Sala.find(j.sala) if j.sala
+          velorio = objeto.velorio
+          responsavel = Atendente.find(j.atendente)
+        %>
+        <td><%= velorio.nome %></td>
+        <td><%= objeto.class %></td>
+        <td><%= j.acao %></td>
+        <td><%= j.justificativa %></td>
+        <td><%= responsavel.funcionario.nome %></td>
+        <td><%= j.horario.strftime("%d/%m/%Y %H:%M") %></td>
+      </tr>
+    <% end %> 
+  </tbody>
+</table>
