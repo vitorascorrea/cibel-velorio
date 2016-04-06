@@ -35,7 +35,7 @@ def filtro_salas
 end
 
   def dados_reserva
-    @sepultamento = params[:sepultamento]
+    @sepultamento = params[:sepultamento].to_time.beginning_of_hour.to_s
     @sala = Sala.find(params[:sala_id])
     @velorio = Velorio.find(params[:velorio_id])
     @cemiterio = Cemiterio.find(params[:cemiterio_id])

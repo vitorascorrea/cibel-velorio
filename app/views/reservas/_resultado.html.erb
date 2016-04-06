@@ -23,11 +23,19 @@
           <td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
           <td><%= r.municipe %></td>
           <td>
+          <% if r.sepultamento < Time.now %>
+            <span type="button" data-toggle="modal" data-target="#exp_<%= r.id %>">
+              <div class="disabledBut">
+                <i class="fa fa-lock"></i>
+              </div>
+            </span>
+          <% else %>
             <span type="button" id="editar_reserva_<%= r.falecido %>" data-toggle="modal" data-target="#edit_<%= r.id %>">
               <div class="myButton">
                 <i class="fa fa-pencil-square-o"></i>
               </div>
-            </span>  
+            </span>                
+          <% end %>    
           </td>
          </tr>
        <% end %>
@@ -67,5 +75,20 @@
       </div>
     </div>
   </div>
-
+  <div class="modal fade" id="exp_<%= r.id %>" role="dialog">
+    <div class="modal-dialog">
+      <div class="cimodal tam6 col-md-offset-1">
+        <div class="titulo">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Atenção</h4>
+        </div>
+        <div class="conteudo-modal">
+          <p>Essa reserva já expirou.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="myButton" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
