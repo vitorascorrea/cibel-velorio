@@ -13,11 +13,13 @@
 		<div class="row conteudo-painel">
 			<div class="col-md-7 cib_left">
 				<%= label_tag "Declaração de Óbito:", nil, class: "cib_label" %>
+				<%= label_tag "Nº da Nota de Contratação:", nil, class: "cib_label" %>
 				<%= label_tag "Nome do Falecido:", nil, class: "cib_label" %>
 				<%= label_tag "Nome do Munícipe Responsável:", nil, class: "cib_label" %>
 			</div>
 			<div class="col-md-5">
 				<%= text_field_tag :d_obito, nil, maxlength: 6, class: "cib_input", id: "form_d_obito" %>
+				<%= text_field_tag :ncf, nil, maxlength: 7, class: "cib_input", id: "form_ncf" %>
 				<%= text_field_tag :n_falecido, nil, class: "cib_input", id: "form_n_falecido" %>
 				<%= text_field_tag :n_municipe, nil, class: "cib_input", id: "form_n_municipe" %>
 			</div>

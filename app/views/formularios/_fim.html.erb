@@ -24,6 +24,10 @@
           <td><%= @reserva.d_obito %></td>
         </tr>
          <tr>
+          <td class="left">Número da Nota de Contratação:</td>
+          <td><%= @reserva.ncf %></td>
+        </tr>
+         <tr>
           <td class="left">Cemitério:</td>
           <td><%= Cemiterio.find(@reserva.cemiterio_id).nome %></td>
         </tr>

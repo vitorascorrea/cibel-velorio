@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129174351) do
+ActiveRecord::Schema.define(version: 20160411152617) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160129174351) do
     t.boolean  "mesmo_local"
     t.integer  "velorio_id"
     t.boolean  "excluida"
+    t.string   "ncf"
   end
 
   add_index "reservas", ["atendente_id"], name: "index_reservas_on_atendente_id"

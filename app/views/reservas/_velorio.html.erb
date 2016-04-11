@@ -13,6 +13,7 @@
             <th>Sepultamento</th>
             <th>Atendente</th>
             <th>Falecido</th>
+            <th>NCF</th>
             <th></th>
           </tr>
         </thead>
@@ -25,6 +26,7 @@
               <td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
               <td><%= r.atendente.funcionario.nome %></td>
               <td><%= r.falecido %></td>
+              <td><%= r.ncf %></td>
               <td>
                 <% if r.sepultamento < Time.now %>
                   <span type="button" data-toggle="modal" data-target="#exp_<%= r.id %>">

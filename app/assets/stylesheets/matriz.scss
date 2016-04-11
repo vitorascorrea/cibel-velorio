@@ -8,6 +8,22 @@
     color: black;
 }
 
+.matriz{
+    overflow-x: hidden;
+}
+
+.mais_horarios{
+    float: right; 
+    font-size: 20px; 
+    cursor: pointer;
+}
+
+.menos_horarios{
+    float: left; 
+    font-size: 20px; 
+    cursor: pointer;
+}
+
 .agenda_ocupado{
     background-color: red; 
     width: 100%;

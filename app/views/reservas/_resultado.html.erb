@@ -12,6 +12,7 @@
           <th>Velório</th>
           <th>Horário de sepultamento</th>
           <th>Contratante</th>
+          <th>NCF</th>
           <th></th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@
           <td><%= r.velorio.nome %></td>
           <td><%= r.sepultamento.strftime("%d/%m/%Y %H:%M") %></td>
           <td><%= r.municipe %></td>
+          <td><%= r.ncf %></td>
           <td>
           <% if r.sepultamento < Time.now %>
             <span type="button" data-toggle="modal" data-target="#exp_<%= r.id %>">

@@ -7,7 +7,7 @@ module FormulariosHelper
 		#Construindo a matriz
 		matriz[0][0] = ""
 
-		for y in 1..25
+		for y in 1..49
 			matriz[0][y] = horario_atual
 			horario_atual = horario_atual + 3600			
 		end
@@ -20,7 +20,7 @@ module FormulariosHelper
 		
 		for x in 1..velorio.salas.count
 			ultimo_sepultamento_sala = ultimoSepultamento(velorio.salas[x-1])
-				for y in 1..25
+				for y in 1..49
 					trocou_dia = true if matriz[0][y] == 0					
 					if trocou_dia
 						if (!ultimo_sepultamento_sala.nil?) && (matriz[0][y] <= (ultimo_sepultamento_sala) + 3600)

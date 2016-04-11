@@ -1,4 +1,4 @@
-$(function() {
+$(function() {    
     $('td.td_livre').click( function() {
     	$('.agenda_livre').css('background-color', '#fff'); //Altera tudo pro padrão normal
         document.getElementById('sepultamento').value = $(this).find('.agenda_livre').attr("data-horario");
@@ -20,4 +20,13 @@ $(function() {
         	}        	
         });       
     });
+
+    $('.mais_horarios').click(function(){        
+        $('.matriz').scrollLeft($('.matriz').scrollLeft() + 500);
+    });
+
+    $('.menos_horarios').click(function(){
+        $('.matriz').scrollLeft($('.matriz').scrollLeft() - 500);
+    });
 });
+

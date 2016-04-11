@@ -1,11 +1,20 @@
-<div class="conteudo-painel testando">		
+<div class="mais_horarios">Mais Horários <span class="fa fa-arrow-right"></span></div>
+<div class="menos_horarios"><span class="fa fa-arrow-left"></span> Menos Horários</div>
+<div style="clear:both;"></div>
+
+<div class="conteudo-painel matriz">
 	<table border="0" class="table table-condensed">			
 		<% object.each_with_index do |row, row_index| %>
 			<% if row_index == 0 %>
 			<tr>
 				<td style="background: none; border: 0px;"></td>
+
 				<td class="celula_hoje" colspan='<%= Time.now.in_time_zone.end_of_day.hour.to_i - Time.now.in_time_zone.hour.to_i + 1 %>'><%= Time.now.strftime('%d/%m/%Y') %></td>
-				<td class="celula_amanha" colspan='<%= Time.now.in_time_zone.end_of_day.hour.to_i + Time.now.in_time_zone.hour.to_i %>'><%= Time.now.tomorrow.strftime('%d/%m/%Y') %></td>
+
+				<td class="celula_amanha" colspan='24'><%= Time.now.tomorrow.strftime('%d/%m/%Y') %></td>
+
+				<td class="celula_hoje" colspan='<%= Time.now.in_time_zone.hour.to_i + 1%>'><%= 2.days.from_now.strftime('%d/%m/%Y') %></td>
+
 			</tr>  		
 			<% end %>
   		<tr>
@@ -40,3 +49,7 @@
 		<% end %>
 	</table>				
 </div>
+
+<div class="mais_horarios">Mais Horários <span class="fa fa-arrow-right"></span></div>
+<div class="menos_horarios"><span class="fa fa-arrow-left"></span> Menos Horários</div>
+<div style="clear:both;"></div>
