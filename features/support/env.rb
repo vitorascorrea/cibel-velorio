@@ -57,3 +57,14 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.javascript_driver = :selenium
 World(FactoryGirl::Syntax::Methods)
+
+if ENV['HEADLESS'] == 'true'
+  require 'headless'
+
+  headless = Headless.new
+  headless.start
+
+  at_exit do
+    headless.destroy
+  end
+end
