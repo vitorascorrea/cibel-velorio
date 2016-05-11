@@ -1,4 +1,4 @@
-FactoryGirl.define do 
+FactoryGirl.define do
 
 	factory :funcionario do
 		sequence(:rf) { |n| "#{n}" }
@@ -10,25 +10,25 @@ FactoryGirl.define do
 		sequence(:nome) { |n| "Agencia#{n}" }
 	end
 
-	factory :velorio do 		
-		sequence(:nome) { |n| "Velorio#{n}" }
+	factory :velorio do
+		sequence(:nome) { |n| "#{n}" }
 	end
 
-	factory :cemiterio do 
-		sequence(:nome) { |n| "Cemiterio#{n}" }
+	factory :cemiterio do
+		sequence(:nome) { |n| "#{n}" }
 	end
-
+	
 	factory :atendente do
 		funcionario
 		agencia
 	end
 
-	factory :sala do 
+	factory :sala do
 		velorio
 		especial false
 	end
 
-	factory :reserva do 
+	factory :reserva do
 		atendente
 		sala
 		cemiterio
