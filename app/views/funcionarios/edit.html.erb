@@ -1,6 +1,6 @@
 <div class="col-md-4 col-md-offset-4" style="margin-top: 55px">
   <div class="painel inicio">
-    <h1 class="help">Cadastrar novo atendente</h1>
+    <h1 class="help">Editar atendente</h1>
 
     <% flash.each do |message_type, message| %>
     	<div class="alert alert-<%= message_type %>"><%= message %></div>
@@ -18,7 +18,7 @@
 			    </tr>
 			     <tr>
 			      <td class="left"><%= a.label :senha, 'Senha' %></td>
-			      <td><%= a.password_field :password %></td>
+			      <td><%= a.text_field :password %></td>
 			    </tr>
 			     <tr>
 			     	<%= fields_for @atendente do |f| %>
@@ -27,7 +27,8 @@
 			      <% end %>
 			    </tr>
 			  </table>
-			  <%= a.submit 'Cadastrar', id: 'cadastrar', class: 'myButton' %>
+	    	<%= a.submit 'Confirmar edição', class: 'myButton' %>
+	    	<%= link_to 'Cancelar', funcionarios_path, class: 'dangerBut' %>
 			<% end %> 			   
   </div>
 </div>
