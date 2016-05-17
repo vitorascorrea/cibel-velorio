@@ -1,14 +1,14 @@
-<div class="row" style="margin-top: 50px;">   
+<div class="row" style="margin-top: 50px;">
   <div class="painel col-md-12">
     <div class="titulo">
       <h2>Informações da Reserva</h2>
     </div>
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">  
+      <div class="col-md-10 col-md-offset-1">
         <div class="col-md-4">
-          <%= form_for(@reserva) do |f| %>  
+          <%= form_for(@reserva) do |f| %>
           <h4 class="edit"><%= f.label :falecido, "Falecido" %></h4>
-          <%= f.text_field :falecido, class: 'form-control', id: "edit_n_falecido_salvar" %>    
+          <%= f.text_field :falecido, class: 'form-control', id: "edit_n_falecido_salvar" %>
           <h4 class="edit"><%= f.label :municipe, "Munícipe" %></h4>
           <%= f.text_field :municipe, class: 'form-control', id: "edit_n_municipe_salvar" %>
           <h4 class="edit"><%= f.label :d_obito, "Declaração de Óbito" %></h4>
@@ -23,7 +23,7 @@
           <%= @reserva.sepultamento.strftime("%d/%m/%Y %H:%M") %>
           <h4 class="nedit"><strong>Atendente</strong></h4>
           <%= @reserva.atendente.funcionario.nome %>
-        </div>  
+        </div>
         <div class="col-md-4">
           <h4 class="nedit"><strong>Cemitério</strong></h4>
           <%= @reserva.cemiterio.nome %>
@@ -32,10 +32,10 @@
           <h4 class="nedit"><strong>Agencia</strong></h4>
           <%= @reserva.atendente.agencia.nome %>
         </div>
-      </div>  
-  	</div>  
+      </div>
+  	</div>
     <div class="conteudo-painel" id="matriz-edit" style="margin-top: 50px;">
-      <%= render 'layouts/matriz', object: @matriz %>
+      <%= render 'layouts/matriz', object: @matriz, colspan: @colspan %>
     </div>
     <div class="proximo-passo2">
       <%= f.submit "Salvar Mudanças", class: "myButton", id: "edit_submit_mudancas", style: "display: none" %>

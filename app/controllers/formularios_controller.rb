@@ -21,8 +21,14 @@ def filtro_salas
     @velorio = Velorio.find_by(nome: @nome_cemiterio)
     if @velorio.nome == 'Vila Formosa II'
       @matriz = geraMatriz(@velorio, 15)
+      @colspan_central = 96
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i * 4 - 4
+      @colspan_borda_dir = Time.now.hour.to_i * 4 + 8
     else
       @matriz = geraMatriz(@velorio, 60)
+      @colspan_central = 24
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i - 1
+      @colspan_borda_dir = Time.now.hour.to_i + 2
     end
   else
     if params[:cemiterio_id] == "0"
@@ -33,8 +39,14 @@ def filtro_salas
     @velorio = Velorio.find(params[:velorio_id])
     if @velorio.nome == 'Vila Formosa II'
       @matriz = geraMatriz(@velorio, 15)
+      @colspan_central = 96
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i * 4 - 4
+      @colspan_borda_dir = Time.now.hour.to_i * 4 + 8
     else
       @matriz = geraMatriz(@velorio, 60)
+      @colspan_central = 24
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i - 1
+      @colspan_borda_dir = Time.now.hour.to_i + 2
     end
   end
   respond_to do |format|

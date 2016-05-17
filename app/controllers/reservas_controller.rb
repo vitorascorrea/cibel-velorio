@@ -11,10 +11,16 @@ class ReservasController < ApplicationController
   def selecao_velorio
     @velorio = Velorio.find(params[:velorio_id])
     @reservas = @velorio.reservas.order(sepultamento: :desc)
-    if Velorio.find(@reserva.velorio_id).nome == 'Vila Formosa II'
+    if Velorio.find(params[:velorio_id]).nome == 'Vila Formosa II'
       @matriz = geraMatriz(@velorio, 15)
+      @colspan_central = 96
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i * 4 - 4
+      @colspan_borda_dir = Time.now.hour.to_i * 4 + 8
     else
       @matriz = geraMatriz(@velorio, 60)
+      @colspan_central = 24
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i - 1
+      @colspan_borda_dir = Time.now.hour.to_i + 2
     end
   	respond_to do |format|
   		format.js
@@ -26,8 +32,14 @@ class ReservasController < ApplicationController
     @velorio = @reserva.velorio
     if Velorio.find(@reserva.velorio_id).nome == 'Vila Formosa II'
       @matriz = geraMatriz(@velorio, 15)
+      @colspan_central = 96
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i * 4 - 4
+      @colspan_borda_dir = Time.now.hour.to_i * 4 + 8
     else
       @matriz = geraMatriz(@velorio, 60)
+      @colspan_central = 24
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i - 1
+      @colspan_borda_dir = Time.now.hour.to_i + 2
     end
     gon.sala = @reserva.sala.id
     gon.sepultamento = @reserva.sepultamento + 3600

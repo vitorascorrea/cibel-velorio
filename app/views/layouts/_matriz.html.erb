@@ -9,11 +9,11 @@
 			<tr>
 				<td style="background: none; border: 0px;"></td>
 
-				<td class="celula_hoje" colspan='<%= Time.now.in_time_zone.end_of_day.hour.to_i - Time.now.in_time_zone.hour.to_i + 1 %>'><%= Time.now.strftime('%d/%m/%Y') %></td>
+				<td class="celula_hoje" colspan='<%= @colspan_borda_esq %>'><%= Time.now.strftime('%d/%m/%Y') %></td>
 
-				<td class="celula_amanha" colspan='24'><%= Time.now.tomorrow.strftime('%d/%m/%Y') %></td>
+				<td class="celula_amanha" colspan='<%= @colspan_central %>'><%= Time.now.tomorrow.strftime('%d/%m/%Y') %></td>
 
-				<td class="celula_hoje" colspan='<%= Time.now.in_time_zone.hour.to_i + 1%>'><%= 2.days.from_now.strftime('%d/%m/%Y') %></td>
+				<td class="celula_hoje" colspan='<%= @colspan_borda_dir %>'><%= 2.days.from_now.strftime('%d/%m/%Y') %></td>
 
 			</tr>
 			<% end %>
