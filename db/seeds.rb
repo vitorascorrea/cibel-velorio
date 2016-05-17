@@ -22,10 +22,6 @@ ag_santana = Agencia.create(nome: 'Santana')
 func_at_santana = Funcionario.create(rf: '06', nome: 'Atendente - Santana', password: '06')
 at_santana = Atendente.create(id: func_at_santana.id, funcionario: func_at_santana, agencia: ag_santana, adm: false)
 
-ag_saudade = Agencia.create(nome: 'Saudade')
-func_at_saudade = Funcionario.create(rf: '07', nome: 'Atendente - Saudade', password: '07')
-at_saudade = Atendente.create(id: func_at_saudade.id, funcionario: func_at_saudade, agencia: ag_saudade, adm: false)
-
 ag_vila_formosa = Agencia.create(nome: 'Vila Formosa')
 func_at_vila_formosa = Funcionario.create(rf: '08', nome: 'Atendente - Vila Formosa', password: '08')
 at_vila_formosa = Atendente.create(id: func_at_vila_formosa.id, funcionario: func_at_vila_formosa, agencia: ag_vila_formosa, adm: false)
@@ -33,6 +29,14 @@ at_vila_formosa = Atendente.create(id: func_at_vila_formosa.id, funcionario: fun
 ag_servidor_municipal = Agencia.create(nome: 'Servidor Municipal')
 func_at_servidor_municipal = Funcionario.create(rf: '09', nome: 'Atendente - Servidor Municipal', password: '09')
 at_servidor_municipal = Atendente.create(id: func_at_servidor_municipal.id, funcionario: func_at_servidor_municipal, agencia: ag_servidor_municipal, adm: false)
+
+ag_svo = Agencia.create(nome: 'SVO')
+func_at_svo = Funcionario.create(rf: '010', nome: 'Atendente - SVO', password: '010')
+at_svo = Atendente.create(id: func_at_svo.id, funcionario: func_at_svo, agencia: ag_svo, adm: false)
+
+ag_santo_amaro = Agencia.create(nome: 'Santo Amaro')
+func_at_santo_amaro = Funcionario.create(rf: '011', nome: 'Atendente - Santo Amaro', password: '011')
+at_santo_amaro = Atendente.create(id: func_at_santo_amaro.id, funcionario: func_at_santo_amaro, agencia: ag_santo_amaro, adm: false)
 
 araca =                  Velorio.create(nome: 'Araçá')
 campo_grande =           Velorio.create(nome: 'Campo Grande')
@@ -53,7 +57,7 @@ vila_formosa_ii =        Velorio.create(nome: 'Vila Formosa II')
 vila_mariana =           Velorio.create(nome: 'Vila Mariana')
 vila_nova_cachoeirinha = Velorio.create(nome: 'Vila Nova Cachoeirinha')
 
-# CEMITÉRIOS QUE TAMBÉM SÃO VELORIOS: 
+# CEMITÉRIOS QUE TAMBÉM SÃO VELORIOS:
 Cemiterio.create(nome: 'Araçá', velorio: araca)
 Cemiterio.create(nome: 'Campo Grande', velorio: campo_grande)
 Cemiterio.create(nome: 'Dom Bosco', velorio: dom_bosco)
@@ -75,6 +79,9 @@ Cemiterio.create(nome: 'Vila Nova Cachoeirinha', velorio: vila_nova_cachoeirinha
 
 # CEMITÉRIO QUE NÃO TEM VELÓRIO:
 Cemiterio.create(nome: 'Crematório')
+Cemiterio.create(nome: 'Consolação')
+Cemiterio.create(nome: 'Penha')
+Cemiterio.create(nome: 'Parelheiros')
 
 Sala.create(velorio: araca, especial: false)
 Sala.create(velorio: araca, especial: false)
@@ -86,7 +93,7 @@ Sala.create(velorio: araca, especial: false)
 Sala.create(velorio: araca, especial: false)
 func_araca = Funcionario.create(rf: '1', nome: 'Velorista - Araça', password: '1')
 vel_araca = Velorista.create(id: func_araca.id, funcionario: func_araca, velorio: araca)
-                                     
+
 Sala.create(velorio: campo_grande, especial: false)
 Sala.create(velorio: campo_grande, especial: false)
 Sala.create(velorio: campo_grande, especial: false)
