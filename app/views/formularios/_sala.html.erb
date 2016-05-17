@@ -2,22 +2,22 @@
   <div>
     <%= link_to "Voltar", main_path, class: "dangerBut" %>
     <%= submit_tag "Próximo passo", id: "prox-passo", class: "myButton" %>
-  </div>  
+  </div>
   <div class="painel col-md-12 text-center">
     <div class="titulo centralizar-texto">
       <h2>Selecione a sala e horário de sepultamento</h2>
     </div>
-    
+
     <h2><%= @velorio.nome %></h2>
-    
-    <%= render 'layouts/matriz', object: @matriz %> 
-      
+
+    <%= render 'layouts/matriz', object: @matriz %>
+
   	<div class="conteudo-painel">
   	  <%= hidden_field_tag(:sepultamento, value = nil) %>
   	  <%= hidden_field_tag(:sala_id, value = nil) %>
   	  <%= hidden_field_tag(:cemiterio_id, value = @cemiterio) %>
   	  <%= hidden_field_tag(:velorio_id, value = @velorio.id) %>
-  	</div>	
+  	</div>
 <% end %>
 
   <!-- Trigger the modal with a button -->
@@ -25,7 +25,7 @@
    <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
-      
+
         <!-- Modal content-->
         <div class="cimodal tam6 col-md-offset-1">
           <div class="titulo">

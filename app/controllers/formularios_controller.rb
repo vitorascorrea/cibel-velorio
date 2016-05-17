@@ -12,6 +12,7 @@ class FormulariosController < ApplicationController
       end
     end
     @cemiterios = @cem_aux << ["Outro", 0]
+    @cemiterios = @cemiterios.sort
   end
 
 def filtro_salas
