@@ -9,14 +9,14 @@
 </head>
 <body>
   <div class="body">
-    <div>      
-      <%= render 'layouts/header' if params[:controller] != 'sessions' %>  
-    </div>    
-    <div class="container-fluid">
-    	<%= yield %>    	
+    <div>
+      <%= render 'layouts/header' if params[:controller] != 'sessions' %>
     </div>
-    <div>      
-      <%= render 'layouts/footer' %>      
+    <div class="container-fluid">
+    	<%= yield %>
+    </div>
+    <div>
+      <%= render 'layouts/footer' %>
     </div>
   </div>
 </body>
