@@ -7,10 +7,20 @@
   <div style="text-align: center; margin-top: 10px;">
     <div class="col-md-4 col-md-offset-4">
       <div class="col-md-10 col-md-offset-1">
-      <% @atendentes.each do |a| %>
-        <% f = a.funcionario %>
-        <%= link_to f.nome, edit_funcionario_path(f.id), class: "btn btn-default btn-block", style: "text-overflow: ellipsis;"  %>
-      <% end %>
+        <table class="data_table">
+          <thead>
+            <th>Nome do Atendente</th>
+          </thead>
+          <tbody>
+          <% @atendentes.each do |a| %>
+          <tr>
+            <td><% f = a.funcionario %>
+            <%= link_to f.nome, edit_funcionario_path(f.id), class: "btn btn-default btn-block", style: "text-overflow: ellipsis;"  %></td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+
       </div>
     </div>
   </div>
