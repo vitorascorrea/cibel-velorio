@@ -1,26 +1,46 @@
 class ReservasController < ApplicationController
   include FormulariosHelper
   include ReservasHelper
-  
+
   before_action :pre_editou?, only: [:edit]
-  
+
   def index
     @reservas = Reserva.all
-  end 
+  end
 
   def selecao_velorio
     @velorio = Velorio.find(params[:velorio_id])
     @reservas = @velorio.reservas.order(sepultamento: :desc)
-    @matriz = geraMatriz(@velorio)
+    if Velorio.find(params[:velorio_id]).nome == 'Vila Formosa II'
+      @matriz = geraMatriz(@velorio, 15)
+      @colspan_central = 96
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i * 4 - 4
+      @colspan_borda_dir = Time.now.hour.to_i * 4 + 8
+    else
+      @matriz = geraMatriz(@velorio, 60)
+      @colspan_central = 24
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i - 1
+      @colspan_borda_dir = Time.now.hour.to_i + 2
+    end
   	respond_to do |format|
   		format.js
   	end
   end
-  
+
   def edit
     @reserva = Reserva.find(params[:id])
     @velorio = @reserva.velorio
-    @matriz = geraMatriz(@velorio)
+    if Velorio.find(@reserva.velorio_id).nome == 'Vila Formosa II'
+      @matriz = geraMatriz(@velorio, 15)
+      @colspan_central = 96
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i * 4 - 4
+      @colspan_borda_dir = Time.now.hour.to_i * 4 + 8
+    else
+      @matriz = geraMatriz(@velorio, 60)
+      @colspan_central = 24
+      @colspan_borda_esq = @colspan_central - Time.now.hour.to_i - 1
+      @colspan_borda_dir = Time.now.hour.to_i + 2
+    end
     gon.sala = @reserva.sala.id
     gon.sepultamento = @reserva.sepultamento + 3600
     aux = false
@@ -35,7 +55,7 @@ class ReservasController < ApplicationController
     end
     gon.inicio ? gon.inicio = gon.inicio : gon.inicio = Time.now.in_time_zone - 3600
   end
-  
+
   def pre_edicao
     @reserva = Reserva.find(params[:reserva][:id_edit])
     Justificativa.create(reserva: @reserva.id, acao: "Editar", justificativa: params[:reserva][:justificativa], atendente: current_funcionario.id, horario: Time.now.in_time_zone)
@@ -49,7 +69,7 @@ class ReservasController < ApplicationController
     @reserva.update_attributes(sepultamento: params[:sepultamento], sala_id: params[:sala_id])
     redirect_to reservas_path
   end
-  
+
   def destroy
     @reserva = Reserva.find(params[:id])
     @reserva.update_attributes(excluida: true)
@@ -66,14 +86,14 @@ class ReservasController < ApplicationController
       end
     end
   end
-  
+
   private
-  
+
   def pre_editou?
     redirect_to reservas_path unless session[:pre_edicao]
     session.delete(:pre_edicao)
   end
-  
+
   def reserva_params
     params.require(:reserva).permit(:falecido, :municipe, :d_obito)
   end

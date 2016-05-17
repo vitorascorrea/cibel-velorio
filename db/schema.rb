@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411152617) do
+ActiveRecord::Schema.define(version: 20160517161929) do
 
   create_table "agencias", force: :cascade do |t|
     t.string   "nome"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160411152617) do
 
   add_index "reservas", ["atendente_id"], name: "index_reservas_on_atendente_id"
   add_index "reservas", ["cemiterio_id"], name: "index_reservas_on_cemiterio_id"
+  add_index "reservas", ["excluida"], name: "index_reservas_on_excluida"
   add_index "reservas", ["sala_id"], name: "index_reservas_on_sala_id"
   add_index "reservas", ["velorio_id"], name: "index_reservas_on_velorio_id"
 
