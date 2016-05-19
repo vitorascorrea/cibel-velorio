@@ -87,7 +87,7 @@ class ReservasController < ApplicationController
       when :postgresql
         @resultado = Reserva.where('falecido ILIKE ?', nome)
       else
-        raise NotImplementedError, "Erro"
+        @resultado = Reserva.where('falecido LIKE ?', nome)
       end
       respond_to do |format|
         format.js
