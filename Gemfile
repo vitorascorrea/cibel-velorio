@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '4.2.4'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -13,13 +12,14 @@ gem 'bcrypt'
 gem 'gon'
 gem 'table_print'
 gem 'squeel'
-gem 'pg'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'headless'
 
 group :development, :test do
 	# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
+	gem 'sqlite3'
 	gem 'byebug'
 	gem 'cucumber-rails', :require => false
 	# database_cleaner is not required, but highly recommended
@@ -28,6 +28,11 @@ group :development, :test do
 	gem 'factory_girl_rails', '~> 4.0'
 	gem 'capybara'
 	gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :development do
