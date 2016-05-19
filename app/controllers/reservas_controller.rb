@@ -80,7 +80,15 @@ class ReservasController < ApplicationController
   def pesquisa
     if params[:Nome]
       nome = '%' + params[:Nome] + '%'
-      @resultado = Reserva.where('falecido LIKE ?', nome)
+      adapter_type = ActiveRecord::Base.connection.adapter_name.downcase.to_sym
+      case adapter_type
+      when :sqlite
+        @resultado = Reserva.where('falecido LIKE ?', nome)
+      when :postgresql
+        @resultado = Reserva.where('falecido ILIKE ?', nome)
+      else
+        raise NotImplementedError, "Erro"
+      end
       respond_to do |format|
         format.js
       end
