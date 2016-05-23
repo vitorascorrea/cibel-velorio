@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     if !logged_in? && params[:controller] != 'sessions'
       redirect_to login_path
     end
-    if current_funcionario.class == Velorista && params[:controller] != 'home'
+    if current_funcionario.class == Velorista && params[:controller] != 'home' && params[:controller] != 'sessions'
       redirect_to home_path
     end
   end
